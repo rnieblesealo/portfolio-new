@@ -5,7 +5,7 @@
 @tailwind utilities;
 
 body {
-  background-color: #1889E1;
+  background-color: black;
 
   /* Frequent things like text should be white */
   color: white;
@@ -23,7 +23,7 @@ h1 {
   font-weight: 800;
   font-size: 6rem;
 
-  -webkit-text-stroke: 2rem rgba(10, 10, 10, 1);
+  -webkit-text-stroke: 2rem rgba(0, 0, 0, 1);
 }
 
 h2 {
@@ -32,7 +32,7 @@ h2 {
 
   letter-spacing: -0.3rem;
 
-  -webkit-text-stroke: 1.5rem rgba(10, 10, 10, 1);
+  -webkit-text-stroke: 1.5rem rgba(0, 0, 0, 1);
 }
 
 h3,
@@ -65,4 +65,9 @@ img {
 
 .square-ul {
   list-style-type: square;
+}
+
+.stroked {
+  -webkit-text-stroke: 2rem rgba(0, 0, 0, 1);
+  paint-order: stroke markers fill;
 }

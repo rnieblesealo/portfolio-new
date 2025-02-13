@@ -28,7 +28,7 @@ export default function AboutMe() {
 
   return (
     <>
-      <h2>About Me</h2>
+      <h2>About Me :]</h2>
       <ul>
         {aboutMeElements}
       </ul>

@@ -5,7 +5,7 @@ import { FaHeart } from "react-icons/fa6"
 
 export default function Intro() {
   return (
-    <div className="flex flex-col items-center justify-center mt-10">
+    <div className="flex flex-col items-center justify-center">
       <h3 className="text-yellow">Hey there! My name is</h3>
 
       <PictureAndName />
