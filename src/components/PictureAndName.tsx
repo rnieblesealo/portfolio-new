@@ -6,7 +6,7 @@ export default function PictureAndName() {
         alt="My picture"
         className="w-[275px] border-[20px] border-black box-border"
       />
-      <h1 className="w-[50%] text-center leading-[3.9rem]">Rafael Niebles</h1>
+      <h1 className="w-[50%] flex items-center justify-center text-center leading-[3.9rem]">Rafael Niebles</h1>
     </div>
   )
 }

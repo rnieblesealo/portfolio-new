@@ -35,7 +35,7 @@ export default function AboutMe() {
 
   const aboutMeElements = aboutMe.map((about, index) => {
     const rot = `rotateZ(${index % 2 === 0 ? 3 : -1}deg)`
-    const offset = `translateX(${index % 2 === 0 ? 20 : -70}px)`
+    const offset = `translateX(${index % 2 === 0 ? 20 : -30}px)`
 
     const appliedTransforms = `${rot} ${offset}`
 
@@ -48,9 +48,9 @@ export default function AboutMe() {
         <img
           src={about.imgSrc}
           alt="About me illustration"
-          className="bg-black p-3 border-box w-[150px] rounded-lg"
+          className="bg-black p-3 border-box h-[150px] rounded-2xl"
         />
-        <p className="ml-[-3px] bg-black p-4 font-bold max-w-[400px] rounded-tr-lg rounded-br-lg">{about.text}</p>
+        <p className="ml-[-3px] bg-black p-4 font-bold h-full max-h-[140px] overflow-y-auto rounded-tr-2xl rounded-br-2xl">{about.text}</p>
       </li>
     )
   })
@@ -58,7 +58,7 @@ export default function AboutMe() {
   return (
     <>
       <h2 className="mb-7">About Me :]</h2>
-      <ul className="flex flex-col gap-5">
+      <ul className="flex flex-col flex-wrap items-center justify-center max-w-[100%] md:max-w-[40%] lg:max-w-[40%]">
         {aboutMeElements}
       </ul>
     </>

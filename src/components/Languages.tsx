@@ -29,7 +29,7 @@ export default function Languages() {
 
   return (
     <>
-      <ul className="w-full max-w-[500px] h-min-content bg-black flex flex-wrap items-center justify-center flex-row text-[3rem] p-6 gap-4">
+      <ul className="w-full max-w-[90%] h-min-content bg-black flex flex-wrap items-center justify-center flex-row text-[3rem] p-6 gap-4 rounded-2xl">
         {langElements}
       </ul>
     </>

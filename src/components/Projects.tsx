@@ -151,8 +151,8 @@ export default function Projects() {
 
     return (
       <>
-        <li key={proj.id} className="bg-black flex flex-col items-center max-w-[270px] rounded-2xl border-[12px] border-black">
-          <h3 className="rounded-tl-lg rounded-tr-lg text-[1.5rem] center p-2 box-border w-full break-words text-center" style={{ backgroundColor: proj.color }}>{proj.name}</h3>
+        <li key={proj.id} className="bg-black flex flex-col items-center w-full max-w-[300px] rounded-2xl border-[12px] border-black">
+          <h3 className="rounded-tl-lg rounded-tr-lg text-[1.25rem] center p-2 box-border w-full break-words text-center" style={{ backgroundColor: proj.color }}>{proj.name}</h3>
           <img
             src={proj.imgSrc}
             alt="Project demo"
@@ -174,7 +174,7 @@ export default function Projects() {
   return (
     <>
       <h2>My Projects!</h2>
-      <ul className="grid grid-cols-3 gap-5 p-5">
+      <ul className="max-w-[100%] grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 p-2">
         {projectElements}
       </ul>
     </>

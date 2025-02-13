@@ -75,7 +75,7 @@ export default function Experience() {
     }
 
     return (
-      <li key={exp.id} className="bg-black p-4 flex flex-row gap-5 rounded-lg">
+      <li key={exp.id} className="bg-black p-4 flex flex-row gap-5 rounded-lg w-full">
         <div className="flex flex-col items-center w-full max-w-[100px] gap-4">
           <img
             src={exp.imgSrc}
@@ -103,7 +103,7 @@ export default function Experience() {
   return (
     <>
       <h2>My Experience!</h2>
-      <ul className="flex flex-col gap-4">
+      <ul className="flex flex-col gap-4 max-w-[90%]">
         {experienceElements}
       </ul>
     </>

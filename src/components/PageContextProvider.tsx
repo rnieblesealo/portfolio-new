@@ -11,17 +11,17 @@ function Clouds() {
       <img
         src="images/cloud-b.png"
         alt="Decorative cloud"
-        className="fixed pixelated w-[10rem] top-[50%] left-[85%]"
+        className="fixed pixelated w-[10rem] top-[50%] left-[70%] opacity-[80%]"
       />
       <img
         src="images/cloud-b.png"
         alt="Decorative cloud"
-        className="fixed pixelated w-[10rem] top-[15%] left-[10%]"
+        className="fixed pixelated w-[10rem] top-[15%] left-[10%] opacity-[80%]"
       />
       <img
         src="images/cloud-b.png"
         alt="Decorative cloud"
-        className="fixed pixelated w-[10rem] top-[80%] left-[15%] transform scale-x-[-1]"
+        className="fixed pixelated w-[10rem] top-[80%] left-[15%] opacity-[80%] transform scale-x-[-1]"
       />
     </div>
   )
@@ -41,7 +41,7 @@ export default function PageContextProvider({ children }: { children?: React.Rea
           <Clouds />
           <div className="z-[1] relative">
             <NavBar />
-            <div className="flex flex-col items-center justify-center mt-10 mb-10">
+            <div className="flex flex-col items-center justify-center mb-10">
               {children}
             </div>
             <Footer />
