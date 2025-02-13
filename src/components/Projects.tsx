@@ -37,6 +37,15 @@ export default function Projects() {
       url: rafaGhLink("memorywell")
     },
     {
+      id: "kanjo",
+      name: "Kanjo.ai",
+      desc: "Custom neural network for an emotion recognition ML model.",
+      langs: ["python", "pytorch"],
+      imgSrc: "images/compressed-gifs/kanjo-will.gif",
+      color: "#5c9856",
+      url: rafaGhLink("kanjoai")
+    },
+    {
       id: "sofieski",
       name: "Sofieski's Wordles",
       desc: "WhatsApp bot that auto-detects and stores Wordle solutions! Gift for my friend Sofia :)",
@@ -44,15 +53,6 @@ export default function Projects() {
       imgSrc: "images/compressed-gifs/sofieski.gif",
       color: "#EB6AAA",
       url: rafaGhLink("sofieski-wordles")
-    },
-    {
-      id: "kanjo",
-      name: "Kanjo.ai",
-      desc: "Custom neural network for an emotion recognition ML model.",
-      langs: ["python", "pytorch"],
-      imgSrc: "images/compressed-gifs/kanjo-logo.gif",
-      color: "gray",
-      url: rafaGhLink("kanjoai")
     },
     {
       id: "bromo",
