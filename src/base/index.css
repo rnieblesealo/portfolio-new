@@ -62,3 +62,7 @@ h5 {
 img {
   image-rendering: pixelated;
 }
+
+.square-ul {
+  list-style-type: square;
+}

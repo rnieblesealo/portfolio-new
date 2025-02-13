@@ -8,19 +8,20 @@ export default function AboutMe() {
   const aboutMe: AboutMeItem[] = [
     {
       id: "exp1",
-      text: "I love this, I love that, and I love you!",
-    },
-    {
-      id: "exp2",
-      text: "I love this, I love that, and I love you!",
+      text: "I love Heathers!",
+      imgSrc: "/images/heathers.png"
     }
   ]
 
   const aboutMeElements = aboutMe.map((about) => {
     return (
-      <li key={about.id}>
-        <img src={about.imgSrc} alt="About me illustration" />
-        <p>{about.text}</p>
+      <li key={about.id} className="flex items-center">
+        <img
+          src={about.imgSrc}
+          alt="About me illustration"
+          className="bg-black p-4 border-box w-[150px]"
+        />
+        <p className="bg-black p-4 font-bold">{about.text}</p>
       </li>
     )
   })

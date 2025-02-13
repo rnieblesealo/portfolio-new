@@ -1,3 +1,5 @@
+import clsx from "clsx"
+
 export default function Projects() {
   type ProjectsItem = {
     id: string,
@@ -10,17 +12,19 @@ export default function Projects() {
 
   const projects: ProjectsItem[] = [
     {
-      id: "sofieski",
-      name: "Sofieski's Wordles",
-      desc: "WhatsApp bot frontend",
-      langs: ["html5", "css3"],
-    }
+      id: "micro",
+      name: "Microtransistor",
+      desc: "First-person FPS",
+      langs: ["unity", "csharp"],
+      imgSrc: "images/microtransistor.gif",
+      color: "red"
+    },
   ]
 
   const projectElements = projects.map((proj) => {
     const langs = proj.langs.map((lang) => {
       return (
-        <li>
+        <li className="text-[3rem]">
           <i key={lang} className={`devicon-${lang}-plain`} />
         </li>
       )
@@ -28,11 +32,15 @@ export default function Projects() {
 
     return (
       <>
-        <div key={proj.id}>
-          <h3>{proj.name}</h3>
-          <img src={proj.imgSrc} alt="Project demo" />
+        <div key={proj.id} className="bg-black p-5 flex flex-col items-center gap-4 max-w-[270px]">
+          <h3 className="text-[1.5rem] p-2 box-border w-full break-words text-center" style={{ backgroundColor: proj.color }}>{proj.name}</h3>
+          <img
+            src={proj.imgSrc}
+            alt="Project demo"
+            className="w-full aspect-square object-cover"
+          />
           <p>{proj.desc}</p>
-          <ul>
+          <ul className="flex flex-row gap-2">
             {langs}
           </ul>
         </div>

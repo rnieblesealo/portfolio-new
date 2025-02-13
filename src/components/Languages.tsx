@@ -8,7 +8,7 @@ export default function Languages() {
     "java",
     "swift",
     "c",
-    "cpp",
+    "cplusplus",
     "csharp",
     "postgresql"
   ]
@@ -23,15 +23,13 @@ export default function Languages() {
 
   const langElements = langs.map((lang) => {
     return (
-      <li>
-        <i key={lang} className={`devicon-${lang}-plain`} />
-      </li>
+      <li key={lang} className={`devicon-${lang}-plain`} />
     )
   })
 
   return (
     <>
-      <ul>
+      <ul className="w-full max-w-[500px] h-min-content bg-black flex flex-wrap items-center justify-center flex-row text-[3rem] p-6 gap-4">
         {langElements}
       </ul>
     </>
