@@ -23,13 +23,17 @@ export default function Languages() {
 
   const langElements = langs.map((lang) => {
     return (
-      <i key={lang} className={`devicon-${lang}-plain`} />
+      <li>
+        <i key={lang} className={`devicon-${lang}-plain`} />
+      </li>
     )
   })
 
   return (
     <>
-      {langElements}
+      <ul>
+        {langElements}
+      </ul>
     </>
   )
 }

@@ -18,17 +18,19 @@ export default function AboutMe() {
 
   const aboutMeElements = aboutMe.map((about) => {
     return (
-      <div key={about.id}>
+      <li key={about.id}>
         <img src={about.imgSrc} alt="About me illustration" />
         <p>{about.text}</p>
-      </div>
+      </li>
     )
   })
 
   return (
     <>
       <h2>About Me</h2>
-      {aboutMeElements}
+      <ul>
+        {aboutMeElements}
+      </ul>
     </>
   )
 }

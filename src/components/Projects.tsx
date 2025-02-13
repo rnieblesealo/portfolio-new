@@ -1,46 +1,39 @@
-export default function Experience() {
-  type ExperienceItem = {
+export default function Projects() {
+  type ProjectsItem = {
     id: string,
-    location: string,
-    role: string,
+    name: string,
     desc: string,
-    bulletsTitle?: string,
-    bullets?: string[],
-    startDate: Date,
-    endDate?: Date,
-    imgSrc?: string
+    langs: string[],
+    imgSrc?: string,
+    color?: string
   }
 
-  const experiences: ExperienceItem[] = [
+  const projects: ProjectsItem[] = [
     {
-      id: "yomama",
-      location: "Yo mama house",
-      role: "Yo mama pounder",
-      desc: "Pounded yo mama",
-      startDate: new Date()
+      id: "sofieski",
+      name: "Sofieski's Wordles",
+      desc: "WhatsApp bot frontend",
+      langs: ["html5", "css3"],
     }
   ]
 
-  const experienceElements = experiences.map((exp) => {
-    const bullets = exp.bullets?.map((bullet) => {
+  const projectElements = projects.map((proj) => {
+    const langs = proj.langs.map((lang) => {
       return (
-        <li key={`${bullet}`}>{bullet}</li>
+        <li>
+          <i key={lang} className={`devicon-${lang}-plain`} />
+        </li>
       )
     })
 
     return (
       <>
-        <div key={exp.id}>
-          <img src={exp.imgSrc} alt="Location logo" />
-          <span>{`${exp.startDate.toLocaleString()} - ${exp.endDate?.toLocaleString()}`}</span>
-        </div>
-        <div>
-          <h4>{exp.location}</h4>
-          <h5>{exp.role}</h5>
-          <p>{exp.desc}</p>
-          <h5>{exp.bulletsTitle}</h5>
+        <div key={proj.id}>
+          <h3>{proj.name}</h3>
+          <img src={proj.imgSrc} alt="Project demo" />
+          <p>{proj.desc}</p>
           <ul>
-            {bullets}
+            {langs}
           </ul>
         </div>
       </>
@@ -50,7 +43,7 @@ export default function Experience() {
   return (
     <>
       <h2>My Projects!</h2>
-      {experienceElements}
+      {projectElements}
     </>
   )
 }

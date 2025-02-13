@@ -29,7 +29,7 @@ export default function Experience() {
     })
 
     return (
-      <div key={exp.id}>
+      <li key={exp.id}>
         <div>          <img src={exp.imgSrc} alt="Location logo" />
           <span>{`${exp.startDate.toLocaleString()} - ${exp.endDate?.toLocaleString()}`}</span>
         </div>
@@ -42,14 +42,16 @@ export default function Experience() {
             {bullets}
           </ul>
         </div>
-      </div>
+      </li>
     )
   })
 
   return (
     <>
       <h2>My Experience!</h2>
-      {experienceElements}
+      <ul>
+        {experienceElements}
+      </ul>
     </>
   )
 }
