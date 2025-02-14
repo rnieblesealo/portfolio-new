@@ -36,8 +36,8 @@ export default function Intro() {
           className="w-[260px] border-black box-border rounded-lg"
         />
       </div>
-      <div className="relative mt-[50px] bg-black w-[300px] h-min-content flex items-center justify-center" >
-        <h1 className="stroked min-w-[350px] min-h-[100px] text-[6.5rem] flex flex-wrap items-center justify-center text-center leading-[4.5rem] space-y-[-3px]">
+      <div className="relative mt-[50px] bg-black max-w-[50%] h-min-content flex items-center justify-center" >
+        <h1 className="stroked min-w-[330px] min-h-[100px] text-[6rem] flex flex-wrap items-center justify-center text-center leading-[4.5rem] space-y-[-3px]">
           {coloredName}
         </h1>
       </div>

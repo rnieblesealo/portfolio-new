@@ -65,7 +65,7 @@ export default function Projects() {
 
     const projectLink = (
       <a href={proj.url} className="flex items-center justify-center gap-2 font-bold text-hoverable" target="_blank">
-        <p>Check it out!</p>
+        <p className="text-center">Check it out!</p>
         <span className="text-[1.5rem]">
           <RiShareBoxLine />
         </span>
