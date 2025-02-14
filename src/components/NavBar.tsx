@@ -3,6 +3,7 @@ import { UsePageContext } from "./PageContextProvider"
 
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoCloseSharp } from "react-icons/io5";
+import clsx from "clsx";
 
 export default function NavBar() {
   const context = UsePageContext()
@@ -28,25 +29,33 @@ export default function NavBar() {
     </ul>
   )
 
+  // NOTE: giving keys triggers react's reconciliation to reload EVERYTHING for this component 
+  // this is because it will be treated as a unique element
+  // ...which reruns the animation we want :)
+
   const burgerButton = (
-    <button className="text-[2rem]" onClick={showMobileNavMenu}>
+    <button key="burger" className="text-[2rem] animate-jump-in" onClick={showMobileNavMenu}>
       <GiHamburgerMenu />
     </button>
   )
 
   const closeButton = (
-    <button className="text-[2.5rem]" onClick={hideMobileNavMenu}>
+    <button key="close" className="text-[2.5rem] animate-jump-in" onClick={hideMobileNavMenu}>
       <IoCloseSharp />
     </button >
+  )
+
+  const listItemStyle = clsx(
+    "animate-jump-in"
   )
 
   const mobileNavMenu = (
     <div>
       <ul className="bg-black relative w-screen h-screen text-[2rem] font-bold flex flex-col items-center gap-4 p-4 z-10">
-        <li>Home</li>
-        <li>About</li>
-        <li>Experience</li>
-        <li>Projects</li>
+        <li className={listItemStyle}>Home</li>
+        <li className={listItemStyle}>About</li>
+        <li className={listItemStyle}>Experience</li>
+        <li className={listItemStyle}>Projects</li>
       </ul>
     </div>
   )
