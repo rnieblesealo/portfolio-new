@@ -28,7 +28,7 @@ export default function Intro() {
 
   // there is some honky css for the name to have a black bg behind it to hide gaps between chars that the stroke can't get to
   const picAndName = (
-    <div className="flex flex-col items-center justify-center space-y-[-70px] mb-[40px]">
+    <div className="flex flex-col items-center justify-center space-y-[-70px] mb-[40px] animate-jump-in">
       <div className="bg-black p-5 rounded-2xl">
         <img
           src="images/profile.jpg"

@@ -18,7 +18,7 @@ export default function AboutMe() {
           alt="About me illustration"
           className="bg-black p-3 border-box h-[150px] rounded-2xl"
         />
-        <p className="ml-[-3px] bg-black p-4 font-bold h-full max-h-[140px] overflow-y-auto rounded-tr-2xl rounded-br-2xl">{about.text}</p>
+        <p className="ml-[-3px] bg-black p-4 font-bold h-full max-h-[140px] overflow-y-auto rounded-tr-2xl rounded-br-2xl animate-flip-down">{about.text}</p>
       </li>
     )
   })

@@ -27,7 +27,7 @@ export default function Experience() {
     }
 
     return (
-      <li key={exp.id} className="bg-black p-4 flex flex-row gap-5 rounded-2xl w-full">
+      <li key={exp.id} className="bg-black p-4 flex flex-row gap-5 rounded-2xl w-full animate-fade-right">
         <div className="flex flex-col items-center w-full max-w-[100px] gap-4">
           <img
             src={exp.imgSrc}
