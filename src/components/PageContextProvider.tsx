@@ -53,9 +53,8 @@ export default function PageContextProvider({ children }: { children?: React.Rea
   const mainContainerStyle = clsx(
     "w-min-content",
     "h-min-content",
-    "relative",
+    "absolute",
     "bg-gradient-to-b from-blue-500 to-pink-700",
-    "overflow-x-hidden",
     "z-2"
   )
 

@@ -78,7 +78,7 @@ export default function Projects() {
 
     const tagElements = proj.tags?.map((tag) => {
       return (
-        <li key={tag} className="cursor-pointer text-[0.75rem] font-bold transition-bg duration-[0.1s] bg-gray-800 hover:bg-gray-900 rounded-2xl text-white p-1 pl-3 pr-3">{tag}</li>
+        <li key={tag} className="cursor-pointer text-[0.75rem] font-bold transition-bg duration-[0.1s] bg-gray-800 hover:bg-gray-900 rounded-2xl text-white p-1 pl-3 pr-3 text-center">{tag}</li>
       )
     })
 
