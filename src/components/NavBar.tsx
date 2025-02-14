@@ -22,13 +22,17 @@ export default function NavBar() {
   }
 
   const bigButtons = links.map((link) => {
+    const enlargedIcon = (
+      <p className="text-[2rem]">
+        {link.icon}
+      </p>
+    )
+
     return (
       <li key={link.id}>
         <button onClick={hideMobileNavMenu}>
-          <a className="text-hoverable animate-fade-left flex items-center justify-center gap-2" href={link.link} target="_blank">
-            <p className="text-[2rem]">
-              {link.icon}
-            </p>
+          <a className="text-hoverable animate-fade-left flex items-center justify-center gap-2" href={link.link} target={link.newTab ? "_blank" : ""}>
+            {link.icon && enlargedIcon}
             {link.text}
           </a>
         </button>

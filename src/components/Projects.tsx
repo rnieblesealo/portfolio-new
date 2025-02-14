@@ -41,7 +41,7 @@ export default function Projects() {
     return (
       <li
         key={proj.id}
-        className="bg-black flex flex-col items-center w-full max-w-[300px] rounded-2xl border-[12px] border-black"
+        className="bg-black flex flex-col items-center w-full max-w-[300px] rounded-2xl border-[12px] border-black transition-scale duration-[0.25s] hover:scale-[1.05] cursor-pointer"
       >
         <h3 className="rounded-tl-lg rounded-tr-lg text-[1.25rem] center p-2 box-border w-full break-words text-center" style={{ backgroundColor: proj.color }}>{proj.name}</h3>
         <img

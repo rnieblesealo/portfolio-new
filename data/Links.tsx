@@ -9,6 +9,7 @@ type LinksItem = {
   text?: string,
   icon?: React.ReactNode
   link: string,
+  newTab?: boolean
 }
 
 const links: LinksItem[] = [
@@ -36,17 +37,20 @@ const links: LinksItem[] = [
     id: "resume",
     text: "Resumé",
     link: "https://drive.google.com/file/d/16Tr9ySJrI1fEz8drh2w6zxu6ADSH9CbD/view",
-    icon: <IoDocumentText />
+    icon: <IoDocumentText />,
+    newTab: true
   },
   {
     id: "github",
     link: "https://github.com/rnieblesealo",
-    icon: <FaGithub />
+    icon: <FaGithub />,
+    newTab: true
   },
   {
     id: "linkedin",
     link: "https://www.linkedin.com/in/rafael-niebles/",
-    icon: <FaLinkedin />
+    icon: <FaLinkedin />,
+    newTab: true
   }
 ]
 

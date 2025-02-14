@@ -1,7 +1,8 @@
 type AboutMeItem = {
   id: string,
   text: string,
-  imgSrc?: string
+  imgSrc?: string,
+  demoSrc?: string
 }
 
 const aboutMe: AboutMeItem[] = [
@@ -22,12 +23,13 @@ const aboutMe: AboutMeItem[] = [
   },
   {
     id: "music",
-    text: "Music is my second passion! Click this widget to check some of my songs out :)",
-    imgSrc: "/images/guitar.png"
+    text: "Music is my second passion! I love surf rock to death, but enjoy pretty much everything.",
+    imgSrc: "/images/guitar.png",
+    demoSrc: "/images/compressed-gifs/band.gif"
   },
   {
     id: "favMovie",
-    text: "My favorite movie of all time is Heathers.",
+    text: "My favorite movie of all time is Heathers!",
     imgSrc: "/images/heathers.png"
   },
 ]
