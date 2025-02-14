@@ -64,15 +64,6 @@ export default function Projects() {
       url: "https://github.com/Frankelly-Guzman/Bromodoro"
     },
     {
-      id: "glassdoor",
-      name: "Glassdoor Mockup",
-      desc: "Mockup of Glassdoor's front page as a design/ideation exercise.",
-      langs: ["typescript", "react", "tailwindcss", "vite"],
-      imgSrc: "images/glassdoor.png",
-      color: "#237947",
-      url: rafaGhLink("glassdoor-mockup")
-    },
-    {
       id: "spyder",
       name: "The Spyder",
       desc: "Dodge traffic as you escape a giant deadly spider! Survival is futile. Intern project built for HYEL!",
@@ -99,6 +90,15 @@ export default function Projects() {
       color: "#8D7755",
       teamSize: 4,
       url: "https://github.com/ryanengphoto/lucina"
+    },
+    {
+      id: "glassdoor",
+      name: "Glassdoor Mockup",
+      desc: "Mockup of Glassdoor's front page as a design/ideation exercise.",
+      langs: ["typescript", "react", "tailwindcss", "vite"],
+      imgSrc: "images/glassdoor.png",
+      color: "#0F121C",
+      url: rafaGhLink("glassdoor-mockup")
     },
     {
       id: "chip",

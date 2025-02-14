@@ -37,7 +37,7 @@ export default function Experience() {
       location: "KnightHacks",
       role: "Project Director",
       desc: "As a team of 5, we'll be designing and implementing Bromodoro, a full-stack app designed to make productivity more social and fun using the genius Pomodoro Technique.",
-      bulletsTitle: "While at this, I've done some...",
+      bulletsTitle: "My team and I are...",
       bullets: [
         "Developing a modern, responsive (and fun!) frontend using Vite + React.",
         "Leveraging Supabase and its API for our database and deployment needs.",
@@ -75,7 +75,7 @@ export default function Experience() {
     }
 
     return (
-      <li key={exp.id} className="bg-black p-4 flex flex-row gap-5 rounded-lg w-full">
+      <li key={exp.id} className="bg-black p-4 flex flex-row gap-5 rounded-2xl w-full">
         <div className="flex flex-col items-center w-full max-w-[100px] gap-4">
           <img
             src={exp.imgSrc}
@@ -83,7 +83,7 @@ export default function Experience() {
           />
           <span className="text-center">{`${start}`} - <span className={`${italicizePresent}`}>{end}</span></span>
         </div>
-        <div>
+        <div className="flex flex-col gap-3">
           <h3
             className="w-fit"
             style={(exp.startTitleColor && exp.endTitleColor) ? titleStyle : {}}>
