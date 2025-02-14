@@ -1,3 +1,4 @@
+import clsx from "clsx"
 import langs from "../../data/langs"
 
 export default function Languages() {
@@ -10,9 +11,16 @@ export default function Languages() {
   // if not, the entire list needs to be re-rendered
   // this is why we can't use nanoid too; the keys must be unique and persist across re-renders!
 
+  const hoverAnim = clsx(
+    "transition-transform duration-[0.25s]",
+    "hover:scale-[1.25]",
+    "hover:colored",
+    "hover:[text-shadow:0px_0px_25px_rgba(255,255,255,0.5)]",
+  )
+
   const langElements = langs.map((lang) => {
     return (
-      <li key={lang} className={`devicon-${lang}-plain`} />
+      <li key={lang} className={`devicon-${lang}-plain ${hoverAnim} cursor-pointer`} />
     )
   })
 
