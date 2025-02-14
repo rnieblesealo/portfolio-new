@@ -25,7 +25,7 @@ export default function AboutMe() {
 
   return (
     <>
-      <h2 className="mb-7">About Me :]</h2>
+      <h2 id="abt" className="mb-7">About Me :]</h2>
       <ul className="flex flex-col flex-wrap items-center justify-center max-w-[75%] sm:max-w-[80%] md:max-w-[60%] lg:max-w-[40%]">
         {aboutMeElements}
       </ul>

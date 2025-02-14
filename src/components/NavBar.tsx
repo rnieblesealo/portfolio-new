@@ -3,7 +3,8 @@ import { UsePageContext } from "./PageContextProvider"
 
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoCloseSharp } from "react-icons/io5";
-import clsx from "clsx";
+
+import links from "../../data/Links"
 
 export default function NavBar() {
   const context = UsePageContext()
@@ -20,12 +21,24 @@ export default function NavBar() {
     document.body.style.overflow = "visible"
   }
 
-  const bigButtons = (
+  const bigButtons = links.map((link) => {
+    return (
+      <li key={link.id}>
+        <button onClick={hideMobileNavMenu}>
+          <a className="text-hoverable animate-fade-left flex items-center justify-center gap-2" href={link.link} target="_blank">
+            <p className="text-[2rem]">
+              {link.icon}
+            </p>
+            {link.text}
+          </a>
+        </button>
+      </li>
+    )
+  })
+
+  const bigButtonCollection = (
     <ul className="text-[1rem] font-bold flex flex-row items-center ml-auto gap-4 h-min-content">
-      <li>Home</li>
-      <li>About</li>
-      <li>Experience</li>
-      <li>Projects</li>
+      {bigButtons}
     </ul>
   )
 
@@ -45,34 +58,28 @@ export default function NavBar() {
     </button >
   )
 
-  const listItemStyle = clsx(
-    "animate-fade-right",
-    "text-hoverable"
-  )
-
   const mobileNavMenu = (
     <div>
       <ul className="bg-black relative w-screen h-screen text-[2rem] font-bold flex flex-col items-center gap-4 p-4 z-10">
-        <li className={listItemStyle}>Home</li>
-        <li className={listItemStyle}>About</li>
-        <li className={listItemStyle}>Experience</li>
-        <li className={listItemStyle}>Projects</li>
+        {bigButtons}
       </ul>
     </div>
   )
 
   return (
     <>
-      <nav className="bg-black flex items-center p-2">
+      <nav className="bg-black flex items-center p-2 sticky w-screen">
         <div className="flex w-full items-center flex-row gap-3">
           <img
             src="images/icon.png"
             alt="Small icon of me"
             className="w-full max-w-[50px]"
           />
-          <p className="font-tiny5">Rafael Niebles</p>
+          <a href="#home" className="font-tiny5 font-bold text-hoverable">
+            <p>Rafael Niebles</p>
+          </a>
         </div>
-        {context.isSmall ? (mobileNavActive ? closeButton : burgerButton) : bigButtons}
+        {context.isSmall ? (mobileNavActive ? closeButton : burgerButton) : bigButtonCollection}
       </nav>
       {mobileNavActive && mobileNavMenu}
     </>

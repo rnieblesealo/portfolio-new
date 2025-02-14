@@ -22,7 +22,7 @@ export default function Intro() {
 
   const coloredName = "RafaelNiebles".split("").map((char, index) => {
     return (
-      <span style={{ color: nameColors[index % nameColors.length] }}>{char}</span>
+      <span key={index} style={{ color: nameColors[index % nameColors.length] }}>{char}</span>
     )
   })
 
@@ -45,7 +45,7 @@ export default function Intro() {
   )
 
   return (
-    <div className="flex flex-col items-center justify-center mt-5 mb-5">
+    <div id="home" className="flex flex-col items-center justify-center mt-5 mb-5">
       <h3 className="stroked-light text-yellow">Hey there! My name's</h3>
 
       {picAndName}

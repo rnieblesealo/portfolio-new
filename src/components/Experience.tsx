@@ -54,7 +54,7 @@ export default function Experience() {
 
   return (
     <>
-      <h2>My Experience!</h2>
+      <h2 id="exp">My Experience!</h2>
       <ul className="flex flex-col gap-4 max-w-[90%]">
         {experienceElements}
       </ul>

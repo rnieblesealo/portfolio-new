@@ -31,7 +31,7 @@ function Clouds() {
 }
 
 export default function PageContextProvider({ children }: { children?: React.ReactNode }) {
-  const smallThresholdPx = 576
+  const smallThresholdPx = 1024
 
   const [isSmall, setIsSmall] = useState(window.innerWidth < smallThresholdPx)
 
