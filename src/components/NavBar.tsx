@@ -64,7 +64,7 @@ export default function NavBar() {
 
   const mobileNavMenu = (
     <div>
-      <ul className="bg-black relative w-screen h-screen text-[1rem] font-bold flex flex-col items-center gap-4 p-4 z-10">
+      <ul className="bg-black fixed top-0 w-screen h-screen text-[1rem] font-bold flex flex-col items-center gap-4 p-4 z-10">
         {bigButtons}
       </ul>
     </div>
