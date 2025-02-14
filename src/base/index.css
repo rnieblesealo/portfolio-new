@@ -68,7 +68,7 @@ img {
 }
 
 .stroked {
-  -webkit-text-stroke: 2rem black;
+  -webkit-text-stroke: 1.5rem black;
   paint-order: stroke markers fill;
 }
 
