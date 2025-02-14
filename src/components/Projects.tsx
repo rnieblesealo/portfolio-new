@@ -1,10 +1,60 @@
 import { IoPeopleSharp } from "react-icons/io5";
 import { RiShareBoxLine } from "react-icons/ri";
 import projects from "../../data/projects"
+import { useState } from "react";
+
+interface ProjectProps {
+  id: string,
+  name: string,
+  desc: string,
+  imgSrc?: string,
+  color?: string,
+  langs: React.ReactNode,
+  teamSize: React.ReactNode,
+  ctLink: React.ReactNode,
+  tagCollection: React.ReactNode
+}
+
+// we don't instantiate in the .map because we need to use state for hover effect
+function Project({ id, name, desc, imgSrc, color, langs, teamSize, ctLink, tagCollection }: ProjectProps) {
+  const [isHovered, setIsHovered] = useState(false)
+
+  const styles = {
+    transition: "box-shadow 0.25s ease, transform 0.25s ease",
+  }
+
+  return (
+    <li
+      key={id}
+      className="bg-black flex flex-col items-center w-full max-w-[300px] rounded-2xl border-[12px] border-black cursor-pointer"
+      onMouseEnter={() => { setIsHovered(true) }}
+      onMouseLeave={() => { setIsHovered(false) }}
+      style={{
+        ...styles, // append predefined styles
+        ...(isHovered ? { boxShadow: `0px 0px 50px ${color}`, transform: "scale(105%)" } : {})
+      }}
+    >
+      <h3 className="rounded-tl-lg rounded-tr-lg text-[1.25rem] center p-2 box-border w-full break-words text-center" style={{ backgroundColor: color }}>{name}</h3>
+      <img
+        src={imgSrc}
+        alt="Project demo"
+        className="w-full aspect-square object-cover mb-4"
+      />
+      <div className="flex flex-col gap-4">
+        <p className="text-center">{desc}</p>
+        <ul className="w-full flex flex-row flex-wrap items-center justify-center gap-2">
+          {langs}
+        </ul>
+        {teamSize}
+        {ctLink}
+        {tagCollection}
+      </div>
+    </li >
+  )
+}
 
 export default function Projects() {
   const projectElements = projects.map((proj) => {
-
     const langs = proj.langs.map((lang) => {
       return (
         <li key={lang} className="text-[2.5rem]">
@@ -39,35 +89,26 @@ export default function Projects() {
     )
 
     return (
-      <li
-        key={proj.id}
-        className="bg-black flex flex-col items-center w-full max-w-[300px] rounded-2xl border-[12px] border-black transition-scale duration-[0.25s] hover:scale-[1.05] cursor-pointer"
-      >
-        <h3 className="rounded-tl-lg rounded-tr-lg text-[1.25rem] center p-2 box-border w-full break-words text-center" style={{ backgroundColor: proj.color }}>{proj.name}</h3>
-        <img
-          src={proj.imgSrc}
-          alt="Project demo"
-          className="w-full aspect-square object-cover mb-4"
-        />
-        <div className="flex flex-col gap-4">
-          <p className="text-center">{proj.desc}</p>
-          <ul className="w-full flex flex-row flex-wrap items-center justify-center gap-2">
-            {langs}
-          </ul>
-          {proj.teamSize && teamSize}
-          {proj.url && projectLink}
-          {proj.tags && tagCollection}
-        </div>
-      </li>
+      <Project
+        id={proj.id}
+        name={proj.name}
+        desc={proj.desc}
+        imgSrc={proj.imgSrc}
+        color={proj.color}
+        langs={langs}
+        teamSize={teamSize}
+        ctLink={projectLink}
+        tagCollection={tagCollection}
+      />
     )
   })
 
   return (
     <>
       <h2 id="proj">My Projects!</h2>
-      <ul className="max-w-[100%] grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 p-2">
+      < ul className="max-w-[100%] grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 p-2" >
         {projectElements}
-      </ul>
+      </ul >
     </>
   )
 }
