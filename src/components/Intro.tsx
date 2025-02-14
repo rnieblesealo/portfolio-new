@@ -56,7 +56,7 @@ export default function Intro() {
 
       <Languages />
 
-      <h3 className="stroked-light flex items-center gap-3">and a whole lot of <span className="text-red-600 text-[3rem]">{<FaHeart />}</span>!</h3>
+      <h3 className="stroked-light flex items-center gap-3">and a whole lot of <span className="text-red-700 text-[3rem]">{<FaHeart className="animate-jump animate-infinite animate-duration-1000" />}</span>!</h3>
     </div>
   )
 }

@@ -73,7 +73,7 @@ export default function NavBar() {
   return (
     <>
       <nav className="bg-black flex items-center p-2 w-screen h-[70px] sticky top-0 z-[999]">
-        <div className="flex w-full items-center flex-row gap-3">
+        <div className="flex w-full items-center flex-row gap-3 animate-fade-left">
           <img
             src="images/icon.png"
             alt="Small icon of me"

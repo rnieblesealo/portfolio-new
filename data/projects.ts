@@ -140,18 +140,6 @@ const projects: ProjectsItem[] = [
     ]
   },
   {
-    id: "glassdoor",
-    name: "Glassdoor Mockup",
-    desc: "Mockup of Glassdoor's front page as a design/ideation exercise.",
-    langs: ["typescript", "react", "tailwindcss", "vite"],
-    imgSrc: "images/glassdoor.png",
-    color: "#0F121C",
-    url: rafaGhLink("glassdoor-mockup"),
-    tags: [
-      "Web Design"
-    ]
-  },
-  {
     id: "chip",
     name: "Chippy",
     desc: "An emulator for the original CHIP-8 VM.",
