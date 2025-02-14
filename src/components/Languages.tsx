@@ -1,17 +1,6 @@
+import langs from "../../data/langs"
+
 export default function Languages() {
-  const langs: string[] = [
-    "typescript",
-    "javascript",
-    "html5",
-    "css3",
-    "python",
-    "java",
-    "swift",
-    "c",
-    "cplusplus",
-    "csharp",
-    "postgresql"
-  ]
 
   // NOTE: we need to give some key to generated lists!
   // -------------------------------------------------------------------------------------------------

@@ -12,27 +12,20 @@ function Clouds() {
     "fixed pixelated z-1 w-[10rem] opacity-[80%]"
   )
 
+  const cloud = (top: number, left: number) => (
+    <img
+      src="images/cloud-b.png"
+      alt="Decorative cloud"
+      className={cloudStyle}
+      style={{ top: `${top}%`, left: `${left}%` }}
+    />
+  )
 
   return (
     <div className="w-full h-full absolute z-1">
-      <img
-        src="images/cloud-b.png"
-        alt="Decorative cloud"
-        className={cloudStyle}
-        style={{ top: "15%", left: "15%" }}
-      />
-      <img
-        src="images/cloud-b.png"
-        alt="Decorative cloud"
-        className={cloudStyle}
-        style={{ top: "50%", left: "85%" }}
-      />
-      <img
-        src="images/cloud-b.png"
-        alt="Decorative cloud"
-        className={cloudStyle}
-        style={{ top: "90%", left: "20%" }}
-      />
+      {cloud(15, 8)}
+      {cloud(50, 85)}
+      {cloud(90, 20)}
     </div>
   )
 }
