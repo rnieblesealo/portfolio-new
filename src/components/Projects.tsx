@@ -13,12 +13,12 @@ export default function Projects() {
     })
 
     const projectLink = (
-      <p className="flex items-center justify-center gap-2 font-bold">
-        <u>Check it out!</u>
+      <a href={proj.url} className="flex items-center justify-center gap-2 font-bold text-hoverable" target="_blank">
+        <p>Check it out!</p>
         <span className="text-[1.5rem]">
           <RiShareBoxLine />
         </span>
-      </p>
+      </a>
     )
 
     const teamSize = (
@@ -27,7 +27,7 @@ export default function Projects() {
 
     const tagElements = proj.tags?.map((tag) => {
       return (
-        <p className="text-[0.75rem] font-bold bg-gray-800 rounded-2xl text-white p-1 pl-3 pr-3">{tag}</p>
+        <p className="cursor-pointer text-[0.75rem] font-bold transition-bg duration-[0.1s] bg-gray-800 hover:bg-gray-900 rounded-2xl text-white p-1 pl-3 pr-3">{tag}</p>
       )
     })
 

@@ -34,19 +34,20 @@ export default function NavBar() {
   // ...which reruns the animation we want :)
 
   const burgerButton = (
-    <button key="burger" className="text-[2rem] animate-jump-in" onClick={showMobileNavMenu}>
+    <button key="burger" className="text-hoverable text-[2rem] animate-jump-in" onClick={showMobileNavMenu}>
       <GiHamburgerMenu />
     </button>
   )
 
   const closeButton = (
-    <button key="close" className="text-[2.5rem] animate-jump-in" onClick={hideMobileNavMenu}>
+    <button key="close" className="text-hoverable text-[2.5rem] animate-jump-in" onClick={hideMobileNavMenu}>
       <IoCloseSharp />
     </button >
   )
 
   const listItemStyle = clsx(
-    "animate-jump-in"
+    "animate-fade-right",
+    "text-hoverable"
   )
 
   const mobileNavMenu = (

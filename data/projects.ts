@@ -34,7 +34,7 @@ const projects: ProjectsItem[] = [
     id: "memwell",
     name: "Memory Well",
     desc: "Official website for the band Memory Well. My first freelance project!",
-    langs: ["javascript", "react", "tailwindcss", "vite", "axios"],
+    langs: ["javascript", "react", "vite", "axios"],
     imgSrc: "images/compressed-gifs/memwell.gif",
     color: "purple",
     url: rafaGhLink("memorywell"),

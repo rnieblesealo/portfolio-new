@@ -81,3 +81,23 @@ img {
   -webkit-text-stroke: 0.25rem black;
   paint-order: stroke markers fill;
 }
+
+.text-hoverable {
+  cursor: pointer;
+  padding: 10px;
+  transition: color 0.1s ease, outline 0.1s ease;
+}
+
+.text-hoverable:hover {
+  color: #3D7FF3;
+  outline: 1px solid #3D7FF3;
+  border-radius: 0.75rem;
+  padding: 10px;
+}
+
+.text-hoverable:active {
+  color: #1A2E5A;
+  outline: 1px solid #1A2E5A;
+  border-radius: 0.75rem;
+  padding: 10px;
+}
