@@ -4,7 +4,6 @@ import projects from "../../data/projects"
 import { useState } from "react";
 
 interface ProjectProps {
-  id: string,
   name: string,
   desc: string,
   imgSrc?: string,
@@ -16,7 +15,7 @@ interface ProjectProps {
 }
 
 // we don't instantiate in the .map because we need to use state for hover effect
-function Project({ id, name, desc, imgSrc, color, langs, teamSize, ctLink, tagCollection }: ProjectProps) {
+function Project({ name, desc, imgSrc, color, langs, teamSize, ctLink, tagCollection }: ProjectProps) {
   const [isHovered, setIsHovered] = useState(false)
 
   const styles = {
@@ -25,7 +24,6 @@ function Project({ id, name, desc, imgSrc, color, langs, teamSize, ctLink, tagCo
 
   return (
     <li
-      key={id}
       className="bg-black flex flex-col items-center w-full max-w-[300px] rounded-2xl border-[12px] border-black cursor-pointer"
       onMouseEnter={() => { setIsHovered(true) }}
       onMouseLeave={() => { setIsHovered(false) }}
@@ -90,7 +88,7 @@ export default function Projects() {
 
     return (
       <Project
-        id={proj.id}
+        key={proj.id}
         name={proj.name}
         desc={proj.desc}
         imgSrc={proj.imgSrc}
@@ -106,7 +104,7 @@ export default function Projects() {
   return (
     <>
       <h2 id="proj">My Projects!</h2>
-      < ul className="max-w-[100%] grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 p-2" >
+      <ul className="max-w-[100%] grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 p-2" >
         {projectElements}
       </ul >
     </>
