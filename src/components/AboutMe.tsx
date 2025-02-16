@@ -1,7 +1,7 @@
 import clsx from "clsx"
 import aboutMe from "../../data/aboutMe"
-import { getLastFmTopArtists } from "../scripts/lastfm.ts"
 import { useEffect, useState } from "react"
+import { getLastFmTopArtists, searchSpotify } from "../scripts/lastfm.ts"
 
 interface TopArtistProps {
   imgSrc: string,
@@ -21,34 +21,55 @@ function TopArtist({ imgSrc, name }: TopArtistProps) {
 }
 
 function TopArtists() {
-  const [topArtists, setTopArtists] = useState(null)
+  const [topArtists, setTopArtists] = useState<any>(null)
 
-  // get top artists from lastfm
-  // TODO: lastfm no longer supports images, use musicbrainz
   useEffect(() => {
+    // get top artists from lastfm
     getLastFmTopArtists()
-      .then((response) => {
-        console.log("Response", response)
+      .then(async (lastFmResponse) => {
+        console.log("LastFM: ", lastFmResponse)
 
-        const topArtists = response.map((artistData) => {
+        // grab name of each top artist and query spotify for its image
+        const topArtists = await Promise.all(
+          lastFmResponse.map(async (artistInfo) => {
+            const artistName = artistInfo.name
+            let artistImage = null
+
+            try {
+              const spotifyArtistData = await searchSpotify(artistName)
+              artistImage = spotifyArtistData.images[0].url
+            } catch (error) {
+              console.error("Could not get Spotify image: ", error)
+            }
+
+            return {
+              name: artistName,
+              imgUrl: artistImage
+            }
+          }))
+
+        const components = topArtists.map((info) => {
+          console.log(info.imgUrl)
+
           return (
-            <TopArtist
-              name={artistData.name}
-              imgSrc=""
-            />
+            <div className="bg-black p-5 flex items-center flex-col justify-center rounded-2xl gap-2">
+              <img
+                src={info.imgUrl}
+                alt={`Artist pic of ${info.name}`}
+                className="max-w-[200px] rounded-lg"
+              />
+              <p className="font-bold">{info.name}</p>
+            </div>
           )
         })
 
-        setTopArtists(topArtists)
+        setTopArtists(components)
 
-      })
-      .catch((error) => {
-        console.error("Error: ", error)
       })
   }, [])
 
   return (
-    <div>
+    <div className="flex flex-wrap gap-4 items-center justify-center">
       {topArtists}
     </div>
   )
