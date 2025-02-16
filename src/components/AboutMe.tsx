@@ -1,5 +1,58 @@
 import clsx from "clsx"
 import aboutMe from "../../data/aboutMe"
+import { getLastFmTopArtists } from "../scripts/lastfm.ts"
+import { useEffect, useState } from "react"
+
+interface TopArtistProps {
+  imgSrc: string,
+  name: string
+}
+
+function TopArtist({ imgSrc, name }: TopArtistProps) {
+  return (
+    <div>
+      <img
+        src={imgSrc}
+        alt={`Artist pic of ${name}`}
+      />
+      <p>{name}</p>
+    </div>
+  )
+}
+
+function TopArtists() {
+  const [topArtists, setTopArtists] = useState(null)
+
+  // get top artists from lastfm
+  // TODO: lastfm no longer supports images, use musicbrainz
+  useEffect(() => {
+    getLastFmTopArtists()
+      .then((response) => {
+        console.log("Response", response)
+
+        const topArtists = response.map((artistData) => {
+          return (
+            <TopArtist
+              name={artistData.name}
+              imgSrc=""
+            />
+          )
+        })
+
+        setTopArtists(topArtists)
+
+      })
+      .catch((error) => {
+        console.error("Error: ", error)
+      })
+  }, [])
+
+  return (
+    <div>
+      {topArtists}
+    </div>
+  )
+}
 
 export default function AboutMe() {
   const aboutMeElements = aboutMe.map((about, index) => {
@@ -44,6 +97,7 @@ export default function AboutMe() {
   return (
     <>
       <h2 id="abt" className="mb-7">About Me :]</h2>
+      <TopArtists />
       <ul className="flex flex-col flex-wrap items-center justify-center max-w-[75%] sm:max-w-[80%] md:max-w-[60%] lg:max-w-[40%]">
         {aboutMeElements}
       </ul>
