@@ -62,6 +62,16 @@ const experiences: ExperienceItem[] = [
     startTitleColor: "#9969CD",
     endTitleColor: "#131731"
   },
+  {
+    id: "codepath-web",
+    location: "CodePath",
+    role: "Web Development Student",
+    desc: "I'm currently taking CodePath's WEB102 for intermediate web development, where I'm most interested in learning to better collaborate with others in team-based settings!",
+    startDate: new Date("February 1, 2025"),
+    imgSrc: "images/codepath.jpg",
+    startTitleColor: "#06C58C",
+    endTitleColor: "white"
+  },
 ]
 
 export default experiences
