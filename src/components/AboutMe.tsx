@@ -2,25 +2,7 @@ import clsx from "clsx"
 import aboutMe from "../../data/aboutMe"
 import { useEffect, useState } from "react"
 import { getLastFmTopArtists, searchSpotify } from "../scripts/lastfm.ts"
-import { FaLastfm, FaSpotify } from "react-icons/fa6"
-import { FaLastfmSquare } from "react-icons/fa"
-
-interface TopArtistProps {
-  imgSrc: string,
-  name: string
-}
-
-function TopArtist({ imgSrc, name }: TopArtistProps) {
-  return (
-    <div>
-      <img
-        src={imgSrc}
-        alt={`Artist pic of ${name}`}
-      />
-      <p>{name}</p>
-    </div>
-  )
-}
+import { FaLastfmSquare, FaSpotify } from "react-icons/fa"
 
 function TopArtists() {
   const [topArtists, setTopArtists] = useState<any>(null)
@@ -33,7 +15,7 @@ function TopArtists() {
 
         // grab name of each top artist and query spotify for its image
         const topArtists = await Promise.all(
-          lastFmResponse.map(async (artistInfo) => {
+          lastFmResponse.map(async (artistInfo: any) => {
             const artistName = artistInfo.name
             const artistPlayCount = artistInfo.playcount
             let artistImage = null
@@ -75,14 +57,6 @@ function TopArtists() {
 
       })
   }, [])
-
-  const rankStyle = clsx(
-    "font-bold",
-    "font-tiny5",
-    "text-center",
-    "text-[3rem]",
-    "stroked-less"
-  )
 
   const placeholder = (
     <p className="flex items-center justify-center font-bold bg-black p-4 rounded-2xl w-full">Fetching...</p>
