@@ -29,7 +29,7 @@ export async function getLastFmTopArtists() {
       format: "json"
     })
 
-    const response: LastFmResponse = await axios.get("http://ws.audioscrobbler.com/2.0/", { params }) // TODO: why is it written like this?
+    const response: LastFmResponse = await axios.get("https://ws.audioscrobbler.com/2.0/", { params }) // TODO: why is it written like this?
 
     // return artist data
     return response.data.topartists.artist
