@@ -64,11 +64,11 @@ function TopArtists() {
                 alt={`Artist pic of ${info.name}`}
                 className="w-[150px] aspect-square rounded-lg object-cover"
               />
-              <p className="font-bold text-center break-words flex flex-col">
-                <span className="text-[0.75rem] text-gray-600">#{index + 1}</span>
+              <p className="font-bold text-center flex flex-col text-[0.8rem]">
+                <span className="font-normal text-[0.75rem] text-gray-600">#{index + 1}</span>
                 {info.name}
               </p>
-              <p className="font-bold text-gray-600 text-center text-[0.75rem]">
+              <p className="text-gray-600 text-center text-[0.75rem]">
                 {info.playcount} plays
               </p>
             </div >
@@ -95,7 +95,7 @@ function TopArtists() {
 
   return (
     <div className="rounded-2xl mt-3 mb-3 max-w-[100%] sm:max-w-[90%] lg:max-w-[75%] flex items-center justify-center flex-col">
-      <h3 className="mb-[-10px] w-full flex justify-start stroked-less text-red-500 font-tiny5 font-bold rounded-2xl p-3 text-center">Rafa's artists on repeat...</h3>
+      <h3 className="text-[1.5rem] mb-[-10px] w-full stroked-less text-red-500 font-tiny5 font-bold rounded-2xl p-3">Rafa's on repeat...</h3>
       {topArtists
         ? topArtistsGrid
         : placeholder

@@ -33,7 +33,7 @@ function Project({ name, desc, url, imgSrc, color, langs, teamSize, tagCollectio
       }}
     >
       <a href={url} target="_blank">
-        <h3 className="rounded-tl-lg rounded-tr-lg text-[1.25rem] center p-2 box-border w-full break-words text-center flex items-center justify-center gap-2" style={{ backgroundColor: color }}>
+        <h3 className="rounded-tl-lg rounded-tr-lg text-[1.25rem] p-2 box-border break-all text-center flex flex-wrap items-center justify-center gap-2" style={{ backgroundColor: color }}>
           {name}
           <span className="text-[1rem]">
             <RiShareBoxLine />
