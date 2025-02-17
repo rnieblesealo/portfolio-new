@@ -73,7 +73,7 @@ export default function Projects() {
       </a>
     )
 
-    const teamSize = (
+    const teamSize = proj.teamSize && (
       <p className="flex items-center justify-center gap-2 text-center font-bold"><IoPeopleSharp />Team Size: {`${proj.teamSize ?? 1}`}</p>
     )
 
