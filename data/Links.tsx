@@ -19,14 +19,14 @@ const links: LinksItem[] = [
     link: "#home"
   },
   {
-    id: "proj",
-    text: "Projects",
-    link: "#proj"
-  },
-  {
     id: "abt",
     text: "About",
     link: "#abt"
+  },
+  {
+    id: "proj",
+    text: "Projects",
+    link: "#proj"
   },
   {
     id: "exp",
