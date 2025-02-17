@@ -11,12 +11,11 @@ interface ProjectProps {
   color?: string,
   langs: React.ReactNode,
   teamSize: React.ReactNode,
-  checkItLink: React.ReactNode,
   tagCollection: React.ReactNode
 }
 
 // we don't instantiate in the .map because we need to use state for hover effect
-function Project({ name, desc, url, imgSrc, color, langs, teamSize, checkItLink, tagCollection }: ProjectProps) {
+function Project({ name, desc, url, imgSrc, color, langs, teamSize, tagCollection }: ProjectProps) {
   const [isHovered, setIsHovered] = useState(false)
 
   const styles = {
@@ -34,7 +33,12 @@ function Project({ name, desc, url, imgSrc, color, langs, teamSize, checkItLink,
       }}
     >
       <a href={url} target="_blank">
-        <h3 className="rounded-tl-lg rounded-tr-lg text-[1.25rem] center p-2 box-border w-full break-words text-center" style={{ backgroundColor: color }}>{name}</h3>
+        <h3 className="rounded-tl-lg rounded-tr-lg text-[1.25rem] center p-2 box-border w-full break-words text-center flex items-center justify-center gap-2" style={{ backgroundColor: color }}>
+          {name}
+          <span className="text-[1rem]">
+            <RiShareBoxLine />
+          </span>
+        </h3>
         <img
           src={imgSrc}
           alt="Project demo"
@@ -46,7 +50,6 @@ function Project({ name, desc, url, imgSrc, color, langs, teamSize, checkItLink,
             {langs}
           </ul>
           {teamSize}
-          {checkItLink}
           {tagCollection}
         </div>
       </a>
@@ -67,9 +70,6 @@ export default function Projects() {
     const checkItLink = (
       <a href={proj.url} className="flex items-center justify-center gap-2 font-bold text-hoverable" target="_blank">
         <p className="text-center">Check it out!</p>
-        <span className="text-[1.5rem]">
-          <RiShareBoxLine />
-        </span>
       </a>
     )
 
@@ -99,7 +99,6 @@ export default function Projects() {
         color={proj.color}
         langs={langs}
         teamSize={teamSize}
-        checkItLink={checkItLink}
         tagCollection={tagCollection}
       />
     )

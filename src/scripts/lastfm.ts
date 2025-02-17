@@ -99,7 +99,7 @@ export async function searchSpotify(artistName: string) {
     return null
   }
 
-  console.log("Got access token: ", accessToken)
+  // console.log("Got access token: ", accessToken)
 
   try {
     const spotifySearchUrl = "https://api.spotify.com/v1/search"
@@ -118,7 +118,7 @@ export async function searchSpotify(artistName: string) {
     // we want best match so grab first one lol
     const firstMatch = response.data.artists.items[0]
 
-    console.log("Got first match: ", firstMatch)
+    // console.log("Got first match: ", firstMatch)
 
     return firstMatch
   } catch (error) {
