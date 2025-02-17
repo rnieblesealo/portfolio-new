@@ -67,12 +67,6 @@ export default function Projects() {
       )
     })
 
-    const checkItLink = (
-      <a href={proj.url} className="flex items-center justify-center gap-2 font-bold text-hoverable" target="_blank">
-        <p className="text-center">Check it out!</p>
-      </a>
-    )
-
     const teamSize = proj.teamSize && (
       <p className="flex items-center justify-center gap-2 text-center font-bold"><IoPeopleSharp />Team Size: {`${proj.teamSize ?? 1}`}</p>
     )

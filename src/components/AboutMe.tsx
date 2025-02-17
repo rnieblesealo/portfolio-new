@@ -1,15 +1,11 @@
 import clsx from "clsx"
 import aboutMe from "../../data/aboutMe"
 import { useEffect, useState } from "react"
-import { getLastFmTopArtists, searchSpotify } from "../scripts/lastfm.ts"
+import { getLastFmTopArtists, LastFmArtistInfo } from "../scripts/lastfm.ts"
+import { searchSpotify } from "../scripts/spotify.ts"
 import { FaLastfmSquare, FaSpotify } from "react-icons/fa"
 
-type LastFmArtistInfo = {
-  name: string,
-  playcount: string,
-  imgUrl: string
-}
-
+// TODO: rewrite this to make more logical
 function TopArtists() {
   const [topArtists, setTopArtists] = useState<React.ReactNode[] | null>(null)
 
@@ -19,29 +15,48 @@ function TopArtists() {
       .then(async (lastFmResponse) => {
         // console.log("LastFM: ", lastFmResponse)
 
+        // need to check is not null or else typescript complains
+        if (!lastFmResponse) {
+          console.error("Invalid LastFM response")
+          return;
+        }
 
         // grab name of each top artist and query spotify for its image
-        const topArtists = await Promise.all(
+        const topArtists: LastFmArtistInfo[] = await Promise.all(
+
           lastFmResponse.map(async (artistInfo: LastFmArtistInfo) => {
             const artistName = artistInfo.name
             const artistPlayCount = artistInfo.playcount
-            let artistImage = null
+            let artistImage: string | undefined
 
+            // search spotify for lastfm artist by name to get its image
             try {
               const spotifyArtistData = await searchSpotify(artistName)
-              artistImage = spotifyArtistData.images[1].url
+
+              // give back struct with image if found
+              if (spotifyArtistData) {
+                artistImage = spotifyArtistData.images[1].url
+
+                return {
+                  name: artistName,
+                  playcount: artistPlayCount,
+                  imgUrl: artistImage
+                }
+              }
+
             } catch (error) {
               console.error("Could not get Spotify image: ", error)
             }
 
             return {
               name: artistName,
-              playCount: artistPlayCount,
+              playcount: artistPlayCount,
               imgUrl: artistImage
             }
+
           }))
 
-        const components = topArtists.map((info:LastFmArtistInfo, index: number) => {
+        const components = topArtists.map((info: LastFmArtistInfo, index: number) => {
           return (
             <div key={index} className="bg-black p-3 flex items-center flex-col justify-center rounded-2xl gap-1 animate-jump-in cursor-pointer">
               <img
@@ -63,6 +78,9 @@ function TopArtists() {
         setTopArtists(components)
 
       })
+      .catch((error) => {
+        console.log("Unable to generate artist info: ", error)
+      })
   }, [])
 
   const placeholder = (
@@ -77,7 +95,7 @@ function TopArtists() {
 
   return (
     <div className="rounded-2xl mt-3 mb-3 max-w-[100%] sm:max-w-[90%] lg:max-w-[75%] flex items-center justify-center flex-col">
-      <h3 className="mb-[-10px] w-full flex justify-start stroked-less text-red-500 font-tiny5 font-bold rounded-2xl p-3 text-center">Rafa's on repeat...</h3>
+      <h3 className="mb-[-10px] w-full flex justify-start stroked-less text-red-500 font-tiny5 font-bold rounded-2xl p-3 text-center">Rafa's artists on repeat...</h3>
       {topArtists
         ? topArtistsGrid
         : placeholder
