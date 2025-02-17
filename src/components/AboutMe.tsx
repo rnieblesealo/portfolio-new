@@ -4,6 +4,12 @@ import { useEffect, useState } from "react"
 import { getLastFmTopArtists, searchSpotify } from "../scripts/lastfm.ts"
 import { FaLastfmSquare, FaSpotify } from "react-icons/fa"
 
+type LastFmArtistInfo = {
+  name: string,
+  playcount: string,
+  imgUrl: string
+}
+
 function TopArtists() {
   const [topArtists, setTopArtists] = useState<React.ReactNode[] | null>(null)
 
@@ -13,10 +19,6 @@ function TopArtists() {
       .then(async (lastFmResponse) => {
         // console.log("LastFM: ", lastFmResponse)
 
-        type LastFmArtistInfo = {
-          name: string,
-          playcount: string
-        }
 
         // grab name of each top artist and query spotify for its image
         const topArtists = await Promise.all(
@@ -39,7 +41,7 @@ function TopArtists() {
             }
           }))
 
-        const components = topArtists.map((info, index) => {
+        const components = topArtists.map((info:LastFmArtistInfo, index: number) => {
           return (
             <div key={index} className="bg-black p-3 flex items-center flex-col justify-center rounded-2xl gap-1 animate-jump-in cursor-pointer">
               <img
@@ -52,7 +54,7 @@ function TopArtists() {
                 {info.name}
               </p>
               <p className="font-bold text-gray-600 text-center text-[0.75rem]">
-                {info.playCount} plays
+                {info.playcount} plays
               </p>
             </div >
           )
