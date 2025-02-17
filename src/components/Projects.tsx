@@ -6,16 +6,17 @@ import { useState } from "react";
 interface ProjectProps {
   name: string,
   desc: string,
+  url?: string,
   imgSrc?: string,
   color?: string,
   langs: React.ReactNode,
   teamSize: React.ReactNode,
-  ctLink: React.ReactNode,
+  checkItLink: React.ReactNode,
   tagCollection: React.ReactNode
 }
 
 // we don't instantiate in the .map because we need to use state for hover effect
-function Project({ name, desc, imgSrc, color, langs, teamSize, ctLink, tagCollection }: ProjectProps) {
+function Project({ name, desc, url, imgSrc, color, langs, teamSize, checkItLink, tagCollection }: ProjectProps) {
   const [isHovered, setIsHovered] = useState(false)
 
   const styles = {
@@ -32,22 +33,24 @@ function Project({ name, desc, imgSrc, color, langs, teamSize, ctLink, tagCollec
         ...(isHovered ? { boxShadow: `0px 0px 50px ${color}`, transform: "scale(105%)" } : {})
       }}
     >
-      <h3 className="rounded-tl-lg rounded-tr-lg text-[1.25rem] center p-2 box-border w-full break-words text-center" style={{ backgroundColor: color }}>{name}</h3>
-      <img
-        src={imgSrc}
-        alt="Project demo"
-        className="w-full aspect-square object-cover mb-4"
-      />
-      <div className="flex flex-col gap-4">
-        <p className="text-center">{desc}</p>
-        <ul className="w-full flex flex-row flex-wrap items-center justify-center gap-2">
-          {langs}
-        </ul>
-        {teamSize}
-        {ctLink}
-        {tagCollection}
-      </div>
-    </li >
+      <a href={url} target="_blank">
+        <h3 className="rounded-tl-lg rounded-tr-lg text-[1.25rem] center p-2 box-border w-full break-words text-center" style={{ backgroundColor: color }}>{name}</h3>
+        <img
+          src={imgSrc}
+          alt="Project demo"
+          className="w-full aspect-square object-cover mb-4"
+        />
+        <div className="flex flex-col gap-4">
+          <p className="text-center">{desc}</p>
+          <ul className="w-full flex flex-row flex-wrap items-center justify-center gap-2">
+            {langs}
+          </ul>
+          {teamSize}
+          {checkItLink}
+          {tagCollection}
+        </div>
+      </a>
+    </li>
   )
 }
 
@@ -61,7 +64,7 @@ export default function Projects() {
       )
     })
 
-    const projectLink = (
+    const checkItLink = (
       <a href={proj.url} className="flex items-center justify-center gap-2 font-bold text-hoverable" target="_blank">
         <p className="text-center">Check it out!</p>
         <span className="text-[1.5rem]">
@@ -89,13 +92,14 @@ export default function Projects() {
     return (
       <Project
         key={proj.id}
+        url={proj.url}
         name={proj.name}
         desc={proj.desc}
         imgSrc={proj.imgSrc}
         color={proj.color}
         langs={langs}
         teamSize={teamSize}
-        ctLink={projectLink}
+        checkItLink={checkItLink}
         tagCollection={tagCollection}
       />
     )

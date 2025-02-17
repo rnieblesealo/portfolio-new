@@ -36,7 +36,7 @@ function TopArtists() {
 
         const components = topArtists.map((info, index) => {
           return (
-            <div className="bg-black p-3 flex items-center flex-col justify-center rounded-2xl gap-1 animate-jump-in">
+            <div className="bg-black p-3 flex items-center flex-col justify-center rounded-2xl gap-1 animate-jump-in cursor-pointer">
               <img
                 src={info.imgUrl}
                 alt={`Artist pic of ${info.name}`}
@@ -103,6 +103,7 @@ export default function AboutMe() {
 
     const bottomImageStyle = clsx(
       "bg-black p-3 border-box h-[150px] rounded-2xl transition-scale duration-[0.3s] hover:scale-[1.15] z-20 cursor-pointer",
+      about.demoSrc && "animate-fade animate-infinite animate-duration-[2000ms] animate-ease-in-out animate-alternate-reverse animate-fill-both",
       about.demoSrc && "hover:opacity-[0%]"
     )
 
