@@ -2,6 +2,8 @@ import clsx from "clsx"
 import aboutMe from "../../data/aboutMe"
 import { useEffect, useState } from "react"
 import { getLastFmTopArtists, searchSpotify } from "../scripts/lastfm.ts"
+import { FaLastfm, FaSpotify } from "react-icons/fa6"
+import { FaLastfmSquare } from "react-icons/fa"
 
 interface TopArtistProps {
   imgSrc: string,
@@ -33,33 +35,39 @@ function TopArtists() {
         const topArtists = await Promise.all(
           lastFmResponse.map(async (artistInfo) => {
             const artistName = artistInfo.name
+            const artistPlayCount = artistInfo.playcount
             let artistImage = null
 
             try {
               const spotifyArtistData = await searchSpotify(artistName)
-              artistImage = spotifyArtistData.images[0].url
+              artistImage = spotifyArtistData.images[1].url
             } catch (error) {
               console.error("Could not get Spotify image: ", error)
             }
 
             return {
               name: artistName,
+              playCount: artistPlayCount,
               imgUrl: artistImage
             }
           }))
 
-        const components = topArtists.map((info) => {
-          console.log(info.imgUrl)
-
+        const components = topArtists.map((info, index) => {
           return (
-            <div className="bg-black p-5 flex items-center flex-col justify-center rounded-2xl gap-2">
+            <div className="bg-black p-3 flex items-center flex-col justify-center rounded-2xl gap-1 animate-jump-in">
               <img
                 src={info.imgUrl}
                 alt={`Artist pic of ${info.name}`}
-                className="max-w-[200px] rounded-lg"
+                className="w-[150px] aspect-square rounded-lg object-cover"
               />
-              <p className="font-bold">{info.name}</p>
-            </div>
+              <p className="font-bold text-center break-words flex flex-col">
+                <span className="text-[0.75rem] text-gray-600">#{index + 1}</span>
+                {info.name}
+              </p>
+              <p className="font-bold text-gray-600 text-center text-[0.75rem]">
+                {info.playCount} plays
+              </p>
+            </div >
           )
         })
 
@@ -68,10 +76,36 @@ function TopArtists() {
       })
   }, [])
 
-  return (
-    <div className="flex flex-wrap gap-4 items-center justify-center">
+  const rankStyle = clsx(
+    "font-bold",
+    "font-tiny5",
+    "text-center",
+    "text-[3rem]",
+    "stroked-less"
+  )
+
+  const placeholder = (
+    <p className="flex items-center justify-center font-bold bg-black p-4 rounded-2xl w-full">Fetching...</p>
+  )
+
+  const topArtistsGrid = (
+    <div className="grid grid-cols-3 auto-rows gap-1">
       {topArtists}
     </div>
+  )
+
+  return (
+    <div className="rounded-2xl mt-3 mb-3 max-w-[100%] sm:max-w-[90%] lg:max-w-[75%] flex items-center justify-center flex-col">
+      <h3 className="mb-[-10px] w-full flex justify-start stroked-less text-red-500 font-tiny5 font-bold rounded-2xl p-3 text-center">Rafa's on repeat...</h3>
+      {topArtists
+        ? topArtistsGrid
+        : placeholder
+      }
+      <p className="p-2 flex flex-row items-center justify-end gap-2 font-bold text-left text-[0.75rem] text-gray-100 w-full rounded-2xl">Powered by
+        <span className="text-[1.4rem]"><FaSpotify /></span> and
+        <span className="text-[1.4rem]"><FaLastfmSquare /></span>
+      </p>
+    </div >
   )
 }
 
@@ -118,10 +152,12 @@ export default function AboutMe() {
   return (
     <>
       <h2 id="abt" className="mb-7">About Me :]</h2>
-      <TopArtists />
-      <ul className="flex flex-col flex-wrap items-center justify-center max-w-[75%] sm:max-w-[80%] md:max-w-[60%] lg:max-w-[40%]">
-        {aboutMeElements}
-      </ul>
+      <div className="flex flex-col items-center justify-center max-w-[75%] sm:max-w-[80%] md:max-w-[60%] lg:max-w-[40%]">
+        <ul>
+          {aboutMeElements}
+        </ul>
+        <TopArtists />
+      </div>
     </>
   )
 }

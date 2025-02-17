@@ -13,7 +13,7 @@ const aboutMe: AboutMeItem[] = [
   },
   {
     id: "col",
-    text: "I'm very fortunate to be a legal permanent resident from Colombia! I speak both Spanish and English.",
+    text: "I'm colombian, and speak both Spanish and English!",
     imgSrc: "/images/colombia.png"
   },
   {
@@ -22,15 +22,15 @@ const aboutMe: AboutMeItem[] = [
     imgSrc: "/images/running.png"
   },
   {
-    id: "music",
-    text: "Music is my second passion! I love surf rock to death, but enjoy pretty much everything.",
-    imgSrc: "/images/guitar.png",
-    demoSrc: "/images/compressed-gifs/band.gif"
+    id: "favMovie",
+    text: "My favorite movie is Heathers.",
+    imgSrc: "/images/heathers.png"
   },
   {
-    id: "favMovie",
-    text: "My favorite movie of all time is Heathers!",
-    imgSrc: "/images/heathers.png"
+    id: "music",
+    text: "Music is my second passion! I've been in a couple of small bands in Orlando.",
+    imgSrc: "/images/guitar.png",
+    demoSrc: "/images/compressed-gifs/band.gif"
   },
 ]
 

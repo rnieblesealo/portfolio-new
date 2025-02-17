@@ -94,6 +94,11 @@ img {
   paint-order: stroke markers fill;
 }
 
+.brighter-stroke {
+  -webkit-text-stroke: 0.3rem rgba(30, 30, 30, 1);
+  paint-order: stroke markers fill;
+}
+
 .text-hoverable {
   cursor: pointer;
   padding: 10px;

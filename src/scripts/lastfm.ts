@@ -11,6 +11,7 @@ export async function getLastFmTopArtists() {
       method: "user.gettopartists",
       user: targetUsername,
       api_key: apiKey,
+      limit: "3",
       format: "json"
     })
 
