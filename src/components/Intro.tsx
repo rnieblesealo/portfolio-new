@@ -11,6 +11,9 @@ export default function Intro() {
     "#1889E1", // A
     "#F5E209", // E
     "#733BED", // L
+
+    "", // SPACE 
+
     "#31A278", // N
     "#2354BE", // I
     "#C33B5C", // E
@@ -20,7 +23,7 @@ export default function Intro() {
     "#26DCF1"  // S
   ]
 
-  const coloredName = "RafaelNiebles".split("").map((char, index) => {
+  const coloredName = "Rafael Niebles".split("").map((char, index) => {
     return (
       <span key={index} style={{ color: nameColors[index % nameColors.length] }}>{char}</span>
     )
@@ -28,35 +31,20 @@ export default function Intro() {
 
   // there is some honky css for the name to have a black bg behind it to hide gaps between chars that the stroke can't get to
   const picAndName = (
-    <div className="flex flex-col items-center justify-center space-y-[-70px] mb-[40px] animate-jump-in">
-      <div className="bg-black p-5 rounded-2xl">
-        <img
-          src="images/profile.jpg"
-          alt="My picture"
-          className="w-[260px] border-black box-border rounded-lg"
-        />
-      </div>
-      <div className="relative mt-[50px] bg-black max-w-[50%] h-min-content flex items-center justify-center" >
-        <h1 className="stroked min-w-[330px] min-h-[100px] text-[6rem] flex flex-wrap items-center justify-center text-center leading-[4.5rem] space-y-[-3px]">
-          {coloredName}
-        </h1>
-      </div>
+    <div className="w-min-content h-min-content flex flex-col items-end justify-start space-y-[-70px]">
+      <h1 className="stroked min-w-[330px] min-h-[100px] text-[6rem] flex flex-wrap items-center justify-center text-center leading-[4.5rem] space-y-[-3px]">
+        {coloredName}
+      </h1>
     </div >
   )
 
   return (
-    <div id="home" className="flex flex-col items-center justify-center mt-5 mb-5">
-      <h3 className="stroked-light text-yellow">Hey there! My name's</h3>
-
-      {picAndName}
-
-      <h3 className="stroked-light mt-[-20px] mb-[-15px]">and I'm a</h3>
-      <h2 className="stroked-less text-center stroked text-yellow-300 text-[3rem]">Software Engineer</h2>
-      <h3 className="stroked-light mt-[-15px]">who builds with</h3>
-
-      <Languages />
-
-      <h3 className="stroked-light flex items-center gap-3">and a whole lot of <span className="text-red-700 text-[3rem]">{<FaHeart className="animate-jump animate-infinite animate-duration-1000" />}</span>!</h3>
+    <div id="home" className="w-full h-full flex flex-col items-end justify-center">
+      <div className="mr-12 flex flex-col items-end justify-end z-[999]">
+        {picAndName}
+        <h2 className="stroked-less text-center stroked text-yellow-300 text-[3rem]">Software Engineer</h2>
+        <p className="bg-[#0d1931] pl-5 pr-5 rounded-full font-tiny5 font-bold text-[1.25rem] flex items-center gap-2">"Made by Rafa with <span className="text-red-500"><FaHeart /></span>"</p>
+      </div>
     </div>
   )
 }

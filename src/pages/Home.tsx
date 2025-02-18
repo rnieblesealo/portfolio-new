@@ -8,9 +8,6 @@ export default function Home() {
   return (
     <PageContextProvider>
       <Intro />
-      <AboutMe />
-      <Projects />
-      <Experience />
     </PageContextProvider>
   )
 }

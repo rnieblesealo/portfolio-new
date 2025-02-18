@@ -9,7 +9,7 @@ import NavBar from "../components/NavBar";
 
 function Clouds() {
   const cloudStyle = clsx(
-    "fixed pixelated z-1 w-[10rem] opacity-[80%]"
+    "absolute pixelated z-1 w-[15rem] opacity-[70%]"
   )
 
   const cloud = (top: number, left: number) => (
@@ -23,9 +23,10 @@ function Clouds() {
 
   return (
     <div className="w-full h-full absolute z-1">
-      {cloud(15, 8)}
-      {cloud(50, 85)}
-      {cloud(90, 20)}
+      {cloud(15, -3)}
+      {cloud(40, 40)}
+      {cloud(90, 10)}
+      {cloud(-10, 90)}
     </div>
   )
 }
@@ -51,10 +52,10 @@ export default function PageContextProvider({ children }: { children?: React.Rea
   // mind boggling!
 
   const mainContainerStyle = clsx(
-    "w-min-content",
-    "h-min-content",
+    "w-[1584px]",
+    "h-[396px]",
     "absolute",
-    "bg-gradient-to-b from-blue-500 to-pink-700",
+    "bg-gradient-to-b from-blue-500 via-blue-500 to-pink-600",
     "z-2"
   )
 
@@ -62,15 +63,7 @@ export default function PageContextProvider({ children }: { children?: React.Rea
     <>
       <div className={mainContainerStyle}>
         <Clouds />
-        <PageContext.Provider value={contextInfo}>
-          <div className="z-3 relative">
-            <NavBar />
-            <div className="flex flex-col items-center justify-center mb-10">
-              {children}
-            </div>
-            <Footer />
-          </div >
-        </PageContext.Provider >
+        {children}
       </div >
     </>
   )
