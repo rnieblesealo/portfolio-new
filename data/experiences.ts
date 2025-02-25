@@ -1,4 +1,4 @@
-type ExperienceItem = {
+export type ExperienceItem = {
   id: string,
   location: string,
   role: string,
@@ -12,12 +12,23 @@ type ExperienceItem = {
   endTitleColor?: string
 }
 
-const experiences: ExperienceItem[] = [
+export const experiences: ExperienceItem[] = [
+  {
+    id: "lutron",
+    location: "Lutron",
+    role: "Embedded Software Engineering Intern",
+    desc: "Incoming summer 2025!",
+    startDate: new Date("May 27, 2025"), // only month, year will be displayed but needs day to be valid 
+    endDate: new Date("August 5, 2025"),
+    imgSrc: "images/lutron.jpg",
+    startTitleColor: "white",
+    endTitleColor: "#006CCB"
+  },
   {
     id: "hyel",
     location: "HYEL",
-    role: "Software Engineer Intern",
-    desc: "At HYEL, I had the opportunity to create a complete, production-ready software product, from the design phase all the way to shipping. Check out \"The Spyder\" in the HYEL app/my projects above!",
+    role: "Software Engineer",
+    desc: "At HYEL, I had the opportunity to work as a contractor in creating a complete, production-ready software product, from the design phase all the way to shipping. Check out \"The Spyder\" in the HYEL app/my projects above!",
     bulletsTitle: "Here, I...",
     bullets: [
       "Designed a complete iOS game using Figma",
@@ -29,6 +40,16 @@ const experiences: ExperienceItem[] = [
     imgSrc: "images/hyel.jpg",
     startTitleColor: "white",
     endTitleColor: "#6C00F9"
+  },
+  {
+    id: "codepath-web",
+    location: "CodePath",
+    role: "Web Development Student",
+    desc: "I'm currently taking CodePath's WEB102 for intermediate web development, where I'm most interested in learning to better collaborate with others in team-based settings!",
+    startDate: new Date("February 1, 2025"),
+    imgSrc: "images/codepath.jpg",
+    startTitleColor: "#06C58C",
+    endTitleColor: "white"
   },
   {
     id: "kh-lead",
@@ -62,16 +83,4 @@ const experiences: ExperienceItem[] = [
     startTitleColor: "#9969CD",
     endTitleColor: "#131731"
   },
-  {
-    id: "codepath-web",
-    location: "CodePath",
-    role: "Web Development Student",
-    desc: "I'm currently taking CodePath's WEB102 for intermediate web development, where I'm most interested in learning to better collaborate with others in team-based settings!",
-    startDate: new Date("February 1, 2025"),
-    imgSrc: "images/codepath.jpg",
-    startTitleColor: "#06C58C",
-    endTitleColor: "white"
-  },
 ]
-
-export default experiences

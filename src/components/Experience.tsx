@@ -1,8 +1,19 @@
 import clsx from "clsx"
-import experiences from "../../data/experiences.ts"
+import { experiences, ExperienceItem } from "../../data/experiences.ts"
 
 export default function Experience() {
-  const experienceElements = experiences.map((exp) => {
+  // sort experiences from latest to earliest by start date
+  function sortExperiences(a: ExperienceItem, b: ExperienceItem) {
+    if (a.startDate > b.startDate) {
+      return -1
+    } else if (a.startDate < b.startDate) {
+      return 1
+    }
+
+    return 0;
+  }
+
+  const experienceElements = experiences.sort(sortExperiences).map((exp: ExperienceItem) => {
     const bullets = exp.bullets?.map((bullet) => {
       return (
         <li key={`${bullet}`}>

@@ -58,7 +58,7 @@ function TopArtists() {
 
         const components = topArtists.map((info: LastFmArtistInfo, index: number) => {
           return (
-            <div key={index} className="bg-black p-3 flex items-center flex-col justify-center rounded-2xl gap-1 animate-jump-in cursor-pointer">
+            <div key={index} className="bg-black p-3 flex items-center flex-col justify-top rounded-2xl gap-1 animate-jump-in cursor-pointer">
               <img
                 src={info.imgUrl}
                 alt={`Artist pic of ${info.name}`}
