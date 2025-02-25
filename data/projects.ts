@@ -21,7 +21,7 @@ const projects: ProjectsItem[] = [
     desc: "First-person action FPS with AI-powered enemies, perk machines, and some chonky guns!",
     langs: ["unity", "csharp"],
     imgSrc: "images/compressed-gifs/microtransistor.gif",
-    color: "#b00003",
+    color: "#ec273f",
     url: "https://www.instagram.com/microtransistor/",
     tags: [
       "Game Development",
@@ -36,7 +36,7 @@ const projects: ProjectsItem[] = [
     desc: "Official website for the band Memory Well. My first freelance project!",
     langs: ["javascript", "react", "vite", "axios"],
     imgSrc: "images/compressed-gifs/memwell.gif",
-    color: "purple",
+    color: "#5e5b8c",
     url: rafaGhLink("memorywell"),
     tags: [
       "Freelance",
@@ -52,7 +52,7 @@ const projects: ProjectsItem[] = [
     desc: "Custom neural network for an emotion recognition ML model.",
     langs: ["python", "pytorch"],
     imgSrc: "images/compressed-gifs/kanjo-will.gif",
-    color: "#5c9856",
+    color: "#5ab552",
     url: rafaGhLink("kanjoai"),
     teamSize: 3,
     tags: [
@@ -69,7 +69,7 @@ const projects: ProjectsItem[] = [
     desc: "WhatsApp bot that auto-detects and stores Wordle solutions! Gift for my friend Sofia :)",
     langs: ["typescript", "react", "supabase"],
     imgSrc: "images/compressed-gifs/sofieski.gif",
-    color: "#EB6AAA",
+    color: "#c878af",
     url: rafaGhLink("sofieski-wordles"),
     tags: [
       "WhatsApp API (WWebJS)",
@@ -85,7 +85,7 @@ const projects: ProjectsItem[] = [
     desc: "Full-stack gamified productivity app using the Pomodoro Technique.",
     langs: ["typescript", "react", "supabase"],
     imgSrc: "images/bromodoro-img.png",
-    color: "#FF0100",
+    color: "#ec273f",
     url: "https://github.com/Frankelly-Guzman/Bromodoro",
     teamSize: 6,
     tags: [

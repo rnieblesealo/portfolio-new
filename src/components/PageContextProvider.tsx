@@ -54,7 +54,7 @@ export default function PageContextProvider({ children }: { children?: React.Rea
     "w-min-content",
     "h-min-content",
     "absolute",
-    "bg-gradient-to-b from-blue-500 to-pink-700",
+    "bg-gradient-to-b from-blue to-pink",
     "z-2"
   )
 

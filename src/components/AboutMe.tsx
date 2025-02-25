@@ -3,7 +3,7 @@ import aboutMe from "../../data/aboutMe"
 import { useEffect, useState } from "react"
 import { getLastFmTopArtists, LastFmArtistInfo } from "../scripts/lastfm.ts"
 import { searchSpotify } from "../scripts/spotify.ts"
-import { FaLastfmSquare, FaSpotify } from "react-icons/fa"
+import { FaLastfmSquare, FaMusic, FaSpotify } from "react-icons/fa"
 
 // TODO: rewrite this to make more logical
 function TopArtists() {
@@ -13,7 +13,7 @@ function TopArtists() {
     // get top artists from lastfm
     getLastFmTopArtists()
       .then(async (lastFmResponse) => {
-        // console.log("LastFM: ", lastFmResponse)
+        console.log("LastFM: ", lastFmResponse)
 
         // need to check is not null or else typescript complains
         if (!lastFmResponse) {
@@ -94,15 +94,15 @@ function TopArtists() {
   )
 
   return (
-    <div className="rounded-2xl mt-3 mb-3 max-w-[100%] sm:max-w-[90%] lg:max-w-[75%] flex items-center justify-center flex-col">
-      <h3 className="text-[1.5rem] mb-[-10px] w-full stroked-less text-red-500 font-tiny5 font-bold rounded-2xl p-3">Rafa's on repeat...</h3>
+    <div className="rounded-2xl max-w-[100%] sm:max-w-[90%] lg:max-w-[75%] flex items-center justify-center flex-col mb-8 mt-8 gap-3">
+      <h3 className="text-[1.1rem] stroked-less font-bold rounded-2xl p-1 pl-5 pr-5 flex gap-2 items-center bg-black w-min-content self-start">Rafa's on repeat... <FaMusic /></h3>
       {topArtists
         ? topArtistsGrid
         : placeholder
       }
-      <p className="p-2 flex flex-row items-center justify-end gap-2 font-bold text-left text-[0.75rem] text-gray-100 w-full rounded-2xl">Powered by
-        <span className="text-[1.4rem]"><FaSpotify /></span> and
-        <span className="text-[1.4rem]"><FaLastfmSquare /></span>
+      <p className="p-2 pl-5 pr-5 flex flex-row items-center justify-end gap-2 font-bold text-left text-[0.75rem] text-gray-100 w-min-content rounded-2xl bg-black self-end">Powered by
+        <span className="text-[1.4rem] text-green"><FaSpotify /></span> and
+        <span className="text-[1.4rem] text-red"><FaLastfmSquare /></span>
       </p>
     </div >
   )

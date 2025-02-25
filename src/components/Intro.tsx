@@ -5,19 +5,19 @@ import { FaHeart } from "react-icons/fa6"
 export default function Intro() {
   // these are same as my email label
   const nameColors = [
-    "#ED3B3B", // R
-    "#FF9B33", // A
-    "#32C65B", // F
-    "#1889E1", // A
-    "#F5E209", // E
-    "#733BED", // L
-    "#31A278", // N
-    "#2354BE", // I
-    "#C33B5C", // E
-    "#D8B208", // B
-    "#AD58E3", // L
-    "#96DC08", // E
-    "#26DCF1"  // S
+    "#ec273f", // R
+    "#e98537", // A
+    "#5ab552", // F
+    "#3388de", // A
+    "#f3a833", // E
+    "#cc99ff", // L
+    "#26854c", // N
+    "#3859b3", // I
+    "#9a4d76", // E
+    "#ce9248", // B
+    "#5e5b8c", // L
+    "#6e4c30", // E
+    "#62a477"  // S
   ]
 
   const coloredName = "RafaelNiebles".split("").map((char, index) => {
@@ -46,17 +46,17 @@ export default function Intro() {
 
   return (
     <div id="home" className="flex flex-col items-center justify-center mt-5 mb-5">
-      <h3 className="stroked-light text-yellow">Hey there! My name's</h3>
+      <h3 className="stroked-light">Hey there! My name's</h3>
 
       {picAndName}
 
       <h3 className="stroked-light mt-[-20px] mb-[-15px]">and I'm a</h3>
-      <h2 className="stroked-less text-center stroked text-yellow-300 text-[3rem]">Software Engineer</h2>
+      <h2 className="stroked-less text-center stroked text-yellow text-[3rem]">Software Engineer</h2>
       <h3 className="stroked-light mt-[-15px]">who builds with</h3>
 
       <Languages />
 
-      <h3 className="stroked-light flex items-center gap-3">and a whole lot of <span className="text-red-700 text-[3rem]">{<FaHeart className="animate-jump animate-infinite animate-duration-1000" />}</span>!</h3>
+      <h3 className="stroked-light flex items-center gap-3">and a whole lot of <span className="text-red text-[3rem]">{<FaHeart className="animate-jump animate-infinite animate-duration-1000" />}</span>!</h3>
     </div>
   )
 }

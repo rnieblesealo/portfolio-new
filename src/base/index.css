@@ -4,14 +4,18 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --black: #10121c;
+  --light-blue: #3388de;
+  --dark-blue: #3859b3;
+}
+
 body {
-  background-color: black;
+  background-color: var(--black);
 
   /* Frequent things like text should be white */
   color: white;
 }
-
-/* TODO: Make sure colorscheme matches */
 
 h1,
 h2 {
@@ -23,7 +27,7 @@ h1 {
   font-weight: 800;
   font-size: 6rem;
 
-  -webkit-text-stroke: 2rem rgba(0, 0, 0, 1);
+  -webkit-text-stroke: 2rem var(--black)
 }
 
 /* navigating to this using href works, but ends up offscreen because navbar is fixed (not considered in doc pos) */
@@ -33,6 +37,7 @@ h1 {
 /* can't just add a margin because that'll add actual space above, and we don't want that */
 
 /* NOTE: this explanation is bad; come back and re-analyze later maybe */
+
 :target {
   padding-top: 70px;
   margin-top: -70px;
@@ -44,7 +49,7 @@ h2 {
 
   letter-spacing: -0.3rem;
 
-  -webkit-text-stroke: 1.5rem rgba(0, 0, 0, 1);
+  -webkit-text-stroke: 1.5rem var(--black)
 }
 
 h3,
@@ -80,22 +85,17 @@ img {
 }
 
 .stroked {
-  -webkit-text-stroke: 1.5rem black;
+  -webkit-text-stroke: 1.5rem var(--black);
   paint-order: stroke markers fill;
 }
 
 .stroked-less {
-  -webkit-text-stroke: 1rem black;
+  -webkit-text-stroke: 1rem var(--black);
   paint-order: stroke markers fill;
 }
 
 .stroked-light {
-  -webkit-text-stroke: 0.25rem black;
-  paint-order: stroke markers fill;
-}
-
-.brighter-stroke {
-  -webkit-text-stroke: 0.3rem rgba(30, 30, 30, 1);
+  -webkit-text-stroke: 0.25rem var(--black);
   paint-order: stroke markers fill;
 }
 
@@ -105,16 +105,18 @@ img {
   transition: color 0 ease, outline 0 ease;
 }
 
-.text-hoverable:hover {
-  color: #3D7FF3;
-  outline: 1px solid #3D7FF3;
+.text-hoverable:hover,
+.text-hoverable:active {
   border-radius: 0.75rem;
   padding: 10px;
 }
 
+.text-hoverable:hover {
+  outline: 1px solid var(--light-blue);
+  color: var(--light-blue);
+}
+
 .text-hoverable:active {
-  color: #1A2E5A;
-  outline: 1px solid #1A2E5A;
-  border-radius: 0.75rem;
-  padding: 10px;
+  outline: 1px solid var(--dark-blue);
+  color: var(--dark-blue);
 }
