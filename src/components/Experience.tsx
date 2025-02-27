@@ -38,11 +38,12 @@ export default function Experience() {
     }
 
     return (
-      <li key={exp.id} className="bg-black p-4 flex flex-row gap-5 rounded-2xl w-full animate-fade-right">
-        <div className="flex flex-col items-center w-full max-w-[100px] gap-4">
+      <li key={exp.id} className="bg-black p-4 flex flex-row gap-4 justify-leftgap-5 rounded-2xl w-full animate-fade-right">
+        <div className="flex flex-col items-center max-w-[80px] gap-4">
           <img
             src={exp.imgSrc}
             alt="Location logo"
+            className="min-w-[80px]"
           />
           <span className="text-center">{`${start}`} - <span className={`${italicizePresent}`}>{end}</span></span>
         </div>
