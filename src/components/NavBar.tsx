@@ -79,7 +79,7 @@ export default function NavBar() {
             alt="Small icon of me"
             className="w-full max-w-[50px]"
           />
-          <a href="#home" className="font-tiny5 font-bold text-hoverable">
+          <a href="#home" className="font-bold text-hoverable">
             <p>Rafael Niebles</p>
           </a>
         </div>

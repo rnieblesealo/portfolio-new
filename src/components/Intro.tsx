@@ -11,6 +11,9 @@ export default function Intro() {
     "#1889E1", // A
     "#F5E209", // E
     "#733BED", // L
+  ]
+
+  const lastNameColors = [
     "#31A278", // N
     "#2354BE", // I
     "#C33B5C", // E
@@ -20,11 +23,28 @@ export default function Intro() {
     "#26DCF1"  // S
   ]
 
-  const coloredName = "RafaelNiebles".split("").map((char, index) => {
+  const coloredName = "Rafael".split("").map((char, index) => {
     return (
       <span key={index} style={{ color: nameColors[index % nameColors.length] }}>{char}</span>
     )
   })
+
+  const coloredLastName = "Niebles".split("").map((char, index) => {
+    return (
+      <span key={index} style={{ color: lastNameColors[index % lastNameColors.length] }}>{char}</span>
+    )
+  })
+
+  const name = (
+    <div className="flex flex-col items-center justify-center">
+      <div className="flex items-center justify-center gap-1">
+        {coloredName}
+      </div>
+      <div className="flex items-center justify-center gap-1">
+        {coloredLastName}
+      </div>
+    </div>
+  )
 
   // there is some honky css for the name to have a black bg behind it to hide gaps between chars that the stroke can't get to
   const picAndName = (
@@ -36,11 +56,9 @@ export default function Intro() {
           className="w-[260px] border-black box-border rounded-lg"
         />
       </div>
-      <div className="relative mt-[50px] bg-black max-w-[50%] h-min-content flex items-center justify-center" >
-        <h1 className="stroked min-w-[330px] min-h-[100px] text-[6rem] flex flex-wrap items-center justify-center text-center leading-[4.5rem] space-y-[-3px]">
-          {coloredName}
-        </h1>
-      </div>
+      <h1 className="w-full text-[6rem] flex flex-wrap items-center justify-center text-center leading-[3.8rem] gap-2">
+        {name}
+      </h1>
     </div >
   )
 

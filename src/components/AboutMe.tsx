@@ -3,7 +3,7 @@ import aboutMe from "../../data/aboutMe"
 import { useEffect, useState } from "react"
 import { getLastFmTopArtists, LastFmArtistInfo } from "../scripts/lastfm.ts"
 import { searchSpotify } from "../scripts/spotify.ts"
-import { FaLastfmSquare, FaSpotify } from "react-icons/fa"
+import { FaLastfmSquare, FaSpotify, FaMusic } from "react-icons/fa"
 
 // TODO: rewrite this to make more logical
 function TopArtists() {
@@ -95,7 +95,7 @@ function TopArtists() {
 
   return (
     <div className="rounded-2xl mt-3 mb-3 max-w-[100%] sm:max-w-[90%] lg:max-w-[75%] flex items-center justify-center flex-col">
-      <h3 className="text-[1.5rem] mb-[-10px] w-full stroked-less text-red-500 font-tiny5 font-bold rounded-2xl p-3">Rafa's on repeat...</h3>
+      <h3 className="flex items-center justify-center gap-2 self-start text-[1.2rem] mb-1 w-min-content text-red-500 bg-black font-bold rounded-2xl p-1 pl-4 pr-4">Rafa's on repeat... <FaMusic /></h3>
       {topArtists
         ? topArtistsGrid
         : placeholder

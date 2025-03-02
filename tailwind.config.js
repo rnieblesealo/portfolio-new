@@ -6,7 +6,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        tiny5: ["Tiny5", "serif"],
+        tiny5: ["Tiny5", "serif"]
       },
     },
   },

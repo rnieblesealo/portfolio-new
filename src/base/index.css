@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Funnel+Sans:ital,wght@0,300..800;1,300..800&family=Tiny5&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jersey+10&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -15,7 +16,7 @@ body {
 
 h1,
 h2 {
-  font-family: "Tiny5", serif;
+  font-family: "Jersey 10", serif;
   paint-order: stroke markers fill;
 }
 
@@ -23,7 +24,7 @@ h1 {
   font-weight: 800;
   font-size: 6rem;
 
-  -webkit-text-stroke: 2rem rgba(0, 0, 0, 1);
+  -webkit-text-stroke: 1rem rgba(0, 0, 0, 1);
 }
 
 /* navigating to this using href works, but ends up offscreen because navbar is fixed (not considered in doc pos) */
@@ -42,9 +43,8 @@ h2 {
   font-weight: 800;
   font-size: 3.75rem;
 
-  letter-spacing: -0.3rem;
 
-  -webkit-text-stroke: 1.5rem rgba(0, 0, 0, 1);
+  -webkit-text-stroke: 1.15rem rgba(0, 0, 0, 1);
 }
 
 h3,
@@ -117,4 +117,8 @@ img {
   outline: 1px solid #1A2E5A;
   border-radius: 0.75rem;
   padding: 10px;
+}
+
+.clear-stroke {
+  --webkit-text-stroke: 0;
 }
