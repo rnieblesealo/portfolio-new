@@ -9,7 +9,7 @@ import NavBar from "../components/NavBar";
 
 function Clouds() {
   const cloudStyle = clsx(
-    "absolute pixelated z-1 w-[15rem] opacity-[70%]"
+    "absolute pixelated z-1 w-[15rem] opacity-[40%]"
   )
 
   const cloud = (top: number, left: number) => (
@@ -55,7 +55,7 @@ export default function PageContextProvider({ children }: { children?: React.Rea
     "w-[1584px]",
     "h-[396px]",
     "absolute",
-    "bg-gradient-to-b from-blue-500 via-blue-500 to-pink-600",
+    "bg-gradient-to-b from-blue-500 to-blue-500",
     "z-2"
   )
 

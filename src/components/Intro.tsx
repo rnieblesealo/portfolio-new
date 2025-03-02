@@ -1,5 +1,3 @@
-import Languages from "./Languages"
-
 import { FaHeart } from "react-icons/fa6"
 
 export default function Intro() {
@@ -13,6 +11,10 @@ export default function Intro() {
     "#733BED", // L
 
     "", // SPACE 
+    "", // SPACE 
+    "", // SPACE 
+    "", // SPACE 
+    "", // SPACE 
 
     "#31A278", // N
     "#2354BE", // I
@@ -23,7 +25,7 @@ export default function Intro() {
     "#26DCF1"  // S
   ]
 
-  const coloredName = "Rafael Niebles".split("").map((char, index) => {
+  const coloredName = "Rafael     Niebles".split("").map((char, index) => {
     return (
       <span key={index} style={{ color: nameColors[index % nameColors.length] }}>{char}</span>
     )
@@ -32,7 +34,7 @@ export default function Intro() {
   // there is some honky css for the name to have a black bg behind it to hide gaps between chars that the stroke can't get to
   const picAndName = (
     <div className="w-min-content h-min-content flex flex-col items-end justify-start space-y-[-70px]">
-      <h1 className="stroked min-w-[330px] min-h-[100px] text-[6rem] flex flex-wrap items-center justify-center text-center leading-[4.5rem] space-y-[-3px]">
+      <h1 className="stroked min-w-[330px] min-h-[100px] text-[6rem] flex flex-wrap items-center justify-center text-center leading-[4.5rem] space-y-[-3px] gap-1">
         {coloredName}
       </h1>
     </div >
@@ -40,10 +42,12 @@ export default function Intro() {
 
   return (
     <div id="home" className="w-full h-full flex flex-col items-end justify-center">
-      <div className="mr-12 flex flex-col items-end justify-end z-[999]">
+      <div className="stroked-less mr-[70px] flex flex-col items-end justify-end z-[999]">
         {picAndName}
-        <h2 className="stroked-less text-center stroked text-yellow-300 text-[3rem]">Software Engineer</h2>
-        <p className="bg-[#0d1931] pl-5 pr-5 rounded-full font-tiny5 font-bold text-[1.25rem] flex items-center gap-2">"Made by Rafa with <span className="text-red-500"><FaHeart /></span>"</p>
+        <h1 className="stroked-less mt-[-10px] text-yellow-300 text-[3rem] flex items-center justify-center gap-10 mb-1">
+          Software Engineer
+        </h1>
+        <p className="bg-[#0d1931] pl-5 pr-5 rounded-full font-tiny5 font-bold text-[1.25rem] flex items-center gap-2 p-1">"Made by Rafa with <span className="text-red-500"><FaHeart /></span>"</p>
       </div>
     </div>
   )
