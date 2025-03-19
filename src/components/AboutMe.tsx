@@ -5,6 +5,8 @@ import { getLastFmTopArtists, LastFmArtistInfo } from "../scripts/lastfm.ts"
 import { searchSpotify } from "../scripts/spotify.ts"
 import { FaLastfmSquare, FaSpotify, FaMusic } from "react-icons/fa"
 
+import BigHeading from "../comps/BigHeading.tsx"
+
 // TODO: rewrite this to make more logical
 function TopArtists() {
   const [topArtists, setTopArtists] = useState<React.ReactNode[] | null>(null)
@@ -151,7 +153,7 @@ export default function AboutMe() {
 
   return (
     <>
-      <h2 id="abt" className="mb-7">About Me :]</h2>
+      <BigHeading id="abt" text="About Me :)" />
       <div className="flex flex-col items-center justify-center max-w-[75%] sm:max-w-[80%] md:max-w-[60%] lg:max-w-[40%]">
         <ul>
           {aboutMeElements}

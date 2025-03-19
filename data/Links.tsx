@@ -16,22 +16,27 @@ const links: LinksItem[] = [
   {
     id: "intro",
     text: "Intro",
-    link: "#home"
+    link: "/#home"
   },
   {
     id: "abt",
     text: "About",
-    link: "#abt"
+    link: "/#abt"
+  },
+  {
+    id: "blogs",
+    text: "Blogs",
+    link: "/blogs"
   },
   {
     id: "proj",
     text: "Projects",
-    link: "#proj"
+    link: "/#proj"
   },
   {
     id: "exp",
     text: "Experience",
-    link: "#exp"
+    link: "/#exp"
   },
   {
     id: "resume",

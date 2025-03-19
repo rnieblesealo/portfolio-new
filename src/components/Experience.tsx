@@ -1,5 +1,6 @@
 import clsx from "clsx"
 import { experiences, ExperienceItem } from "../../data/experiences.ts"
+import BigHeading from "../comps/BigHeading.tsx";
 
 export default function Experience() {
   // sort experiences from latest to earliest by start date
@@ -45,17 +46,17 @@ export default function Experience() {
             alt="Location logo"
             className="min-w-[80px]"
           />
-          <span className="text-center">{`${start}`} - <span className={`${italicizePresent}`}>{end}</span></span>
+          <p className="text-center text-sm">{`${start}`} - <span className={`${italicizePresent}`}>{end}</span></p>
         </div>
         <div className="flex flex-col gap-3">
           <h3
-            className="w-fit"
+            className="w-fit text-2xl font-extrabold"
             style={(exp.startTitleColor && exp.endTitleColor) ? titleStyle : {}}>
             {exp.location}
           </h3>
-          <h5>{exp.role}</h5>
-          <p>{exp.desc}</p>
-          <h5>{exp.bulletsTitle}</h5>
+          <h5 className="text-lg font-bold">{exp.role}</h5>
+          <p className="text-md">{exp.desc}</p>
+          <h5 className="text-lg font-bold">{exp.bulletsTitle}</h5>
           <ul className="square-ul pl-4">
             {bullets}
           </ul>
@@ -66,7 +67,7 @@ export default function Experience() {
 
   return (
     <>
-      <h2 id="exp">My Experience!</h2>
+      <BigHeading id="exp" text="My Experience..." />
       <ul className="flex flex-col gap-4 max-w-[90%]">
         {experienceElements}
       </ul>

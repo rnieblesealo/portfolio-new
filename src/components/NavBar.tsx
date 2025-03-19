@@ -4,6 +4,8 @@ import { UsePageContext } from "./PageContextProvider"
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoCloseSharp } from "react-icons/io5";
 
+import { Link } from "react-router-dom"
+
 import links from "../../data/Links"
 
 export default function NavBar() {
@@ -31,10 +33,10 @@ export default function NavBar() {
     return (
       <li key={link.id}>
         <button onClick={hideMobileNavMenu}>
-          <a className="text-hoverable animate-fade-left flex items-center justify-center gap-2" href={link.link} target={link.newTab ? "_blank" : ""}>
+          <Link className="text-hoverable animate-fade-left flex items-center justify-center gap-2" to={link.link} target={link.newTab ? "_blank" : ""}>
             {link.icon && enlargedIcon}
             {link.text}
-          </a>
+          </Link>
         </button>
       </li>
     )
@@ -75,7 +77,7 @@ export default function NavBar() {
       <nav className="bg-black flex items-center p-2 w-screen h-[70px] sticky top-0 z-[999]">
         <div className="flex w-full items-center flex-row gap-3 animate-fade-left">
           <img
-            src="images/icon.png"
+            src="/images/icon.png"
             alt="Small icon of me"
             className="w-full max-w-[50px]"
           />

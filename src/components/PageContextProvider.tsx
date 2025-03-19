@@ -14,7 +14,7 @@ function Clouds() {
 
   const cloud = (top: number, left: number) => (
     <img
-      src="images/cloud-b.png"
+      src="/images/cloud-b.png"
       alt="Decorative cloud"
       className={cloudStyle}
       style={{ top: `${top}%`, left: `${left}%` }}
@@ -65,7 +65,7 @@ export default function PageContextProvider({ children }: { children?: React.Rea
         <PageContext.Provider value={contextInfo}>
           <div className="z-3 relative">
             <NavBar />
-            <div className="flex flex-col items-center justify-center mb-10">
+            <div className="flex flex-col items-center justify-center">
               {children}
             </div>
             <Footer />

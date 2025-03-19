@@ -3,6 +3,8 @@ import { RiShareBoxLine } from "react-icons/ri";
 import projects from "../../data/projects"
 import { useState } from "react";
 
+import BigHeading from "../comps/BigHeading.tsx"
+
 interface ProjectProps {
   name: string,
   desc: string,
@@ -33,7 +35,7 @@ function Project({ name, desc, url, imgSrc, color, langs, teamSize, tagCollectio
       }}
     >
       <a href={url} target="_blank">
-        <h3 className="rounded-tl-lg rounded-tr-lg text-[1.25rem] p-2 box-border break-all text-center flex flex-wrap items-center justify-center gap-2" style={{ backgroundColor: color }}>
+        <h3 className="rounded-tl-lg rounded-tr-lg text-[1.25rem] p-2 box-border break-all text-center flex flex-wrap items-center justify-center gap-2 font-extrabold text-xl" style={{ backgroundColor: color }}>
           {name}
           <span className="text-[1rem]">
             <RiShareBoxLine />
@@ -100,7 +102,7 @@ export default function Projects() {
 
   return (
     <>
-      <h2 id="proj">My Projects!</h2>
+      <BigHeading id="proj" text="My Projects!" />
       <ul className="max-w-[100%] grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 p-2" >
         {projectElements}
       </ul >

@@ -48,7 +48,7 @@ export default function Intro() {
 
   // there is some honky css for the name to have a black bg behind it to hide gaps between chars that the stroke can't get to
   const picAndName = (
-    <div className="flex flex-col items-center justify-center space-y-[-70px] mb-[40px] animate-jump-in">
+    <div className="flex flex-col items-center justify-center space-y-[-70px] animate-jump-in">
       <div className="bg-black p-5 rounded-2xl">
         <img
           src="images/profile.jpg"
@@ -56,21 +56,21 @@ export default function Intro() {
           className="w-[260px] border-black box-border rounded-lg"
         />
       </div>
-      <h1 className="w-full text-[6rem] flex flex-wrap items-center justify-center text-center leading-[3.8rem] gap-2">
+      <h1 className="stroked-less font-jersey10 font-bold w-full text-[6rem] flex flex-wrap items-center justify-center text-center leading-[3.8rem] gap-2">
         {name}
       </h1>
     </div >
   )
 
   return (
-    <div id="home" className="flex flex-col items-center justify-center mt-5 mb-5">
+    <div id="home" className="flex flex-col items-center justify-center mt-5 mb-5 font-bold text-2xl gap-2">
       <h3 className="stroked-light text-yellow">Hey there! My name's</h3>
 
       {picAndName}
 
-      <h3 className="stroked-light mt-[-20px] mb-[-15px]">and I'm a</h3>
-      <h2 className="stroked-less text-center stroked text-yellow-300 text-[3rem]">Software Engineer</h2>
-      <h3 className="stroked-light mt-[-15px]">who builds with</h3>
+      <h3 className="stroked-light">and I'm a</h3>
+      <h2 className="stroked-less font-jersey10 font-bold text-center stroked text-yellow-300 text-5xl">Software Engineer</h2>
+      <h3 className="stroked-light">who builds with</h3>
 
       <Languages />
 
