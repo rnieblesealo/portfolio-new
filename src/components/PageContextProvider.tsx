@@ -6,6 +6,7 @@ const PageContext = createContext<any | null>(null) // string refers to type of 
 
 import Footer from "../components/Footer";
 import NavBar from "../components/NavBar";
+import { useLocation } from "react-router-dom";
 
 // this parameter is absolutely f******ing hideous, fix it later...
 function Clouds({ dimmer }: { dimmer?: boolean }) {
@@ -35,6 +36,20 @@ function Clouds({ dimmer }: { dimmer?: boolean }) {
 export default function PageContextProvider({ children, theme }: { children?: React.ReactNode, theme?: "day" | "night" | "solid" }) {
   const smallThresholdPx = 1024
 
+  // this is the # bit in the address bar that tells what div to go to
+  const { hash } = useLocation()
+
+  // this scrolls that div into view when in the address
+  useEffect(() => {
+    if (hash) {
+      const locationElement = document.getElementById(hash.replace("#", ""))
+      if (locationElement) {
+        locationElement.scrollIntoView({ behavior: "smooth" })
+      }
+    }
+  })
+
+  // this sends children that need it msg that we are small
   const [isSmall, setIsSmall] = useState(window.innerWidth < smallThresholdPx)
 
   useEffect(() => {

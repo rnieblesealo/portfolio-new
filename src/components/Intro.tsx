@@ -63,7 +63,7 @@ export default function Intro() {
   )
 
   return (
-    <div id="home" className="flex flex-col items-center justify-center mt-5 mb-5 font-bold text-2xl gap-2">
+    <div id="home" className="flex flex-col items-center justify-center mt-5 mb-5 font-bold text-2xl gap-2 scroll-mt-20">
       <h3 className="stroked-light text-yellow">Hey there! My name's</h3>
 
       {picAndName}

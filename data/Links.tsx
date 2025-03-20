@@ -24,11 +24,6 @@ const links: LinksItem[] = [
     link: "/#abt"
   },
   {
-    id: "blogs",
-    text: "Blogs",
-    link: "/blogs"
-  },
-  {
     id: "proj",
     text: "Projects",
     link: "/#proj"
@@ -37,6 +32,11 @@ const links: LinksItem[] = [
     id: "exp",
     text: "Experience",
     link: "/#exp"
+  },
+  {
+    id: "blogs",
+    text: "Blogs",
+    link: "/blogs/#top"
   },
   {
     id: "resume",
