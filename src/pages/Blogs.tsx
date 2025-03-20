@@ -2,8 +2,8 @@ import PageContextProvider from "../components/PageContextProvider"
 import { Link } from "react-router-dom"
 import articles from "../../data/articles"
 import { type ArticleItem } from "../../data/articles"
-import BigHeading from "../comps/BigHeading"
-import { Tag, Tags } from "../comps/tags"
+import BigHeading from "../components/BigHeading"
+import { Tag, Tags } from "../components/tags"
 
 export default function Blogs() {
   const ArticleContainer = ({ children }: { children?: React.ReactNode }) => {

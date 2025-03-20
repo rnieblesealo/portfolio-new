@@ -1,7 +1,7 @@
-import AboutMe from "../components/AboutMe";
-import Intro from "../components/Intro";
-import Experience from "../components/Experience";
-import Projects from "../components/Projects";
+import AboutMe from "../sections/AboutMe";
+import Intro from "../sections/Intro";
+import Experience from "../sections/Experience";
+import Projects from "../sections/Projects";
 import PageContextProvider from "../components/PageContextProvider"
 
 export default function Home() {

@@ -3,7 +3,7 @@ import { RiShareBoxLine } from "react-icons/ri";
 import projects from "../../data/projects"
 import { useState } from "react";
 
-import BigHeading from "../comps/BigHeading.tsx"
+import BigHeading from "../components/BigHeading.tsx"
 
 interface ProjectProps {
   name: string,

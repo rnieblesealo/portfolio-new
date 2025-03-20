@@ -5,7 +5,7 @@ import { getLastFmTopArtists, LastFmArtistInfo } from "../scripts/lastfm.ts"
 import { searchSpotify } from "../scripts/spotify.ts"
 import { FaLastfmSquare, FaSpotify, FaMusic } from "react-icons/fa"
 
-import BigHeading from "../comps/BigHeading.tsx"
+import BigHeading from "../components/BigHeading.tsx"
 
 // TODO: rewrite this to make more logical
 function TopArtists() {

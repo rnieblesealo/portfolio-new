@@ -1,6 +1,6 @@
 import clsx from "clsx"
 import { experiences, ExperienceItem } from "../../data/experiences.ts"
-import BigHeading from "../comps/BigHeading.tsx";
+import BigHeading from "../components/BigHeading.tsx";
 
 export default function Experience() {
   // sort experiences from latest to earliest by start date

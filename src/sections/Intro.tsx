@@ -1,4 +1,4 @@
-import Languages from "./Languages"
+import Languages from "../components/Languages"
 
 import { FaHeart } from "react-icons/fa6"
 
