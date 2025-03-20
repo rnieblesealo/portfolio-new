@@ -24,7 +24,7 @@ export default function Blogs() {
 
   const ArticleContainer = ({ children }: { children?: React.ReactNode }) => {
     return (
-      <ul className="flex flex-col gap-3 w-[90%] mt-10">
+      <ul className="flex flex-col gap-3 w-[90%]">
         {children}
       </ul>
     )
@@ -50,7 +50,7 @@ export default function Blogs() {
   })
 
   return (
-    <PageContextProvider>
+    <PageContextProvider theme="night">
       <BigHeading text="Blogs" />
       <ArticleContainer>
         {articleComponents}

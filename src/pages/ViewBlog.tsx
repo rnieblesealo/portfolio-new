@@ -2,7 +2,7 @@ import PageContextProvider from "../components/PageContextProvider"
 import Markdown from "react-markdown"
 import remarkGfm from "remark-gfm"
 
-import { Link, useParams } from "react-router-dom"
+import { useParams, useNavigate } from "react-router-dom"
 import { useState, useEffect } from "react"
 
 import { IoArrowBack } from "react-icons/io5";
@@ -10,6 +10,8 @@ import { IoArrowBack } from "react-icons/io5";
 export default function ViewBlog() {
   const { markdownRef } = useParams()
   const [markdownContent, setMarkdownContent] = useState("")
+
+  const navigate = useNavigate()
 
   useEffect(() => {
     import(`/articles/${markdownRef}.md`)
@@ -20,11 +22,11 @@ export default function ViewBlog() {
   }, [markdownRef])
 
   return (
-    <PageContextProvider>
-      <div className="all:unset prose prose-invert bg-gray-900 h-full p-2">
-        <Link to="" className="">
-          <IoArrowBack/> Back
-        </Link>
+    <PageContextProvider theme="solid">
+      <div className="all:unset prose prose-invert bg-gray-900 min-w-[90vw] h-full p-5">
+        <button onClick={() => { navigate(-1) }} className="flex items-center">
+          <IoArrowBack /> Back
+        </button>
         <Markdown remarkPlugins={[remarkGfm]}>
           {markdownContent}
         </Markdown>

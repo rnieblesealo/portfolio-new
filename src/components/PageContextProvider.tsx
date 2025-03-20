@@ -30,7 +30,7 @@ function Clouds() {
   )
 }
 
-export default function PageContextProvider({ children }: { children?: React.ReactNode }) {
+export default function PageContextProvider({ children, theme }: { children?: React.ReactNode, theme?: "day" | "night" | "solid" }) {
   const smallThresholdPx = 1024
 
   const [isSmall, setIsSmall] = useState(window.innerWidth < smallThresholdPx)
@@ -50,22 +50,20 @@ export default function PageContextProvider({ children }: { children?: React.Rea
   // look up css stacking contexts
   // mind boggling!
 
-  const mainContainerStyle = clsx(
-    "w-min-content",
-    "h-min-content",
-    "absolute",
-    "bg-gradient-to-b from-blue-500 to-pink-700",
-    "z-2"
+  const themeStyle = clsx(
+    (!theme || theme === "day") && "bg-gradient-to-b from-blue-500 to-pink-700",
+    theme === "night" && "bg-gradient-to-b from-black to-gray-900",
+    theme === "solid" && "bg-gray-800"
   )
 
   return (
     <>
-      <div className={mainContainerStyle}>
-        <Clouds />
+      <div className={`w-screen absolute z-2 ${themeStyle}`}>
+        {theme != "solid" && <Clouds />}
         <PageContext.Provider value={contextInfo}>
           <div className="z-3 relative">
             <NavBar />
-            <div className="flex flex-col items-center justify-center">
+            <div className="min-h-[85vh] flex flex-col items-center justify-top">
               {children}
             </div>
             <Footer />
