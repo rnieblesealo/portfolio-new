@@ -7,9 +7,11 @@ const PageContext = createContext<any | null>(null) // string refers to type of 
 import Footer from "../components/Footer";
 import NavBar from "../components/NavBar";
 
-function Clouds() {
+// this parameter is absolutely f******ing hideous, fix it later...
+function Clouds({ dimmer }: { dimmer?: boolean }) {
   const cloudStyle = clsx(
-    "fixed pixelated z-1 w-[10rem] opacity-[80%]"
+    "fixed pixelated z-1 w-[10rem]",
+    dimmer ? "opacity-[10%]" : "opacity-[80%]"
   )
 
   const cloud = (top: number, left: number) => (
@@ -52,14 +54,14 @@ export default function PageContextProvider({ children, theme }: { children?: Re
 
   const themeStyle = clsx(
     (!theme || theme === "day") && "bg-gradient-to-b from-blue-500 to-blue-700",
-    theme === "night" && "bg-gradient-to-b from-blue-700 via-orange-600 to-amber-500",
+    theme === "night" && "bg-gradient-to-b from-black to-slate-900 ",
     theme === "solid" && "bg-gray-800"
   )
 
   return (
     <>
       <div className={`w-screen absolute z-2 ${themeStyle}`}>
-        {theme != "solid" && <Clouds />}
+        {theme != "solid" && <Clouds dimmer={theme === "night"} />}
         <PageContext.Provider value={contextInfo}>
           <div className="z-3 relative">
             <NavBar />

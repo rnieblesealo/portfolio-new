@@ -22,9 +22,9 @@ export default function ViewBlog() {
   }, [markdownRef])
 
   return (
-    <PageContextProvider theme="solid">
-      <div className="all:unset prose prose-invert bg-gray-900 min-w-[90vw] h-full p-5">
-        <button onClick={() => { navigate(-1) }} className="flex items-center">
+    <PageContextProvider theme="night">
+      <div className="all:unset prose prose-invert bg-gray-900 min-w-[70vw] h-full p-5">
+        <button onClick={() => { navigate(-1) }} className="flex items-center text-2xl mb-3">
           <IoArrowBack /> Back
         </button>
         <Markdown remarkPlugins={[remarkGfm]}>
