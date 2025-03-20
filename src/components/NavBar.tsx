@@ -1,11 +1,8 @@
-import { useState } from "react";
 import { UsePageContext } from "./PageContextProvider"
-
+import { Link } from "react-router-dom"
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoCloseSharp } from "react-icons/io5";
-
-import { Link } from "react-router-dom"
-
+import { useState } from "react";
 import links from "../../data/Links"
 
 export default function NavBar() {
@@ -23,6 +20,7 @@ export default function NavBar() {
     document.body.style.overflow = "visible"
   }
 
+  /* Mobile nav buttons */
   const bigButtons = links.map((link) => {
     const enlargedIcon = (
       <p className="text-[2rem]">
@@ -42,6 +40,7 @@ export default function NavBar() {
     )
   })
 
+  /* Non-mobile nav buttons */
   const bigButtonCollection = (
     <ul className="text-[1rem] font-bold flex flex-row items-center ml-auto gap-4 h-min-content">
       {bigButtons}
@@ -49,8 +48,6 @@ export default function NavBar() {
   )
 
   // NOTE: giving keys triggers react's reconciliation to reload EVERYTHING for this component 
-  // this is because it will be treated as a unique element
-  // ...which reruns the animation we want :)
 
   const burgerButton = (
     <button key="burger" className="text-hoverable text-[2rem] animate-jump-in" onClick={showMobileNavMenu}>

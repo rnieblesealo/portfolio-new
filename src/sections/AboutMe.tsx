@@ -7,7 +7,6 @@ import { FaLastfmSquare, FaSpotify, FaMusic } from "react-icons/fa"
 
 import BigHeading from "../components/BigHeading.tsx"
 
-// TODO: rewrite this to make more logical
 function TopArtists() {
   const [topArtists, setTopArtists] = useState<React.ReactNode[] | null>(null)
 

@@ -8,7 +8,6 @@ import Footer from "../components/Footer";
 import NavBar from "../components/NavBar";
 import { useLocation } from "react-router-dom";
 
-// this parameter is absolutely f******ing hideous, fix it later...
 function Clouds({ dimmer }: { dimmer?: boolean }) {
   const cloudStyle = clsx(
     "fixed pixelated z-1 w-[10rem]",
