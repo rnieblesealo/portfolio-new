@@ -27,6 +27,7 @@ export default function Home() {
       <AboutMe />
       <Projects />
       <Experience />
+      <div className="m-10" />
     </PageContextProvider>
   )
 }

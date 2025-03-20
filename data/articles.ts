@@ -15,6 +15,14 @@ const articles: ArticleItem[] = [
     hook: "This is an example article.",
     imgSrc: "/images/chip8.gif",
     date: new Date("March 19 2025"),
+  },
+  {
+    id: "example1",
+    ref: "example",
+    heading: "An Example Article",
+    hook: "This is an example article.",
+    imgSrc: "/images/microtransistor.gif",
+    date: new Date("March 19 2025"),
   }
 ]
 

@@ -51,8 +51,8 @@ export default function PageContextProvider({ children, theme }: { children?: Re
   // mind boggling!
 
   const themeStyle = clsx(
-    (!theme || theme === "day") && "bg-gradient-to-b from-blue-500 to-pink-700",
-    theme === "night" && "bg-gradient-to-b from-black to-gray-900",
+    (!theme || theme === "day") && "bg-gradient-to-b from-blue-500 to-blue-700",
+    theme === "night" && "bg-gradient-to-b from-blue-700 via-orange-600 to-amber-500",
     theme === "solid" && "bg-gray-800"
   )
 
