@@ -61,7 +61,7 @@ export default function NavBar() {
   const closeButton = (
     <button key="close" className="text-hoverable text-[2.5rem] animate-jump-in" onClick={hideMobileNavMenu}>
       <IoCloseSharp />
-    </button >
+    </button>
   )
 
   const mobileNavMenu = (
@@ -81,7 +81,7 @@ export default function NavBar() {
             alt="Small icon of me"
             className="w-full max-w-[50px]"
           />
-          <a href="#home" className="font-bold text-hoverable">
+          <a href="/#home" className="font-bold text-hoverable">
             <p>Rafael Niebles</p>
           </a>
         </div>
