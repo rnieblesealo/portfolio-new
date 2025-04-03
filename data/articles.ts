@@ -1,6 +1,5 @@
 export type ArticleItem = {
   id: string,
-  ref: string,
   heading: string,
   hook: string
   imgSrc: string,
@@ -10,40 +9,17 @@ export type ArticleItem = {
 
 const articles: ArticleItem[] = [
   {
-    id: "example",
-    ref: "example",
-    heading: "An Example Article",
-    hook: "This is an example article.",
-    imgSrc: "/images/chip8.gif",
-    date: new Date("March 19 2025"),
+    id: "prof-dev",
+    heading: "Why You Suck at Programming (And Why That's OK!)",
+    hook: "Breaking into SWE might seem impossible right now, but what if I told you it's just a matter of perspective? Adapted from my 4/1 workshop w/KnightHacks on Professional Development.",
+    imgSrc: "/article-covers/prof-dev.png",
+    date: new Date("April 1 2025"),
     tags: [
-      "Example Tag"
+      "Professional Development",
+      "Early Career",
+      "Workshop"
     ]
   },
-  {
-    id: "example1",
-    ref: "example",
-    heading: "An Example Article With Really Long Title Wordddddd",
-    hook: "This is an example article.",
-    imgSrc: "/images/microtransistor.gif",
-    date: new Date("March 19 2025"),
-  },
-  {
-    id: "example1",
-    ref: "example",
-    heading: "An Example Article",
-    hook: "This is an example article.",
-    imgSrc: "/images/microtransistor.gif",
-    date: new Date("March 19 2025"),
-  },
-  {
-    id: "example1",
-    ref: "example",
-    heading: "An Example Article",
-    hook: "This is an example article.",
-    imgSrc: "/images/microtransistor.gif",
-    date: new Date("March 19 2025"),
-  }
 ]
 
 export default articles; 

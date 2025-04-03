@@ -16,7 +16,7 @@ export default function Blogs() {
 
   const Article = ({ info }: { info: ArticleItem }) => {
     return (
-      <Link to={`/blogs/view/${info.ref}`}
+      <Link to={`/blogs/view/${info.id}`}
         className="h-min-content flex flex-col-reverse sm:flex-row items-start justify-start bg-black rounded-2xl p-3 gap-3 w-min-content shadow-lg shadow-white/10">
         <div className="flex flex-col gap-2 flex-grow">
           <Tags align="left">
