@@ -1,4 +1,4 @@
-Recently, I accepted an internship offer at Lutron. The journey wasn't easy, and I learned a whole lot throughout it. This is some of what I have to say about it in hopes of guiding others!
+Recently, I accepted an internship offer at Lutron. The journey wasn't easy, but amidst that adversity, I learned a *bunch*. These are some of the most important lessons I learned. 
 
 ---
 
@@ -24,25 +24,27 @@ So, what do you do?
 
 ###  ⛵️ The First Step...
 
-Is to realize that *you suck at programming.*
+Is to realize that *you suck.*
 
-Yes, there might be some kids in your class building impressive stuff, looking really smart. Some of them might even have been lucky enough to score big internships. But the reality is that at the early career level, most of us would probably be in the trenches when facing a *real* codebase.
+Yes, there might be some kids in your class building impressive stuff, looking really smart. Some of them might even have been lucky enough to score big internships. But the reality is that at the early career level, most of us would probably be in the trenches if thrown at a *real* codebase.
 
 Dealing with those takes experience, which is increasingly difficult to come by.
 
 To get to be a great programmer, one must first take a very important first step: *becoming an excellent learner.*
 
+![devmeme](/article-assets/devjob.jpg) 
+
 ---
 
 ###  🌊 Be Water, My Friend...
 
-Fun fact: for many companies, hiring a junior developer is actually a strategic loss.
-
-Most places don't really expect junior devs to excel at their roles. They might know the road rules of programming, but they haven't been thrown in big city traffic during rush hour yet. For them to become adept in a production environment, they have to get their hands dirty, make some mistakes, and *learn* from them. Eventually, they'll stop sucking and become a valuable asset to their employer.
+Most places don't really expect junior devs/interns to excel at their roles. They might know the road rules of programming, but they haven't been thrown in big city traffic during rush hour yet. For them to become adept in a production environment, they have to get their hands dirty, make some mistakes, and *learn* from them. Eventually, they'll stop sucking and become *hugely* productive.
 
 As a student/early career engineer, don't expect great programming prowess from yourself. It'll take time to get there. But you *can* make the road much smoother, if you *learn how to learn*; to get used to being given a giant pothole of a problem and still be able to shape yourself to fill it just fine.
 
 Like Bruce Lee said: "Be Water, My Friend."
+
+![bewater](/article-assets/bewater.png) 
 
 *But how do you do that?*
 
@@ -59,6 +61,8 @@ Then, try picking some new tech to build it with. Maybe a stack you're curious f
 Then, bring your idea to life! On the way there, you'll stumble upon roadblocks that will force you to grow, learn, use your creativity; that's good. Scratching your head means you're doing it right. That's the most important part of building side projects!
 
 Fall in love with solving problems, being creative, learning. In my view, those are the 3 tallest pillars that make a *great* engineer.
+
+![bob](/article-assets/bob.jpg) 
 
 ---
 
@@ -80,6 +84,8 @@ Don't allow AI to do any of the building for you unless you have some agency ove
 
 Only when you understand what you're doing is it prudent to let it stick its hand in your code!
 
+![vibe](/article-assets/vibe.png) 
+
 ---
 
 ### 🤺 Keep Showing Up!
@@ -99,3 +105,7 @@ And 37x better in 1 year.
 Keep showing up. Chances are things will begin happening much, much faster than you think.
 
 You've got this! ❤️ 
+
+![bayle](/article-assets/bayle.webp) 
+
+> Rise, Tarnished. Your battle is not over yet. 

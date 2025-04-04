@@ -14,7 +14,10 @@ export default function ViewBlog() {
   const navigate = useNavigate()
 
   useEffect(() => {
-    import(`/articles/${markdownRef}.md`)
+    import(
+      /* @vite-ignore */ // WARN: disable vite dynamic import analysis
+      `/articles/${markdownRef}.md`
+    )
       .then((module) => fetch(module.default))
       .then((result) => result.text())
       .then((text) => setMarkdownContent(text))

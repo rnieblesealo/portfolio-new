@@ -7,6 +7,7 @@ import { IoCloseSharp } from "react-icons/io5";
 import { Link } from "react-router-dom"
 
 import links from "../../data/Links"
+import clsx from "clsx";
 
 export default function NavBar() {
   const context = UsePageContext()
@@ -25,15 +26,20 @@ export default function NavBar() {
 
   const bigButtons = links.map((link) => {
     const enlargedIcon = (
-      <p className="text-[2rem]">
+      <p className={`text-[2rem]`}>
         {link.icon}
-      </p>
+      </p >
+    )
+
+    // SPECIAL: MAKE BLOGS HIGHLIGHT BC ITS NEW
+    const isBlogSoAnimate = clsx(
+      link.id === "blogs" && "text-yellow-300 font-extrabold italic"
     )
 
     return (
       <li key={link.id}>
         <button onClick={hideMobileNavMenu}>
-          <Link className="text-hoverable animate-fade-left flex items-center justify-center gap-2" to={link.link} target={link.newTab ? "_blank" : ""}>
+          <Link className={`${isBlogSoAnimate} text-hoverable animate-fade-left flex items-center justify-center gap-2`} to={link.link} target={link.newTab ? "_blank" : ""}>
             {link.icon && enlargedIcon}
             {link.text}
           </Link>

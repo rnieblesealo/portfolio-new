@@ -8,7 +8,7 @@ import { Tag, Tags } from "../comps/tags"
 export default function Blogs() {
   const ArticleContainer = ({ children }: { children?: React.ReactNode }) => {
     return (
-      <ul className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 w-[85%] gap-4">
+      <ul className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 w-[85%] gap-4 justify-center">
         {children}
       </ul>
     )
@@ -16,31 +16,33 @@ export default function Blogs() {
 
   const Article = ({ info }: { info: ArticleItem }) => {
     return (
-      <Link to={`/blogs/view/${info.id}`}
-        className="
+      <li>
+        <Link to={`/blogs/view/${info.id}`}
+          className="
           h-min-content flex flex-col-reverse sm:flex-row items-start justify-start bg-black rounded-2xl p-3 gap-3 w-min-content shadow-lg shadow-white/10
-          transition-shadow duration-200 hover:shadow-xl hover:shadow-purple-400/50
+          transition-shadow duration-200 hover:shadow-xl hover:shadow-white/20
         ">
-        <div className="flex flex-col gap-2 flex-grow">
-          <Tags align="left">
-            {info.tags?.map((tag) => {
-              return (
-                <Tag text={tag} />
-              )
-            })}
-          </Tags>
-          <p className="text-xl font-bold">{info.heading}</p>
-          <p className="text-xs">{info.date.toLocaleString("en-US", { year: "numeric", month: "long", day: "numeric" })}</p>
-          <p className="text-sm">{info.hook}</p>
-        </div>
-        <img src={info.imgSrc} className="w-full h-40 sm:w-40 sm:aspect-square object-cover rounded-md" />
-      </Link>
+          <div className="flex flex-col gap-2 flex-grow">
+            <Tags align="left">
+              {info.tags?.map((tag) => {
+                return (
+                  <Tag key={`t-${tag}`} text={tag} />
+                )
+              })}
+            </Tags>
+            <p className="text-xl font-bold">{info.heading}</p>
+            <p className="text-xs">{info.date.toLocaleString("en-US", { year: "numeric", month: "long", day: "numeric" })}</p>
+            <p className="text-sm">{info.hook}</p>
+          </div>
+          <img src={info.imgSrc} className="w-full h-40 sm:w-40 sm:aspect-square object-cover rounded-md" />
+        </Link>
+      </li>
     )
   }
 
   const articleComponents = articles.map((info: ArticleItem) => {
     return (
-      <Article info={info} />
+      <Article key={`${info.id}`} info={info} />
     )
   })
 
