@@ -14,11 +14,9 @@ export default function ViewBlog() {
   const navigate = useNavigate()
 
   useEffect(() => {
-    import(
-      /* @vite-ignore */ // WARN: disable vite dynamic import analysis
+    fetch(
       `/articles/${markdownRef}.md`
     )
-      .then((module) => fetch(module.default))
       .then((result) => result.text())
       .then((text) => setMarkdownContent(text))
       .catch((error) => console.log("Error loading markdown article: ", error))
