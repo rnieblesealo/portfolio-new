@@ -18,11 +18,12 @@ export async function getLastFmTopArtists() {
   try {
     // call lastfm api to get list of top artists associated to my username
     const apiKey = import.meta.env.VITE_LASTFM_API_KEY
-    const targetUsername = import.meta.env.VITE_LASTFM_USERNAME
+    const targetUsername = "rafaisafar" 
 
     // TODO: read about url query string
     const params = new URLSearchParams({
       method: "user.gettopartists",
+      period: "7day",
       user: targetUsername,
       api_key: apiKey,
       limit: "3",
