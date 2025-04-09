@@ -41,7 +41,7 @@ const links: LinksItem[] = [
   {
     id: "resume",
     text: "Resumé",
-    link: "https://drive.google.com/file/d/16Tr9ySJrI1fEz8drh2w6zxu6ADSH9CbD/view",
+    link: "https://drive.google.com/file/d/1JMhuFU3CLm_kd6HWd9Mt-1Gxd_eGLy9r/view?usp=sharing",
     icon: <IoDocumentText />,
     newTab: true
   },
