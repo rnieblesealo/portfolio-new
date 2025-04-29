@@ -1,5 +1,6 @@
 import { IoPeopleSharp } from "react-icons/io5";
 import { RiShareBoxLine } from "react-icons/ri";
+import { CgAsterisk } from "react-icons/cg";
 import projects from "../../data/projects"
 import { useState } from "react";
 import { cva } from "class-variance-authority"
@@ -8,7 +9,7 @@ import BigHeading from "../comps/BigHeading.tsx"
 
 const projectCard = cva(
   // default classes
-  "flex flex-col items-center w-full h-full max-w-[300px] rounded-lg cursor-pointer",
+  "flex flex-col items-center w-full aspect-square rounded-lg cursor-pointer",
   {
     // variant categories
     variants: {
@@ -25,7 +26,7 @@ const projectCard = cva(
 )
 
 const projectHeading = cva(
-  "rounded-t-lg text-xl text-white p-2 box-border break-all text-center flex flex-wrap items-center justify-center gap-2 font-extrabold",
+  "text-xl text-white p-2 box-border break-all text-center flex flex-wrap items-center justify-center gap-2 font-extrabold",
   {
     variants: {
       variant: {
@@ -54,20 +55,17 @@ type ProjectProps = {
 function Project({ name, desc, url, imgSrc, color, langs, teamSize, tags, variant }: ProjectProps) {
   const [isHovered, setIsHovered] = useState(false)
 
-  const langElements = langs.map((lang) => {
-    return (
-      <li key={lang} className="text-[2.5rem]">
-        <i className={`devicon-${lang}-plain`} />
-      </li>
-    )
-  })
+  const langElements = langs.map((lang) =>
+    <li key={lang} className="text-[2.5rem]">
+      <i className={`devicon-${lang}-plain`} />
+    </li>
+  )
 
-  const teamSizeElement = teamSize && (
+  const teamSizeElement =
     <p
       className="flex items-center justify-center gap-2 text-center font-bold">
       <IoPeopleSharp />Team Size: {`${teamSize ?? 1}`}
     </p>
-  )
 
   const tagElements = tags?.map((tag) => {
     const tagColor = clsx(variant === "codepath" ? "bg-gray-700" : "bg-gray-900")
@@ -81,13 +79,36 @@ function Project({ name, desc, url, imgSrc, color, langs, teamSize, tags, varian
     )
   })
 
-  const tagCollection = (
+  const tagCollection =
     <ul className="flex flex-row flex-wrap items-center justify-center gap-1 mt-2 mb-2">
       {tagElements}
     </ul>
-  )
+
 
   const hoverColor = (variant === "codepath" ? "#31235b" : color)
+
+  const builtForCodepath =
+    <p className="text-center mb-4 flex items-center justify-center bg-gray-300 px-3 py-2 rounded-full">
+      Built for
+      <span
+        className="ml-1 text-gray-700 flex items-center w-min font-extrabold">
+        CODEPATH
+        <span className="flex items-center text-emerald-600">
+          <CgAsterisk className="mx-[-4px]" />ORG
+        </span>
+      </span>
+    </p>
+
+  const infoContent =
+    <div className="flex flex-col p-5">
+      {variant === "codepath" && builtForCodepath}
+      <p className="text-center">{desc}</p>
+      <ul className="w-full flex flex-row flex-wrap items-center justify-center gap-2 my-4">
+        {langElements}
+      </ul>
+      {teamSize && teamSizeElement}
+      {tagCollection}
+    </div>
 
   return (
     <li
@@ -100,7 +121,7 @@ function Project({ name, desc, url, imgSrc, color, langs, teamSize, tags, varian
         className={projectCard({ variant: variant })}
         onMouseEnter={() => { setIsHovered(true) }}
         onMouseLeave={() => { setIsHovered(false) }}>
-        <a href={url} target="_blank">
+        <div className="w-full aspect-square rounded-lg overflow-hidden">
           <h3
             className={projectHeading({ variant: variant })}
             style={{
@@ -111,24 +132,14 @@ function Project({ name, desc, url, imgSrc, color, langs, teamSize, tags, varian
               ...(variant === "normal" ? { backgroundColor: color } : {})
             }}>
             {name}
-            <span className="text-[1rem]">
-              <RiShareBoxLine />
-            </span>
+            <RiShareBoxLine />
           </h3>
           <img
             src={imgSrc}
             alt="Project demo"
-            className="w-full aspect-square object-cover mb-4"
+            className="w-full aspect-square object-cover"
           />
-          <div className="flex flex-col p-5">
-            <p className="text-center">{desc}</p>
-            <ul className="w-full flex flex-row flex-wrap items-center justify-center gap-2 my-4">
-              {langElements}
-            </ul>
-            {teamSizeElement}
-            {tagCollection}
-          </div>
-        </a>
+        </div>
       </div>
     </li >
   )
@@ -147,7 +158,7 @@ export default function Projects() {
         langs={proj.langs}
         teamSize={proj.teamSize}
         tags={proj.tags}
-        variant="normal"
+        variant={proj.variant}
       />
     )
   })

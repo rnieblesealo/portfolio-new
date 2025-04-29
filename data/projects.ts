@@ -7,7 +7,8 @@ type ProjectsItem = {
   imgSrc?: string,
   color?: string,
   url?: string,
-  tags?: string[]
+  tags?: string[],
+  variant: "normal" | "codepath"
 }
 
 const rafaGhLink = (repoName: string) => {
@@ -17,6 +18,7 @@ const rafaGhLink = (repoName: string) => {
 const projects: ProjectsItem[] = [
   {
     id: "micro",
+    variant: "normal",
     name: "Microtransistor",
     desc: "First-person action FPS with AI-powered enemies, perk machines, and some chonky guns!",
     langs: ["unity", "csharp"],
@@ -24,30 +26,29 @@ const projects: ProjectsItem[] = [
     color: "#b00003",
     url: "https://www.instagram.com/microtransistor/",
     tags: [
-      "Game Development",
-      "Gameplay Design",
-      "3D Modeling",
+      "Game Design",
+      "Animation",
+      "State",
       "AI",
     ]
   },
   {
     id: "memwell",
-    name: "Memory Well",
+    variant: "normal",
+    name: "Well",
     desc: "Official website for the band Memory Well. My first freelance project!",
-    langs: ["javascript", "react", "vite", "axios"],
+    langs: ["javascript", "react", "vite", "supabase"],
     imgSrc: "images/compressed-gifs/memwell.gif",
     color: "purple",
     url: rafaGhLink("memorywell"),
     tags: [
       "Freelance",
-      "Web Design",
-      "Marketing",
-      "Spotify API",
-      "Paid From",
+      "Full-Stack",
     ]
   },
   {
     id: "kanjo",
+    variant: "normal",
     name: "Kanjo.ai",
     desc: "Custom neural network for an emotion recognition ML model.",
     langs: ["python", "pytorch"],
@@ -57,14 +58,14 @@ const projects: ProjectsItem[] = [
     teamSize: 3,
     tags: [
       "AI",
-      "Machine Learning",
+      "ML",
       "Data Science",
-      "Neural Network",
       "Computer Vision"
     ]
   },
   {
     id: "sofieski",
+    variant: "normal",
     name: "Sofieski's Wordles",
     desc: "WhatsApp bot that auto-detects and stores Wordle solutions! Gift for my friend Sofia :)",
     langs: ["typescript", "react", "supabase"],
@@ -72,15 +73,15 @@ const projects: ProjectsItem[] = [
     color: "#EB6AAA",
     url: rafaGhLink("sofieski-wordles"),
     tags: [
-      "WhatsApp API (WWebJS)",
+      "Webscraping",
       "Regex",
-      "Database",
       "Full-Stack",
-      "Fun",
+      "CRUD",
     ]
   },
   {
     id: "bromo",
+    variant: "normal",
     name: "Bromodoro",
     desc: "Full-stack gamified productivity app using the Pomodoro Technique.",
     langs: ["typescript", "react", "supabase"],
@@ -92,11 +93,11 @@ const projects: ProjectsItem[] = [
       "Leadership",
       "Full-Stack",
       "UI/UX",
-      "Teamwork"
     ]
   },
   {
     id: "spyder",
+    variant: "normal",
     name: "The Spyder",
     desc: "Dodge traffic as you escape a giant deadly spider! Survival is futile. Intern project built for HYEL!",
     langs: ["swift", "xcode", "figma"],
@@ -106,13 +107,13 @@ const projects: ProjectsItem[] = [
     teamSize: 3,
     tags: [
       "Leadership",
-      "Software Production",
-      "Milestones",
-      "SpriteKit"
+      "Mobile",
+      "Agile",
     ]
   },
   {
     id: "dower",
+    variant: "normal",
     name: "Dower Tefense",
     desc: "Just another good 'ole tower defense game, except YOU are the attacker!",
     langs: ["cplusplus", "sdl", "cmake"],
@@ -120,11 +121,13 @@ const projects: ProjectsItem[] = [
     color: "#44623A",
     url: rafaGhLink("cpp-sdl-td"),
     tags: [
-      "C++ Game Development",
+      "Game Development",
+      "2D",
     ]
   },
   {
     id: "lucina",
+    variant: "normal",
     name: "Lucina",
     desc: "First-person 3D horror game where you escape a hyper-intelligent, AI-powered entity.",
     langs: ["unity", "csharp"],
@@ -134,13 +137,13 @@ const projects: ProjectsItem[] = [
     url: "https://github.com/ryanengphoto/lucina",
     tags: [
       "Game Design",
-      "AI Design",
-      "Map Design",
-      "3D Modeling"
+      "AI",
+      "3D"
     ]
   },
   {
     id: "chip",
+    variant: "normal",
     name: "Chippy",
     desc: "An emulator for the original CHIP-8 VM.",
     langs: ["cplusplus", "sdl"],
@@ -148,11 +151,12 @@ const projects: ProjectsItem[] = [
     color: "black",
     url: rafaGhLink("cpp-chip8-emu"),
     tags: [
-      "C++ Development"
+      "Computer Architecture"
     ]
   },
   {
     id: "mysh",
+    variant: "normal",
     name: "mysh",
     desc: "A UNIX-style shell built for Linux.",
     langs: ["c", "linux", "bash"],
@@ -160,12 +164,13 @@ const projects: ProjectsItem[] = [
     color: "black",
     url: rafaGhLink("c-mysh"),
     tags: [
-      "UNIX Development",
-      "Terminal"
+      "UNIX",
+      "Systems Software"
     ]
   },
   {
     id: "skiplist",
+    variant: "normal",
     name: "Skip List",
     desc: "An implementation of a skip list in Java.",
     langs: ["java"],
@@ -173,7 +178,7 @@ const projects: ProjectsItem[] = [
     color: "black",
     url: rafaGhLink("java-skiplist"),
     tags: [
-      "Data Structures & Algorithms"
+      "DSA"
     ]
   },
 ]
