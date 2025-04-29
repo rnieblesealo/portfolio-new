@@ -149,7 +149,7 @@ function Project({ name, desc, url, imgSrc, color, langs, teamSize, tags, varian
 
           <div className="relative w-full aspect-square">
             <div
-              className="absolute w-full h-full z-10"
+              className="absolute w-full h-full z-5"
               style={{
                 background: `linear-gradient(to bottom, transparent 10%, ${color})`,
                 filter: "opacity(70%)"
