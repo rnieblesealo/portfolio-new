@@ -17,6 +17,87 @@ const rafaGhLink = (repoName: string) => {
 
 const projects: ProjectsItem[] = [
   {
+    id: "10parques",
+    variant: "codepath",
+    name: "#10Parques",
+    desc: "Browse through the best parks in Barranquilla, Colombia.",
+    langs: ["javascript", "react"],
+    imgSrc: "images/compressed-gifs/10parques.gif",
+    color: "#b00003",
+    url: "https://www.instagram.com/microtransistor/",
+  },
+  {
+    id: "gty",
+    variant: "codepath",
+    name: "Guess the Year!",
+    desc: "Flashcards game where you guess different songs' years of release.",
+    langs: ["javascript", "react"],
+    imgSrc: "images/compressed-gifs/guess-the-year.gif",
+    color: "#b00003",
+    url: "https://www.instagram.com/microtransistor/",
+    tags: [
+      "CSS 3D",
+      "React Refs"
+    ]
+  },
+  {
+    id: "cats",
+    variant: "codepath",
+    name: "Cats!",
+    desc: "Get a random cat breed and learn more about it. Includes comprehensive filtering features!",
+    langs: ["javascript", "react"],
+    imgSrc: "images/compressed-gifs/cats.gif",
+    color: "#b00003",
+    url: "https://www.instagram.com/microtransistor/",
+    tags: [
+      "JSON Destructuring",
+      "REST API",
+      "React Memoization"
+    ]
+  },
+  {
+    id: "mt12",
+    variant: "codepath",
+    name: "#MyTop12",
+    desc: "Enter anyone's LastFM handle to catch up on what they've been listening to!",
+    langs: ["javascript", "react"],
+    imgSrc: "images/mytop12.png",
+    color: "#b00003",
+    url: "https://www.instagram.com/microtransistor/",
+    tags: [
+      "Spotify API",
+      "LastFM API",
+      "Data Visualization"
+    ]
+  },
+  {
+    id: "charmaker",
+    variant: "codepath",
+    name: "Character Maker",
+    desc: "Create the RPG character of your dreams, EarthBound style!",
+    langs: ["javascript", "react", "supabase", "postgresql"],
+    imgSrc: "images/character-maker.png",
+    color: "#b00003",
+    url: "https://www.instagram.com/microtransistor/",
+    tags: [
+      "CRUD",
+    ]
+  },
+  {
+    id: "tunecrate",
+    variant: "codepath",
+    name: "Tunecrate",
+    desc: "Create an account and review ANY song on Spotify in a community-wide forum!",
+    langs: ["javascript", "react", "supabase", "postgresql"],
+    imgSrc: "images/compressed-gifs/tunecrate.gif",
+    color: "#b00003",
+    url: "https://www.instagram.com/microtransistor/",
+    tags: [
+      "Database Design",
+      "User Auth"
+    ]
+  },
+  {
     id: "micro",
     variant: "normal",
     name: "Microtransistor",
@@ -34,7 +115,7 @@ const projects: ProjectsItem[] = [
   },
   {
     id: "memwell",
-    variant: "codepath",
+    variant: "normal",
     name: "Memory Well",
     desc: "Official website for the band Memory Well. My first freelance project!",
     langs: ["javascript", "react", "vite", "supabase"],

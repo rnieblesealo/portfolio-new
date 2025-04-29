@@ -7,15 +7,17 @@ import { cva } from "class-variance-authority"
 import clsx from "clsx"
 import BigHeading from "../comps/BigHeading.tsx"
 
+// NOTE: this is kind of useless now because i changed my mind on the codepath styling
+// but leaving it because it might be useful in the future
 const projectContent = cva(
   // default classes
-  "flex flex-col items-center w-full h-min overflow-hidden rounded-lg cursor-pointer",
+  "flex flex-col items-center w-full h-full overflow-hidden rounded-lg cursor-pointer",
   {
     // variant categories
     variants: {
       variant: {
-        normal: "bg-black text-white",
-        codepath: "bg-gradient-to-b from-[#18626c] to-white text-gray-700 font-bold"
+        normal: "bg-black",
+        codepath: "bg-black"
       }
     },
     // sets default variants
@@ -68,7 +70,7 @@ function Project({ name, desc, url, imgSrc, color, langs, teamSize, tags, varian
     </p>
 
   const tagElements = tags?.map((tag) => {
-    const tagColor = clsx(variant === "codepath" ? "bg-gray-700" : "bg-gray-900")
+    const tagColor = "bg-gray-900"
 
     return (
       <li
@@ -88,7 +90,7 @@ function Project({ name, desc, url, imgSrc, color, langs, teamSize, tags, varian
   const hoverColor = (variant === "codepath" ? "#31235b" : color)
 
   const builtForCodepath =
-    <p className="font-normal text-white text-center mb-4 flex items-center justify-center bg-gray-700 px-3 py-2 rounded-full">
+    <p className="font-normal text-white text-center mb-4 flex items-center justify-center bg-gray-900 px-3 py-2 rounded-full">
       Built for
       <span
         className="ml-1 text-white flex items-center w-min font-extrabold">
