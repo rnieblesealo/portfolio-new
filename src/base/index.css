@@ -10,11 +10,7 @@
 
 body {
   background-color: black;
-
-  /* Frequent things like text should be white */
   color: white;
-
-  /* Default font */
   font-family: "Funnel Sans"
 }
 
