@@ -1,10 +1,11 @@
 import { IoPeopleSharp } from "react-icons/io5";
 import { RiShareBoxLine } from "react-icons/ri";
+import { FaMedal } from "react-icons/fa6";
 import { CgAsterisk } from "react-icons/cg";
 import projects from "../../data/projects"
+import { Link, To } from "react-router-dom"
 import { useState } from "react";
 import { cva } from "class-variance-authority"
-import clsx from "clsx"
 import BigHeading from "../comps/BigHeading.tsx"
 
 // NOTE: this is kind of useless now because i changed my mind on the codepath styling
@@ -16,8 +17,9 @@ const projectContent = cva(
     // variant categories
     variants: {
       variant: {
-        normal: "bg-black",
-        codepath: "bg-black"
+        normal: "bg-gradient-to-b from-gray-700 to-black",
+        codepath: "bg-gradient-to-b from-blue-900 to-black",
+        bitcamp: "bg-gradient-to-b from-orange-900 to-black"
       }
     },
     // sets default variants
@@ -33,7 +35,8 @@ const projectHeading = cva(
     variants: {
       variant: {
         normal: "bg-none",
-        codepath: "bg-gradient-to-r from-[#18626c] via-[#19305d] to-[#31235b]"
+        codepath: "bg-gradient-to-r from-[#18626c] via-[#19305d] to-[#31235b]",
+        bitcamp: "bg-gradient-to-r from-[#ff6b2c] via-[#ff4e2a] to-[#cc2b2b]",
       }
     },
     defaultVariants: {
@@ -51,7 +54,7 @@ type ProjectProps = {
   color?: string,
   teamSize?: number,
   tags?: string[],
-  variant: "normal" | "codepath"
+  variant: "normal" | "codepath" | "bitcamp"
 }
 
 function Project({ name, desc, url, imgSrc, color, langs, teamSize, tags, variant }: ProjectProps) {
@@ -66,7 +69,7 @@ function Project({ name, desc, url, imgSrc, color, langs, teamSize, tags, varian
   const teamSizeElement =
     <p
       className="flex items-center justify-center gap-2 text-center font-bold">
-      <IoPeopleSharp />Team Size: {`${teamSize ?? 1}`}
+      <IoPeopleSharp /> Team Size: {`${teamSize ?? 1}`}
     </p>
 
   const tagElements = tags?.map((tag) => {
@@ -90,7 +93,7 @@ function Project({ name, desc, url, imgSrc, color, langs, teamSize, tags, varian
   const hoverColor = (variant === "codepath" ? "#31235b" : color)
 
   const builtForCodepath =
-    <p className="font-normal text-white text-center mb-4 flex items-center justify-center bg-gray-900 px-3 py-2 rounded-full flex-col sm:flex-row w-full text-sm">
+    <p className="font-normal text-white text-center mb-4 flex items-center justify-center px-3 py-2 rounded-full flex-col sm:flex-row w-full text-xs">
       Built for
       <span
         className="ml-1 text-white flex items-center w-min font-extrabold">
@@ -101,9 +104,15 @@ function Project({ name, desc, url, imgSrc, color, langs, teamSize, tags, varian
       </span>
     </p>
 
+  const bitcamp2025Winner =
+    <p className="font-extrabold text-center mb-4 flex items-center justify-center px-3 py-2 rounded-full flex-col sm:flex-row w-full text-xs border-1 border-amber-500 text-amber-500">
+      <FaMedal className="mr-1 text-sm" />Bitcamp 2025 Winner!
+    </p>
+
   const infoContent =
     <div className="w-full h-min flex flex-col p-5">
       {variant === "codepath" && builtForCodepath}
+      {variant === "bitcamp" && name === "Riffs" && bitcamp2025Winner}
       <p className="text-center">{desc}</p>
       <ul className="w-full flex flex-row flex-wrap items-center justify-center gap-2 my-4">
         {langElements}
@@ -113,50 +122,51 @@ function Project({ name, desc, url, imgSrc, color, langs, teamSize, tags, varian
     </div>
 
   return (
-    <li
-      className="bg-black p-3 rounded-2xl"
-      style={{
-        transition: "box-shadow 0.25s ease, transform 0.25s ease",
-        ...(isHovered ? { boxShadow: `0px 0px 50px ${hoverColor}`, transform: "scale(105%)" } : {})
-      }}>
+    <Link to={url as To} target="_blank" className="w-full h-full">
+      <li
+        className="bg-black p-3 rounded-2xl w-full h-full"
+        style={{
+          transition: "box-shadow 0.25s ease, transform 0.25s ease",
+          ...(isHovered ? { boxShadow: `0px 0px 50px ${hoverColor}`, transform: "scale(105%)" } : {})
+        }}>
 
-      <div
-        className={projectContent({ variant: variant })}
-        onMouseEnter={() => { setIsHovered(true) }}
-        onMouseLeave={() => { setIsHovered(false) }}>
-        <h3
-          className={projectHeading({ variant: variant })}
-          style={{
-            // NOTE: must use ... to do boolean style checking
-            // ... only spreads truthy keys 
-            // if we weren't to include it, we might get something that turns into a "false"
-            // that's not a KV pair so the object breaks!
-            ...(variant === "normal" ? { backgroundColor: color } : {})
-          }}>
-          {name}
-          <RiShareBoxLine />
-        </h3>
-
-
-        <div className="relative w-full aspect-square">
-          <div
-            className="absolute w-full h-full z-10"
+        <div
+          className={projectContent({ variant: variant })}
+          onMouseEnter={() => { setIsHovered(true) }}
+          onMouseLeave={() => { setIsHovered(false) }}>
+          <h3
+            className={projectHeading({ variant: variant })}
             style={{
-              background: `linear-gradient(to bottom, transparent 10%, ${color})`,
-              filter: "opacity(70%)"
-            }} />
-          <img
-            src={imgSrc}
-            alt="Project demo"
-            className="w-full aspect-square object-cover saturate-200"
-          />
+              // NOTE: must use ... to do boolean style checking
+              // ... only spreads truthy keys 
+              // if we weren't to include it, we might get something that turns into a "false"
+              // that's not a KV pair so the object breaks!
+              ...(variant === "normal" ? { backgroundColor: color } : {})
+            }}>
+            {name}
+            <RiShareBoxLine />
+          </h3>
+
+          <div className="relative w-full aspect-square">
+            <div
+              className="absolute w-full h-full z-10"
+              style={{
+                background: `linear-gradient(to bottom, transparent 10%, ${color})`,
+                filter: "opacity(70%)"
+              }} />
+            <img
+              src={imgSrc}
+              alt="Project demo"
+              className="w-full aspect-square object-cover saturate-200"
+            />
+          </div>
+
+          {infoContent}
+
         </div>
 
-        {infoContent}
-
-      </div>
-
-    </li >
+      </li >
+    </Link>
   )
 }
 

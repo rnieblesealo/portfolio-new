@@ -60,7 +60,9 @@ function TopArtists() {
 
         const components = topArtists.map((info: LastFmArtistInfo, index: number) => {
           return (
-            <div key={index} className="bg-black p-3 flex items-center flex-col justify-top rounded-2xl gap-1 animate-jump-in cursor-pointer">
+            <div
+              key={index}
+              className="bg-black p-3 flex items-center flex-col justify-top rounded-2xl gap-1 animate-jump-in">
               <img
                 src={info.imgUrl}
                 alt={`Artist pic of ${info.name}`}
@@ -97,7 +99,7 @@ function TopArtists() {
 
   return (
     <div className="rounded-2xl mt-3 mb-3 max-w-[100%] sm:max-w-[90%] lg:max-w-[75%] flex items-center justify-center flex-col">
-      <h3 className="flex items-center justify-center gap-2 self-start text-[1.2rem] mb-1 w-min-content text-red-500 bg-black font-bold rounded-2xl p-1 pl-4 pr-4">Rafa's on repeat... <FaMusic /></h3>
+      <h3 className="flex items-center justify-center gap-2 self-start text-[1.2rem] mb-1 w-min-content text-red-500 bg-black font-bold font-jersey10 rounded-2xl p-1 pl-4 pr-4">Rafa's on repeat... <FaMusic /></h3>
       {topArtists
         ? topArtistsGrid
         : placeholder
@@ -146,20 +148,20 @@ export default function AboutMe() {
           alt="About me illustration"
           className={bottomImageStyle}
         />
-        <p className="ml-[-3px] bg-black p-4 font-bold h-full max-h-[140px] overflow-y-auto rounded-tr-2xl rounded-br-2xl animate-flip-down z-2">{about.text}</p>
+        <p className="text-sm sm:text-lg ml-[-3px] bg-black p-4 font-bold h-full max-h-[140px] overflow-y-auto rounded-tr-2xl rounded-br-2xl animate-flip-down z-2">{about.text}</p>
       </li>
     )
   })
 
   return (
-    <>
+    <div className="flex flex-col items-center justify-center">
       <BigHeading id="abt" text="About Me :)" />
-      <div className="flex flex-col items-center justify-center max-w-[75%] sm:max-w-[80%] md:max-w-[60%] lg:max-w-[40%]">
+      <div className="flex flex-col items-center justify-center w-70 sm:w-120">
         <ul>
           {aboutMeElements}
         </ul>
         <TopArtists />
       </div>
-    </>
+    </div>
   )
 }

@@ -8,7 +8,7 @@ type ProjectsItem = {
   color?: string,
   url?: string,
   tags?: string[],
-  variant: "normal" | "codepath"
+  variant: "normal" | "codepath" | "bitcamp"
 }
 
 const rafaGhLink = (repoName: string) => {
@@ -16,6 +16,22 @@ const rafaGhLink = (repoName: string) => {
 }
 
 const projects: ProjectsItem[] = [
+  {
+    id: "riffs",
+    variant: "bitcamp",
+    name: "Riffs",
+    desc: "Hum any tune and get a fully interactive guitar tab out of it!",
+    langs: ["typescript", "react"],
+    imgSrc: "images/riffs.png",
+    color: "#821917",
+    url: "https://devpost.com/software/riffs",
+    tags: [
+      "Pitch Recognition",
+      "MIDI",
+      "UI/UX",
+      "Collaboration"
+    ]
+  },
   {
     id: "micro",
     variant: "normal",
@@ -40,7 +56,7 @@ const projects: ProjectsItem[] = [
     langs: ["javascript", "react", "vite", "supabase"],
     imgSrc: "images/compressed-gifs/memwell.gif",
     color: "purple",
-    url: rafaGhLink("memorywell"),
+    url: "https://www.memorywellband.com/",
     tags: [
       "Freelance",
       "Full-Stack",
@@ -132,9 +148,9 @@ const projects: ProjectsItem[] = [
     desc: "First-person 3D horror game where you escape a hyper-intelligent, AI-powered entity.",
     langs: ["unity", "csharp"],
     imgSrc: "images/compressed-gifs/lucina.gif",
-    color: "#8D7755",
+    color: "#b07007",
     teamSize: 4,
-    url: "https://github.com/ryanengphoto/lucina",
+    url: "https://spikyshark.itch.io/lucina",
     tags: [
       "Game Design",
       "AI",
@@ -148,8 +164,8 @@ const projects: ProjectsItem[] = [
     desc: "Browse through the best parks in Barranquilla, Colombia.",
     langs: ["javascript", "react"],
     imgSrc: "images/compressed-gifs/10parques.gif",
-    color: "#004500",
-    url: "https://www.instagram.com/microtransistor/",
+    color: "#0b1c4d",
+    url: "https://github.com/rnieblesealo/10parques"
   },
   {
     id: "gty",
@@ -158,10 +174,10 @@ const projects: ProjectsItem[] = [
     desc: "Flashcards game where you guess different songs' years of release.",
     langs: ["javascript", "react"],
     imgSrc: "images/compressed-gifs/guess-the-year.gif",
-    color: "#5c3c23",
-    url: "https://www.instagram.com/microtransistor/",
+    color: "#0b1c4d",
+    url: "https://github.com/rnieblesealo/guess-the-year",
     tags: [
-      "CSS 3D",
+      "3D CSS",
       "React Refs"
     ]
   },
@@ -172,8 +188,8 @@ const projects: ProjectsItem[] = [
     desc: "Get a random cat breed and learn more about it. Includes comprehensive filtering features!",
     langs: ["javascript", "react"],
     imgSrc: "images/compressed-gifs/cats.gif",
-    color: "#ff9a00",
-    url: "https://www.instagram.com/microtransistor/",
+    color: "#0b1c4d",
+    url: "https://github.com/rnieblesealo/cats",
     tags: [
       "JSON Destructuring",
       "REST API",
@@ -187,8 +203,8 @@ const projects: ProjectsItem[] = [
     desc: "Enter anyone's LastFM handle to catch up on what they've been listening to!",
     langs: ["javascript", "react"],
     imgSrc: "images/mytop12.png",
-    color: "#03248d",
-    url: "https://www.instagram.com/microtransistor/",
+    color: "#0b1c4d",
+    url: "https://github.com/rnieblesealo/music-api",
     tags: [
       "Spotify API",
       "LastFM API",
@@ -202,8 +218,8 @@ const projects: ProjectsItem[] = [
     desc: "Create the RPG character of your dreams, EarthBound style!",
     langs: ["javascript", "react", "supabase", "postgresql"],
     imgSrc: "images/character-maker.png",
-    color: "#000003",
-    url: "https://www.instagram.com/microtransistor/",
+    color: "#0b1c4d",
+    url: "https://github.com/rnieblesealo/character-maker",
     tags: [
       "CRUD",
     ]
@@ -215,11 +231,12 @@ const projects: ProjectsItem[] = [
     desc: "Create an account and review ANY song on Spotify in a community-wide forum!",
     langs: ["javascript", "react", "supabase", "postgresql"],
     imgSrc: "images/compressed-gifs/tunecrate.gif",
-    color: "#1a222f",
-    url: "https://www.instagram.com/microtransistor/",
+    color: "#0b1c4d",
+    url: "https://github.com/rnieblesealo/final-project",
     tags: [
       "Database Design",
-      "User Auth"
+      "User Auth",
+      "Full-Stack"
     ]
   },
   {

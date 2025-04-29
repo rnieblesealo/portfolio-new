@@ -1,3 +1,10 @@
+# Todo
+
+- [x] Links for CodePath project repos
+- [x] Update gif for Lucina
+- [x] Memory Well link takes you to the page itself
+- [ ] Language name on hover
+
 # Notes
 
 ### Loading Markdown Articles

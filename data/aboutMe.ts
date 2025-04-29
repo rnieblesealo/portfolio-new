@@ -8,27 +8,27 @@ type AboutMeItem = {
 const aboutMe: AboutMeItem[] = [
   {
     id: "college",
-    text: "I'm going for a B.S. in Computer Science and a minor in math at UCF!",
+    text: "I'm Studying CS and math at UCF!",
     imgSrc: "/images/ucf.png"
   },
   {
     id: "col",
-    text: "I'm colombian, and speak both Spanish and English!",
+    text: "I'm Colombian and speak both Spanish and English.",
     imgSrc: "/images/colombia.png"
   },
   {
     id: "run",
-    text: "I love running! I ran my first half-marathon a bit ago :]",
+    text: "I'm a runner! My record is a half-marathon :D",
     imgSrc: "/images/running.png"
   },
   {
     id: "favMovie",
-    text: "My favorite movie is Heathers.",
+    text: '"Heathers" is my favorite movie :)',
     imgSrc: "/images/heathers.png"
   },
   {
     id: "music",
-    text: "Music is my second passion! I've been in a couple of small bands in Orlando.",
+    text: "Music is my second love. I've been in a couple bands!",
     imgSrc: "/images/guitar.png",
     demoSrc: "/images/compressed-gifs/band.gif"
   },
