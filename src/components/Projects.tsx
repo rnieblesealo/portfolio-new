@@ -7,9 +7,9 @@ import { cva } from "class-variance-authority"
 import clsx from "clsx"
 import BigHeading from "../comps/BigHeading.tsx"
 
-const projectCard = cva(
+const projectFrontFace = cva(
   // default classes
-  "flex flex-col items-center w-full aspect-square rounded-lg cursor-pointer",
+  "flex flex-col items-center w-full aspect-square rounded-lg cursor-pointer absolute backface-hidden rotate-x-0 rounded-2xl overflow-hidden p-2",
   {
     // variant categories
     variants: {
@@ -26,7 +26,7 @@ const projectCard = cva(
 )
 
 const projectHeading = cva(
-  "text-xl text-white p-2 box-border break-all text-center flex flex-wrap items-center justify-center gap-2 font-extrabold",
+  "text-xl text-white p-2 box-border break-all text-center flex flex-wrap items-center justify-center gap-2 font-extrabold w-full",
   {
     variants: {
       variant: {
@@ -53,7 +53,9 @@ type ProjectProps = {
 }
 
 function Project({ name, desc, url, imgSrc, color, langs, teamSize, tags, variant }: ProjectProps) {
-  const [isHovered, setIsHovered] = useState(false)
+  const [flipped, setFlipped] = useState(false)
+
+  const flipClass = clsx(flipped ? "transform rotate-x-180" : "transform rotate-x-0")
 
   const langElements = langs.map((lang) =>
     <li key={lang} className="text-[2.5rem]">
@@ -84,9 +86,6 @@ function Project({ name, desc, url, imgSrc, color, langs, teamSize, tags, varian
       {tagElements}
     </ul>
 
-
-  const hoverColor = (variant === "codepath" ? "#31235b" : color)
-
   const builtForCodepath =
     <p className="text-center mb-4 flex items-center justify-center bg-gray-300 px-3 py-2 rounded-full">
       Built for
@@ -111,17 +110,14 @@ function Project({ name, desc, url, imgSrc, color, langs, teamSize, tags, varian
     </div>
 
   return (
-    <li
-      className="bg-black p-3 rounded-2xl"
-      style={{
-        transition: "box-shadow 0.25s ease, transform 0.25s ease",
-        ...(isHovered ? { boxShadow: `0px 0px 50px ${hoverColor}`, transform: "scale(105%)" } : {})
-      }}>
+    // Parent 3D "viewport"
+    <li className="perspective-distant" >
+      {/* Parent part that moves around in the 3D viewport */}
       <div
-        className={projectCard({ variant: variant })}
-        onMouseEnter={() => { setIsHovered(true) }}
-        onMouseLeave={() => { setIsHovered(false) }}>
-        <div className="w-full aspect-square rounded-lg overflow-hidden">
+        onClick={() => setFlipped(!flipped)}
+        className={`w-50 aspect-square relative transition-transform duration-200 transform-3d ${flipClass}`}>
+        {/* Front face */}
+        <div className={projectFrontFace({ variant: variant })}>
           <h3
             className={projectHeading({ variant: variant })}
             style={{
@@ -137,9 +133,15 @@ function Project({ name, desc, url, imgSrc, color, langs, teamSize, tags, varian
           <img
             src={imgSrc}
             alt="Project demo"
-            className="w-full aspect-square object-cover"
+            className="w-full h-full object-cover"
           />
         </div>
+
+        {/* Back face */}
+        <div className="bg-black absolute backface-hidden rotate-x-180 w-full h-full rounded-2xl overflow-hidden">
+          {infoContent}
+        </div>
+
       </div>
     </li >
   )

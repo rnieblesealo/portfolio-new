@@ -35,7 +35,7 @@ const projects: ProjectsItem[] = [
   {
     id: "memwell",
     variant: "normal",
-    name: "Well",
+    name: "Memory Well",
     desc: "Official website for the band Memory Well. My first freelance project!",
     langs: ["javascript", "react", "vite", "supabase"],
     imgSrc: "images/compressed-gifs/memwell.gif",
