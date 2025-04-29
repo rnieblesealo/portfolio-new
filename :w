@@ -3,7 +3,6 @@ import { RiShareBoxLine } from "react-icons/ri";
 import projects from "../../data/projects"
 import { useState } from "react";
 import { cva } from "class-variance-authority"
-import clsx from "clsx"
 import BigHeading from "../comps/BigHeading.tsx"
 
 const projectCard = cva(
@@ -25,14 +24,33 @@ const projectCard = cva(
 )
 
 const projectHeading = cva(
-  "rounded-t-lg text-xl text-white p-2 box-border break-all text-center flex flex-wrap items-center justify-center gap-2 font-extrabold",
+  "rounded-t-lg text-[1.25rem] p-2 box-border break-all text-center flex flex-wrap items-center justify-center gap-2 font-extrabold text-xl",
   {
+    // variant categories
     variants: {
       variant: {
-        normal: "bg-none",
-        codepath: "bg-gradient-to-r from-[#18626c] via-[#19305d] to-[#31235b]"
+        normal: "",
+        codepath: "text-white bg-gradient-to-r from-[#18626c] via-[#19305d] to-[#31235b]"
       }
     },
+    // sets default variants
+    defaultVariants: {
+      variant: "normal"
+    }
+  }
+)
+
+const projectTags = cva(
+  "cursor-pointer text-[0.75rem] font-bold transition-bg duration-[0.1s] bg-gray-700 hover:bg-gray-900 rounded-2xl text-white p-1 pl-3 pr-3 text-center",
+  {
+    // variant categories
+    variants: {
+      variant: {
+        normal: "bg-gray-800",
+        codepath: "bg-gray-700"
+      }
+    },
+    // sets default variants
     defaultVariants: {
       variant: "normal"
     }
@@ -51,6 +69,7 @@ type ProjectProps = {
   variant: "normal" | "codepath"
 }
 
+// we don't instantiate in the .map because we need to use state for hover effect
 function Project({ name, desc, url, imgSrc, color, langs, teamSize, tags, variant }: ProjectProps) {
   const [isHovered, setIsHovered] = useState(false)
 
@@ -70,12 +89,10 @@ function Project({ name, desc, url, imgSrc, color, langs, teamSize, tags, varian
   )
 
   const tagElements = tags?.map((tag) => {
-    const tagColor = clsx(variant === "codepath" ? "bg-gray-700" : "bg-gray-900")
-
     return (
       <li
         key={tag}
-        className={`${tagColor} cursor-pointer text-[0.75rem] font-bold transition-bg duration-[0.1s] rounded-2xl text-white p-1 pl-3 pr-3 text-center`}>
+        className={projectTags({ variant: variant })}>
         {tag}
       </li >
     )
@@ -147,7 +164,7 @@ export default function Projects() {
         langs={proj.langs}
         teamSize={proj.teamSize}
         tags={proj.tags}
-        variant="normal"
+        variant="codepath"
       />
     )
   })
