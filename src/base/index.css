@@ -3,6 +3,8 @@
 
 @import "tailwindcss";
 
+@plugin "tailwindcss-animated";
+
 @theme {
   --font-jersey10: "Jersey 10", "sans-serif";
   --font-funnel: "Funnel Sans", "sans-serif";
