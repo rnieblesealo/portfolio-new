@@ -136,12 +136,24 @@ function Project({ name, desc, url, imgSrc, color, langs, teamSize, tags, varian
           {name}
           <RiShareBoxLine />
         </h3>
-        <img
-          src={imgSrc}
-          alt="Project demo"
-          className="w-full aspect-square object-cover"
-        />
+
+
+        <div className="relative w-full aspect-square">
+          <div
+            className="absolute w-full h-full z-10"
+            style={{
+              background: `linear-gradient(to bottom, transparent 10%, ${color})`,
+              filter: "opacity(70%)"
+            }} />
+          <img
+            src={imgSrc}
+            alt="Project demo"
+            className="w-full aspect-square object-cover saturate-200"
+          />
+        </div>
+
         {infoContent}
+
       </div>
 
     </li >
@@ -169,7 +181,7 @@ export default function Projects() {
   return (
     <div>
       <BigHeading id="proj" text="My Projects!" />
-      <ul className="max-w-[100%] grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 p-2" >
+      <ul className="max-w-300 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 p-2" >
         {projectElements}
       </ul >
     </div>

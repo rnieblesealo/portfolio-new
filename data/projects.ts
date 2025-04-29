@@ -17,87 +17,6 @@ const rafaGhLink = (repoName: string) => {
 
 const projects: ProjectsItem[] = [
   {
-    id: "10parques",
-    variant: "codepath",
-    name: "#10Parques",
-    desc: "Browse through the best parks in Barranquilla, Colombia.",
-    langs: ["javascript", "react"],
-    imgSrc: "images/compressed-gifs/10parques.gif",
-    color: "#b00003",
-    url: "https://www.instagram.com/microtransistor/",
-  },
-  {
-    id: "gty",
-    variant: "codepath",
-    name: "Guess the Year!",
-    desc: "Flashcards game where you guess different songs' years of release.",
-    langs: ["javascript", "react"],
-    imgSrc: "images/compressed-gifs/guess-the-year.gif",
-    color: "#b00003",
-    url: "https://www.instagram.com/microtransistor/",
-    tags: [
-      "CSS 3D",
-      "React Refs"
-    ]
-  },
-  {
-    id: "cats",
-    variant: "codepath",
-    name: "Cats!",
-    desc: "Get a random cat breed and learn more about it. Includes comprehensive filtering features!",
-    langs: ["javascript", "react"],
-    imgSrc: "images/compressed-gifs/cats.gif",
-    color: "#b00003",
-    url: "https://www.instagram.com/microtransistor/",
-    tags: [
-      "JSON Destructuring",
-      "REST API",
-      "React Memoization"
-    ]
-  },
-  {
-    id: "mt12",
-    variant: "codepath",
-    name: "#MyTop12",
-    desc: "Enter anyone's LastFM handle to catch up on what they've been listening to!",
-    langs: ["javascript", "react"],
-    imgSrc: "images/mytop12.png",
-    color: "#b00003",
-    url: "https://www.instagram.com/microtransistor/",
-    tags: [
-      "Spotify API",
-      "LastFM API",
-      "Data Visualization"
-    ]
-  },
-  {
-    id: "charmaker",
-    variant: "codepath",
-    name: "Character Maker",
-    desc: "Create the RPG character of your dreams, EarthBound style!",
-    langs: ["javascript", "react", "supabase", "postgresql"],
-    imgSrc: "images/character-maker.png",
-    color: "#b00003",
-    url: "https://www.instagram.com/microtransistor/",
-    tags: [
-      "CRUD",
-    ]
-  },
-  {
-    id: "tunecrate",
-    variant: "codepath",
-    name: "Tunecrate",
-    desc: "Create an account and review ANY song on Spotify in a community-wide forum!",
-    langs: ["javascript", "react", "supabase", "postgresql"],
-    imgSrc: "images/compressed-gifs/tunecrate.gif",
-    color: "#b00003",
-    url: "https://www.instagram.com/microtransistor/",
-    tags: [
-      "Database Design",
-      "User Auth"
-    ]
-  },
-  {
     id: "micro",
     variant: "normal",
     name: "Microtransistor",
@@ -151,7 +70,7 @@ const projects: ProjectsItem[] = [
     desc: "WhatsApp bot that auto-detects and stores Wordle solutions! Gift for my friend Sofia :)",
     langs: ["typescript", "react", "supabase"],
     imgSrc: "images/compressed-gifs/sofieski.gif",
-    color: "#EB6AAA",
+    color: "#ff49bb",
     url: rafaGhLink("sofieski-wordles"),
     tags: [
       "Webscraping",
@@ -183,7 +102,7 @@ const projects: ProjectsItem[] = [
     desc: "Dodge traffic as you escape a giant deadly spider! Survival is futile. Intern project built for HYEL!",
     langs: ["swift", "xcode", "figma"],
     imgSrc: "images/compressed-gifs/spyder.gif",
-    color: "#835792",
+    color: "#603cb0",
     url: "https://github.com/hyungwlee/hyel-spyder",
     teamSize: 3,
     tags: [
@@ -199,7 +118,7 @@ const projects: ProjectsItem[] = [
     desc: "Just another good 'ole tower defense game, except YOU are the attacker!",
     langs: ["cplusplus", "sdl", "cmake"],
     imgSrc: "images/compressed-gifs/dower.gif",
-    color: "#44623A",
+    color: "#326c1f",
     url: rafaGhLink("cpp-sdl-td"),
     tags: [
       "Game Development",
@@ -220,6 +139,87 @@ const projects: ProjectsItem[] = [
       "Game Design",
       "AI",
       "3D"
+    ]
+  },
+  {
+    id: "10parques",
+    variant: "codepath",
+    name: "#10Parques",
+    desc: "Browse through the best parks in Barranquilla, Colombia.",
+    langs: ["javascript", "react"],
+    imgSrc: "images/compressed-gifs/10parques.gif",
+    color: "#004500",
+    url: "https://www.instagram.com/microtransistor/",
+  },
+  {
+    id: "gty",
+    variant: "codepath",
+    name: "Guess the Year!",
+    desc: "Flashcards game where you guess different songs' years of release.",
+    langs: ["javascript", "react"],
+    imgSrc: "images/compressed-gifs/guess-the-year.gif",
+    color: "#5c3c23",
+    url: "https://www.instagram.com/microtransistor/",
+    tags: [
+      "CSS 3D",
+      "React Refs"
+    ]
+  },
+  {
+    id: "cats",
+    variant: "codepath",
+    name: "Cats!",
+    desc: "Get a random cat breed and learn more about it. Includes comprehensive filtering features!",
+    langs: ["javascript", "react"],
+    imgSrc: "images/compressed-gifs/cats.gif",
+    color: "#ff9a00",
+    url: "https://www.instagram.com/microtransistor/",
+    tags: [
+      "JSON Destructuring",
+      "REST API",
+      "React Memoization"
+    ]
+  },
+  {
+    id: "mt12",
+    variant: "codepath",
+    name: "#MyTop12",
+    desc: "Enter anyone's LastFM handle to catch up on what they've been listening to!",
+    langs: ["javascript", "react"],
+    imgSrc: "images/mytop12.png",
+    color: "#03248d",
+    url: "https://www.instagram.com/microtransistor/",
+    tags: [
+      "Spotify API",
+      "LastFM API",
+      "Data Visualization"
+    ]
+  },
+  {
+    id: "charmaker",
+    variant: "codepath",
+    name: "Character Maker",
+    desc: "Create the RPG character of your dreams, EarthBound style!",
+    langs: ["javascript", "react", "supabase", "postgresql"],
+    imgSrc: "images/character-maker.png",
+    color: "#000003",
+    url: "https://www.instagram.com/microtransistor/",
+    tags: [
+      "CRUD",
+    ]
+  },
+  {
+    id: "tunecrate",
+    variant: "codepath",
+    name: "Tunecrate",
+    desc: "Create an account and review ANY song on Spotify in a community-wide forum!",
+    langs: ["javascript", "react", "supabase", "postgresql"],
+    imgSrc: "images/compressed-gifs/tunecrate.gif",
+    color: "#1a222f",
+    url: "https://www.instagram.com/microtransistor/",
+    tags: [
+      "Database Design",
+      "User Auth"
     ]
   },
   {
