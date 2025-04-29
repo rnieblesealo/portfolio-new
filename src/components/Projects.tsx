@@ -90,7 +90,7 @@ function Project({ name, desc, url, imgSrc, color, langs, teamSize, tags, varian
   const hoverColor = (variant === "codepath" ? "#31235b" : color)
 
   const builtForCodepath =
-    <p className="font-normal text-white text-center mb-4 flex items-center justify-center bg-gray-900 px-3 py-2 rounded-full">
+    <p className="font-normal text-white text-center mb-4 flex items-center justify-center bg-gray-900 px-3 py-2 rounded-full flex-col sm:flex-row w-full text-sm">
       Built for
       <span
         className="ml-1 text-white flex items-center w-min font-extrabold">
@@ -179,9 +179,9 @@ export default function Projects() {
   })
 
   return (
-    <div>
+    <div className="flex flex-col items-center justify-center">
       <BigHeading id="proj" text="My Projects!" />
-      <ul className="max-w-300 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 p-2" >
+      <ul className="max-w-80 sm:max-w-300 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-2" >
         {projectElements}
       </ul >
     </div>
