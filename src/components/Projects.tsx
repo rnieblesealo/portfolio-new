@@ -121,19 +121,25 @@ function Project({ name, desc, url, imgSrc, color, langs, teamSize, tags, varian
       {tagCollection}
     </div>
 
+  const gradientOverlay = false;
+
   return (
+    // Enclosing link
     <Link to={url as To} target="_blank" className="w-full h-full">
+      {/* Outer container to add padding */}
       <li
+        onMouseEnter={() => { setIsHovered(true) }}
+        onMouseLeave={() => { setIsHovered(false) }}
         className="bg-black p-3 rounded-2xl w-full h-full"
         style={{
           transition: "box-shadow 0.25s ease, transform 0.25s ease",
           ...(isHovered ? { boxShadow: `0px 0px 50px ${hoverColor}`, transform: "scale(105%)" } : {})
         }}>
 
+        {/* Inner container for info */}
         <div
-          className={projectContent({ variant: variant })}
-          onMouseEnter={() => { setIsHovered(true) }}
-          onMouseLeave={() => { setIsHovered(false) }}>
+          className={projectContent({ variant: variant })}>
+          {/* Heading */}
           <h3
             className={projectHeading({ variant: variant })}
             style={{
@@ -147,13 +153,17 @@ function Project({ name, desc, url, imgSrc, color, langs, teamSize, tags, varian
             <RiShareBoxLine />
           </h3>
 
+          {/* Demo image */}
           <div className="relative w-full aspect-square">
-            <div
-              className="absolute w-full h-full z-5"
-              style={{
-                background: `linear-gradient(to bottom, transparent 10%, ${color})`,
-                filter: "opacity(70%)"
-              }} />
+            {/* Overlay gradient for pizzaz, may be too much */}
+            {gradientOverlay &&
+              <div
+                className="absolute w-full h-full z-5"
+                style={{
+                  background: `linear-gradient(to bottom, transparent 10%, ${color})`,
+                  filter: "opacity(70%)"
+                }} />
+            }
             <img
               src={imgSrc}
               alt="Project demo"
@@ -166,12 +176,16 @@ function Project({ name, desc, url, imgSrc, color, langs, teamSize, tags, varian
         </div>
 
       </li >
-    </Link>
+    </Link >
   )
 }
 
 export default function Projects() {
   const projectElements = projects.map((proj) => {
+    if (proj.hide){
+      return null;
+    }
+
     return (
       <Project
         key={proj.id}

@@ -8,6 +8,7 @@ type ProjectsItem = {
   color?: string,
   url?: string,
   tags?: string[],
+  hide?: boolean,
   variant: "normal" | "codepath" | "bitcamp"
 }
 
@@ -165,7 +166,8 @@ const projects: ProjectsItem[] = [
     langs: ["javascript", "react"],
     imgSrc: "images/compressed-gifs/10parques.gif",
     color: "#0b1c4d",
-    url: "https://github.com/rnieblesealo/10parques"
+    url: "https://github.com/rnieblesealo/10parques",
+    hide: true,
   },
   {
     id: "gty",
@@ -179,7 +181,8 @@ const projects: ProjectsItem[] = [
     tags: [
       "3D CSS",
       "React Refs"
-    ]
+    ],
+    hide: true,
   },
   {
     id: "cats",
@@ -194,7 +197,8 @@ const projects: ProjectsItem[] = [
       "JSON Destructuring",
       "REST API",
       "React Memoization"
-    ]
+    ],
+    hide: true,
   },
   {
     id: "mt12",
@@ -222,7 +226,8 @@ const projects: ProjectsItem[] = [
     url: "https://github.com/rnieblesealo/character-maker",
     tags: [
       "CRUD",
-    ]
+    ],
+    hide: true,
   },
   {
     id: "tunecrate",
