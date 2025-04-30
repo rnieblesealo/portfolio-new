@@ -39,7 +39,7 @@ export default function Experience() {
     }
 
     return (
-      <li key={exp.id} className="bg-black p-4 flex flex-row gap-4 justify-leftgap-5 rounded-2xl w-full animate-fade-right">
+      <li key={exp.id} className="bg-black p-4 flex flex-row gap-4 justify-left gap-5 rounded-2xl w-full animate-fade-right">
         <div className="flex flex-col items-center max-w-[80px] gap-4">
           <img
             src={exp.imgSrc}
@@ -66,11 +66,11 @@ export default function Experience() {
   })
 
   return (
-    <>
+    <div className="w-full flex flex-col items-center justify-center">
       <BigHeading id="exp" text="My Experience..." />
-      <ul className="flex flex-col gap-4 max-w-[90%]">
+      <ul className="flex flex-col items-center justify-center gap-3 max-w-[80%]">
         {experienceElements}
       </ul>
-    </>
+    </div>
   )
 }

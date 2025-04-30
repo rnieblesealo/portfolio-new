@@ -47,15 +47,15 @@ export default function Blogs() {
   })
 
   return (
-    <PageContextProvider theme="night">
+    <div className="flex flex-col items-center justify-center">
       <BigHeading id="top" text="Blogs" />
       <div className="w-[85%] flex">
-        <p className="w-min-content text-3xl font-extrabold mb-5 p-3 pr-4 pt-1 pb-1 bg-black rounded-full">Latest</p>
+        <p className="w-min-content text-2xl font-extrabold mb-5 p-3 pr-4 pt-1 pb-1 bg-black rounded-full">Latest</p>
       </div>
       <ArticleContainer>
         {articleComponents}
       </ArticleContainer>
       <div className="m-10" />
-    </PageContextProvider >
+    </div>
   )
 }

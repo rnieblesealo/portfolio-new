@@ -3,6 +3,7 @@ import { UsePageContext } from "./PageContextProvider"
 
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoCloseSharp } from "react-icons/io5";
+import { FaMoon, FaRegMoon } from "react-icons/fa";
 
 import { Link } from "react-router-dom"
 
@@ -87,9 +88,19 @@ export default function NavBar() {
             alt="Small icon of me"
             className="w-full max-w-[50px]"
           />
-          <a href="/#home" className="font-bold text-hoverable">
+
+          <Link
+            to="/"
+            className="font-bold text-hoverable">
             <p>Rafael Niebles</p>
-          </a>
+          </Link>
+
+          <button
+            onClick={() => context.setIsDark(!context.isDark)}
+            className="text-hoverable">
+            {context.isDark ? <FaMoon /> : <FaRegMoon />}
+          </button>
+
         </div>
         {context.isSmall ? (mobileNavActive ? closeButton : burgerButton) : bigButtonCollection}
       </nav>
