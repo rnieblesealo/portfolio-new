@@ -56,7 +56,7 @@ export default function ViewBlog() {
             <img
               src={src}
               alt={alt}
-              className="max-w-110 block mx-auto my-10 rounded-xl"
+              className="w-full max-w-110 block mx-auto my-10 rounded-xl"
               {...props} />
           ),
           // > quotes 
