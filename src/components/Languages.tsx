@@ -25,10 +25,8 @@ export default function Languages() {
   })
 
   return (
-    <>
-      <ul className="w-full max-w-[90%] h-min-content bg-black flex flex-wrap items-center justify-center flex-row text-[3rem] p-6 gap-4 rounded-2xl animate-flip-down">
-        {langElements}
-      </ul>
-    </>
+    <ul className="w-full max-w-150 h-min-content bg-black flex flex-wrap items-center justify-center flex-row text-[3rem] p-6 gap-4 rounded-2xl animate-flip-down">
+      {langElements}
+    </ul>
   )
 }
