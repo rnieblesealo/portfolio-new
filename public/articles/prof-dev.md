@@ -22,7 +22,7 @@ So, what do you do?
 
 ---
 
-###  ⛵️ The First Step...
+##  ⛵️ The First Step...
 
 Is to realize that *you suck.*
 
@@ -36,7 +36,7 @@ To get to be a great programmer, one must first take a very important first step
 
 ---
 
-###  🌊 Be Water, My Friend...
+##  🌊 Be Water, My Friend...
 
 Most places don't really expect junior devs/interns to excel at their roles. They might know the road rules of programming, but they haven't been thrown in big city traffic during rush hour yet. For them to become adept in a production environment, they have to get their hands dirty, make some mistakes, and *learn* from them. Eventually, they'll stop sucking and become *hugely* productive.
 
@@ -50,7 +50,7 @@ Like Bruce Lee said: "Be Water, My Friend."
 
 ---
 
-### 🛠️ Build, build build...
+## 🛠️ Build, build build...
 
 The tried and tested way is to do just what a junior dev does: get your hands dirty! 
 
@@ -66,7 +66,7 @@ Fall in love with solving problems, being creative, learning. In my view, those 
 
 ---
 
-### 📔 Document Your Journey!
+## 📔 Document Your Journey!
 
 Recruiters understand that at the early career, candidates will have a lower skill level. They understand that your ability to pick stuff up quickly supersedes your programming prowess. Most candidates that hit the "apply" button suck, just like you! Leverage that.
 
@@ -74,7 +74,7 @@ Proudly show off your process. Build a portfolio, write some blog posts, update 
 
 ---
 
-### 🦾 Use AI Wisely...
+## 🦾 Use AI Wisely...
 
 Yes, AI is disruptive. Yes, it'll probably change software development forever. 
 
@@ -88,7 +88,7 @@ Only when you understand what you're doing is it prudent to let it stick its han
 
 ---
 
-### 🤺 Keep Showing Up!
+## 🤺 Keep Showing Up!
 
 This journey's hard for everyone. If it seems like someone's doing way better than you, it's probably because they started earlier. There's no point in comparing yourself to others; keep showing up for yourself.
 

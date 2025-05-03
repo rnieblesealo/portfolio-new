@@ -44,43 +44,18 @@ export const experiences: ExperienceItem[] = [
   {
     id: "codepath-web",
     location: "CodePath",
-    role: "Web Development Student",
-    desc: "I'm currently taking CodePath's WEB102 for intermediate web development, where I'm most interested in learning to better collaborate with others in team-based settings!",
+    role: "Web Development Alumnus",
+    desc: "I've completed CodePath's intermediate full-stack web dev course with an honors distinction!",
+    bulletsTitle: "I mastered:",
+    bullets: [
+      "Frontend development with React",
+      "Working with varied API/JSON data",
+      "CRUD with Supabase & PostgreSQL",
+      "Full-stack app development combining all these!",
+    ],
     startDate: new Date("February 1, 2025"),
     imgSrc: "images/codepath.jpg",
     startTitleColor: "#06C58C",
     endTitleColor: "white"
-  },
-  {
-    id: "kh-lead",
-    location: "KnightHacks",
-    role: "Project Director",
-    desc: "As a team of 5, we'll be designing and implementing Bromodoro, a full-stack app designed to make productivity more social and fun using the genius Pomodoro Technique.",
-    bulletsTitle: "My team and I are...",
-    bullets: [
-      "Developing a modern, responsive (and fun!) frontend using Vite + React.",
-      "Leveraging Supabase and its API for our database and deployment needs.",
-      "Creating a fun app that'll hopefully get you to do your homework!",
-    ],
-    startDate: new Date("January 1, 2025"),
-    imgSrc: "images/knighthacks.jpg",
-    startTitleColor: "#9969CD",
-    endTitleColor: "#131731"
-  },
-  {
-    id: "kh-workshop",
-    location: "KnightHacks",
-    role: "iOS Development Workshop Instructor",
-    desc: "I'm soon going to host my own KnightHacks workshop, where I'll be introducing curious minds to the world of mobile dev with Swift using a beginner-friendly game project!",
-    bulletsTitle: "I will be teaching...",
-    bullets: [
-      "The Xcode IDE and its file explorer, inspector, and debugger.",
-      "The Swift language and its special features (optionals, unwrapping, computed properties, etc.)",
-      "iOS app architecture (ViewControllers, SceneControllers, Windows, etc.)"
-    ],
-    startDate: new Date("January 1, 2025"),
-    imgSrc: "images/knighthacks.jpg",
-    startTitleColor: "#9969CD",
-    endTitleColor: "#131731"
   },
 ]

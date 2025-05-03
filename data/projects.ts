@@ -34,19 +34,19 @@ const projects: ProjectsItem[] = [
     ]
   },
   {
-    id: "micro",
+    id: "lucina",
     variant: "normal",
-    name: "Microtransistor",
-    desc: "First-person action FPS with AI-powered enemies, perk machines, and some chonky guns!",
+    name: "Lucina",
+    desc: "First-person 3D horror game where you escape a hyper-intelligent, AI-powered entity.",
     langs: ["unity", "csharp"],
-    imgSrc: "images/compressed-gifs/microtransistor.gif",
-    color: "#b00003",
-    url: "https://www.instagram.com/microtransistor/",
+    imgSrc: "images/compressed-gifs/lucina.gif",
+    color: "#b07007",
+    teamSize: 4,
+    url: "https://spikyshark.itch.io/lucina",
     tags: [
       "Game Design",
-      "Animation",
-      "State",
       "AI",
+      "3D"
     ]
   },
   {
@@ -61,6 +61,22 @@ const projects: ProjectsItem[] = [
     tags: [
       "Freelance",
       "Full-Stack",
+    ]
+  },
+  {
+    id: "micro",
+    variant: "normal",
+    name: "Microtransistor",
+    desc: "First-person action FPS with AI-powered enemies, perk machines, and some chonky guns!",
+    langs: ["unity", "csharp"],
+    imgSrc: "images/compressed-gifs/microtransistor.gif",
+    color: "#b00003",
+    url: "https://www.instagram.com/microtransistor/",
+    tags: [
+      "Game Design",
+      "Animation",
+      "State",
+      "AI",
     ]
   },
   {
@@ -140,22 +156,6 @@ const projects: ProjectsItem[] = [
     tags: [
       "Game Development",
       "2D",
-    ]
-  },
-  {
-    id: "lucina",
-    variant: "normal",
-    name: "Lucina",
-    desc: "First-person 3D horror game where you escape a hyper-intelligent, AI-powered entity.",
-    langs: ["unity", "csharp"],
-    imgSrc: "images/compressed-gifs/lucina.gif",
-    color: "#b07007",
-    teamSize: 4,
-    url: "https://spikyshark.itch.io/lucina",
-    tags: [
-      "Game Design",
-      "AI",
-      "3D"
     ]
   },
   {

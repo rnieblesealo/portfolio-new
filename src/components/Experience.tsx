@@ -44,7 +44,7 @@ export default function Experience() {
           <img
             src={exp.imgSrc}
             alt="Location logo"
-            className="min-w-[80px]"
+            className="min-w-[80px] rounded-lg"
           />
           <p className="text-center text-sm">{`${start}`} - <span className={`${italicizePresent}`}>{end}</span></p>
         </div>

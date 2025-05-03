@@ -104,13 +104,22 @@ function Project({ name, desc, url, imgSrc, color, langs, teamSize, tags, varian
       </span>
     </p>
 
+  // TODO: find a better solution for these special badges...
+
   const bitcamp2025Winner =
     <p className="font-extrabold text-center mb-4 flex items-center justify-center px-3 py-2 rounded-full flex-col sm:flex-row w-full text-xs border-1 border-amber-500 text-amber-500">
       <FaMedal className="mr-1 text-sm" />Bitcamp 2025 Winner!
     </p>
 
+  const aiForGameProgrammingWinner =
+    <p className="font-extrabold text-center mb-4 flex flex-col items-center justify-center px-3 py-2 rounded-full flex-col w-full text-xs border-1 border-lime-400 text-lime-400">
+      <FaMedal className="mb-1 text-sm" />Winner of CAP4053's "Most Complete" Award!
+    </p>
+
   const infoContent =
     <div className="w-full h-min flex flex-col p-5">
+      {/* TODO: find a better solution for these special badges...*/}
+      {variant === "normal" && name === "Lucina" && aiForGameProgrammingWinner}
       {variant === "codepath" && builtForCodepath}
       {variant === "bitcamp" && name === "Riffs" && bitcamp2025Winner}
       <p className="text-center">{desc}</p>
@@ -182,7 +191,7 @@ function Project({ name, desc, url, imgSrc, color, langs, teamSize, tags, varian
 
 export default function Projects() {
   const projectElements = projects.map((proj) => {
-    if (proj.hide){
+    if (proj.hide) {
       return null;
     }
 

@@ -1,4 +1,3 @@
-import PageContextProvider from "../components/PageContextProvider"
 import Markdown from "react-markdown"
 import remarkGfm from "remark-gfm"
 
@@ -23,11 +22,48 @@ export default function ViewBlog() {
   }, [markdownRef])
 
   return (
-    <div className="all:unset prose prose-invert bg-gray-900 min-w-[70vw] h-full p-5">
-      <button onClick={() => { navigate("/blogs") }} className="flex items-center text-2xl mb-3">
+    <div className="max-w-250 bg-black px-5">
+      <button
+        onClick={() => { navigate("/blogs") }}
+        className="flex items-center text-xl my-3 p-3 border rounded-2xl cursor-pointer">
         <IoArrowBack /> Back
       </button>
-      <Markdown remarkPlugins={[remarkGfm]}>
+      <Markdown
+        remarkPlugins={[remarkGfm]}
+        components={{
+          // # headings
+          h1: ({ ...props }) => (
+            <h1 className="text-3xl font-extrabold my-4" {...props} />
+          ),
+          // ## headings
+          h2: ({ ...props }) => (
+            <h1 className="text-2xl font-extrabold my-4" {...props} />
+          ),
+          // normal blocks of text
+          p: ({ ...props }) => (
+            <p className="leading-relaxed mb-4 text-gray-300" {...props} />
+          ),
+          // **bold** 
+          strong: ({ ...props }) => (
+            <strong className="text-white font-bold" {...props} />
+          ),
+          // --- horizontal rules 
+          hr: ({ ...props }) => (
+            <hr className="text-gray-800" {...props} />
+          ),
+          // images
+          img: ({ alt, src, ...props }) => (
+            <img
+              src={src}
+              alt={alt}
+              className="max-w-110 block mx-auto my-10 rounded-xl"
+              {...props} />
+          ),
+          // > quotes 
+          blockquote: ({ ...props }) => (
+            <blockquote className="italic font-bold mx-auto text-center" {...props} />
+          ),
+        }}>
         {markdownContent}
       </Markdown>
     </div>
