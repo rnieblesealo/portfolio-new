@@ -22,7 +22,7 @@ export default function ViewBlog() {
   }, [markdownRef])
 
   return (
-    <div className="max-w-250 bg-black px-5">
+    <div className="w-screen max-w-250 bg-black px-5">
       <button
         onClick={() => { navigate("/blogs") }}
         className="flex items-center text-xl my-3 p-3 border rounded-2xl cursor-pointer">
