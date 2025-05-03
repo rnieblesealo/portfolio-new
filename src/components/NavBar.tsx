@@ -8,7 +8,6 @@ import { FaMoon, FaRegMoon } from "react-icons/fa";
 import { Link } from "react-router-dom"
 
 import links from "../../data/Links"
-import clsx from "clsx";
 
 export default function NavBar() {
   const context = UsePageContext()
