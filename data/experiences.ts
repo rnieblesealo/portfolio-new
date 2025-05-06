@@ -1,5 +1,6 @@
 export type ExperienceItem = {
   id: string,
+  employer: string,
   location: string,
   role: string,
   desc: string,
@@ -8,54 +9,58 @@ export type ExperienceItem = {
   startDate: Date,
   endDate?: Date,
   imgSrc?: string,
-  startTitleColor?: string,
-  endTitleColor?: string
+  accentColor?: string,
+  headingColor?: string,
 }
 
 export const experiences: ExperienceItem[] = [
   {
     id: "lutron",
-    location: "Lutron",
+    employer: "Lutron",
+    location: "Philadelphia, PA",
     role: "Embedded Software Engineering Intern",
-    desc: "Incoming summer 2025!",
-    startDate: new Date("May 27, 2025"), // only month, year will be displayed but needs day to be valid 
+    desc: "Super excited to join Lutron this summer and dive into embedded systems!",
+    startDate: new Date("May 27, 2025"),
     endDate: new Date("August 5, 2025"),
     imgSrc: "images/lutron.jpg",
-    startTitleColor: "white",
-    endTitleColor: "#006CCB"
+    accentColor: "#436dc4",
+    headingColor: "white"
   },
   {
     id: "hyel",
-    location: "HYEL",
+    employer: "HYEL",
+    location: "Los Angeles, CA",
     role: "Software Engineer",
-    desc: "At HYEL, I had the opportunity to work as a contractor in creating a complete, production-ready software product, from the design phase all the way to shipping. Check out \"The Spyder\" in the HYEL app/my projects above!",
-    bulletsTitle: "Here, I...",
+    bulletsTitle: "I...",
     bullets: [
-      "Designed a complete iOS game using Figma",
-      "Implemented it using Xcode, UIKit, Swift and SpriteKit",
-      "Ensured a consistent 60 FPS and reduced render load by 30% for its production version.",
+      "Designed a complete iOS game in Figma",
+      "Built it with Xcode, UIKit, Swift & SpriteKit",
+      "Maintained 60 FPS and cut render load by 30%",
     ],
-    startDate: new Date("September 1, 2024"), // only month, year will be displayed but needs day to be valid 
+    desc: "This shipped product—“The Spyder”—is featured in my projects above!",
+    startDate: new Date("September 1, 2024"),
     endDate: new Date("December 1, 2024"),
     imgSrc: "images/hyel.jpg",
-    startTitleColor: "white",
-    endTitleColor: "#6C00F9"
+    accentColor: "#6d00f9",
+    headingColor: "white"
   },
   {
     id: "codepath-web",
-    location: "CodePath",
+    location: "Remote",
+    employer: "CodePath",
     role: "Web Development Alumnus",
-    desc: "I've completed CodePath's intermediate full-stack web dev course with an honors distinction!",
     bulletsTitle: "I mastered:",
     bullets: [
       "Frontend development with React",
-      "Working with varied API/JSON data",
+      "Dynamic apps using APIs & JSON",
       "CRUD with Supabase & PostgreSQL",
-      "Full-stack app development combining all these!",
+      "End-to-end full-stack app building",
     ],
+    desc: "Completed with honors distinction! Check some of the stuff I built for this course above :)",
     startDate: new Date("February 1, 2025"),
+    endDate: new Date("May 3, 2025"),
     imgSrc: "images/codepath.jpg",
-    startTitleColor: "#06C58C",
-    endTitleColor: "white"
+    accentColor: "#07c88f",
+    headingColor: "white"
   },
 ]
