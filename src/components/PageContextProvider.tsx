@@ -62,7 +62,7 @@ export default function PageContextProvider() {
   const [isSmall, setIsSmall] = useState(window.innerWidth < smallThresholdPx)
 
   // dark mode enable; check system to enable by default
-  const [isDark, setIsDark] = useState(window.matchMedia("(prefers-color-scheme: dark)").matches)
+  const [isDark, setIsDark] = useState(false)
 
   useEffect(() => {
     window.addEventListener("resize", () => {
