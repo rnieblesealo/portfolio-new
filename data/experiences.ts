@@ -23,7 +23,7 @@ export const experiences: ExperienceItem[] = [
     startDate: new Date("May 27, 2025"),
     endDate: new Date("August 5, 2025"),
     imgSrc: "images/lutron.jpg",
-    accentColor: "#436dc4",
+    accentColor: "#375eb0",
     headingColor: "white"
   },
   {
@@ -60,7 +60,7 @@ export const experiences: ExperienceItem[] = [
     startDate: new Date("February 1, 2025"),
     endDate: new Date("May 3, 2025"),
     imgSrc: "images/codepath.jpg",
-    accentColor: "#07c88f",
+    accentColor: "#0c9c70",
     headingColor: "white"
   },
 ]
