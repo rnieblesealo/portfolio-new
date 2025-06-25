@@ -8,7 +8,7 @@ type AboutMeItem = {
 const aboutMe: AboutMeItem[] = [
   {
     id: "college",
-    text: "I'm Studying CS and math at UCF!",
+    text: "I'm Studying CS at UCF!",
     imgSrc: "/images/ucf.png"
   },
   {

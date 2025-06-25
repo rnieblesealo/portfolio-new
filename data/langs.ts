@@ -1,17 +1,18 @@
 const langs: string[] = [
+  "neovim",
+  "linux",
   "react",
   "typescript",
-  "html5",
-  "css3",
-  "c",
   "cplusplus",
   "csharp",
   "python",
-  "java",
   "swift",
   "xcode",
+  "java",
   "unity",
-  "postgresql"
+  "postgresql",
+  "sqlite",
+  "docker",
 ]
 
 export default langs
