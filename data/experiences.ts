@@ -17,7 +17,7 @@ export const experiences: ExperienceItem[] = [
   {
     id: "lutron-embedded",
     location: "Philadelphia, PA",
-    employer: "Lutron Electronics",
+    employer: "Lutron",
     role: "Embedded Software Engineering Intern",
     bulletsTitle: "I delivered:",
     bullets: [
@@ -36,7 +36,7 @@ export const experiences: ExperienceItem[] = [
   {
     id: "hyel-ios",
     location: "Los Angeles, CA",
-    employer: "HYEL, Inc.",
+    employer: "HYEL",
     role: "iOS Software Engineering Intern",
     bulletsTitle: "I built:",
     bullets: [

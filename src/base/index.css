@@ -3,13 +3,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Tiny5&display=swap');
 
 @import "tailwindcss";
-
 @plugin "tailwindcss-animated";
 
 @theme {
+  --font-tiny5: "Tiny5", "sans-serif";
   --font-jersey10: "Jersey 10", "sans-serif";
   --font-funnel: "Funnel Sans", "sans-serif";
-  --font-tiny5: "Tiny5" : "sans-serif";
 }
 
 body {
