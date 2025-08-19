@@ -21,7 +21,7 @@ export const experiences: ExperienceItem[] = [
     role: "Embedded Software Engineering Intern",
     bulletsTitle: "I delivered:",
     bullets: [
-      "A custom certificate utility for secure runtime communication with an unreleased device",
+      "A custom certificate utility for secure runtime communication with an embeddeddevice",
       "Robust cryptographic provisioning using C++ and OpenSSL",
       "Seamless integration with Lutron's existing security paradigm",
       "Extensive testing and documentation to support long-term maintainability"
@@ -35,9 +35,9 @@ export const experiences: ExperienceItem[] = [
   },
   {
     id: "hyel-ios",
-    location: "Los Angeles, CA",
+    location: "Remote",
     employer: "HYEL",
-    role: "iOS Software Engineering Intern",
+    role: "iOS Software Engineering Contractor",
     bulletsTitle: "I built:",
     bullets: [
       "An original iOS game for a digital arcade using Swift and Xcode",
