@@ -21,7 +21,7 @@ export const experiences: ExperienceItem[] = [
     role: "Embedded Software Engineering Intern",
     bulletsTitle: "I delivered:",
     bullets: [
-      "A custom certificate utility for secure runtime communication with an embeddeddevice",
+      "A custom certificate utility for secure runtime communication with an embedded device",
       "Robust cryptographic provisioning using C++ and OpenSSL",
       "Seamless integration with Lutron's existing security paradigm",
       "Extensive testing and documentation to support long-term maintainability"
