@@ -68,7 +68,7 @@ function TopArtists() {
                 alt={`Artist pic of ${info.name}`}
                 className="w-[150px] aspect-square rounded-lg object-cover"
               />
-              <p className="font-bold text-center flex flex-col text-[0.8rem]">
+              <p className="font-bold text-center flex flex-col text-[0.8rem] break-all">
                 <span className="font-normal text-[0.75rem] text-gray-600">#{index + 1}</span>
                 {info.name}
               </p>
